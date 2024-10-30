@@ -1,6 +1,6 @@
 #include "logistic_regression.h"
 
-#define N_FEATURES 64
+#define N_FEATURES 128
 #define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
 
 typedef ap_axis<32, 0, 0, 0> axis_pkt;
@@ -16,6 +16,7 @@ void logistic_regression(hls::stream<axis_pkt> &in_stream,
     #pragma HLS INTERFACE axis port=out_stream
     #pragma HLS INTERFACE bram port=weights
     #pragma HLS DATAFLOW
+    #pragma HLS bind_storage variable=weights type=ram_2p impl=bram
 
     // Input packet
     axis_pkt input_pkt;
@@ -26,45 +27,40 @@ void logistic_regression(hls::stream<axis_pkt> &in_stream,
     read_input_features: for (int i = 0; i < N_FEATURES; i++) {
         #pragma HLS PIPELINE II=1
         input_pkt = in_stream.read();
-        union {
-            uint32_t i;
-            float f;
-        } data_cast;
-        data_cast.i = input_pkt.data;
-        features[i] = data_cast.f; // Properly convert the data back to fixed-point float
+        features[i] = *((fixed_t*)&input_pkt.data); // Properly convert the data back to fixed-point float
     }
 
     // Perform logistic regression computation
     fixed_t partial_sums[N_FEATURES];
     #pragma HLS ARRAY_PARTITION variable=partial_sums complete
+	#pragma HLS bind_op variable=partial_sums op=mul impl=fabric // Force the use of LUTs for multiplication instead of DSPs
 
     // Calculate partial products
     compute_partial_products: for (int i = 0; i < N_FEATURES; i++) {
         #pragma HLS UNROLL
+		#pragma HLS allocation operation instances=mul limit=1
         partial_sums[i] = (fixed_t)weights[i + 1] * features[i];
     }
 
     // Accumulate partial sums
-    fixed_t linear_sum = weights[0]; // Bias term
+    fixed_t linear_sum = (fixed_t)weights[0]; // Bias term
     accumulate_partial_sums: for (int i = 0; i < N_FEATURES; i++) {
         #pragma HLS UNROLL
         linear_sum += partial_sums[i];
     }
 
     // Apply sigmoid function using an approximation to reduce DSP usage
-    fixed_t probability = fixed_t(0.5) + linear_sum / (fixed_t(4.0) + fixed_t(hls::abs(linear_sum.to_float()))); // Fixed-point sigmoid approximation to reduce resource usage
+    fixed_t abs_linear_sum = (linear_sum >= fixed_t(0)) ? linear_sum : (fixed_t)(-linear_sum); // Replace hls::abs with a manual absolute calculation to avoid return value function
+    fixed_t probability = fixed_t(0.5) + linear_sum / (fixed_t(4.0) + abs_linear_sum); // Fixed-point sigmoid approximation to reduce resource usage
+
 
     // Classify based on threshold of 0.5
-    fixed_t output = (probability.to_float() >= 0.5f) ? fixed_t(1.0f) : fixed_t(0.0f);
+    // Classify based on threshold of 0.5
+    float output = (probability.to_float() >= 0.5f) ? 1.0f : 0.0f;
 
     // Write output to AXI-Stream
     axis_pkt output_pkt;
-    union {
-        float f;
-        uint32_t i;
-    } output_cast;
-    output_cast.f = output.to_float();
-    output_pkt.data = output_cast.i;
+    output_pkt.data = *((uint32_t*)&output);
     output_pkt.last = 1;
     out_stream.write(output_pkt);
 }

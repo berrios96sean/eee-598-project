@@ -1,61 +1,113 @@
 #include "logistic_regression.h"
+#include <hls_stream.h>
+#include <iostream>
+#include <ap_fixed.h>
+#include <cmath>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 
-#define N_FEATURES 64
-#define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
+// Custom helper function to keep a value within a specified range
+float keep_in_range(float value, float min_val, float max_val) {
+    return std::max(min_val, std::min(value, max_val));
+}
 
-typedef ap_axis<32, 0, 0, 0> axis_pkt;
-typedef ap_fixed<16, 8> fixed_t; // 16-bit fixed-point type with 8 integer bits
+int main() {
+    hls::stream<axis_pkt> in_stream;
+    hls::stream<axis_pkt> out_stream;
+    fixed_int16_t weights[WEIGHTS_SIZE];
 
-typedef ap_int<16> fixed_int16_t; // Use fixed-point integer type for weights to reduce DSP usage
+    // Initialize random seed
+    std::srand(std::time(0));
 
-// Top-level function definition
-void logistic_regression(hls::stream<axis_pkt> &in_stream,
-                         hls::stream<axis_pkt> &out_stream,
-                         fixed_int16_t weights[WEIGHTS_SIZE]) {
-    #pragma HLS INTERFACE axis port=in_stream
-    #pragma HLS INTERFACE axis port=out_stream
-    #pragma HLS INTERFACE bram port=weights
-    #pragma HLS PIPELINE II=1
-
-    // Input packet
-    axis_pkt input_pkt;
-    fixed_t features[N_FEATURES];
-    #pragma HLS ARRAY_PARTITION variable=features complete // Fully partition to optimize parallel access
-
-    // Read input features from AXI-Stream
-    read_input_features: for (int i = 0; i < N_FEATURES; i++) {
-        #pragma HLS PIPELINE II=1 // Pipeline to maintain a consistent initiation interval
-        input_pkt = in_stream.read();
-        union {
-            uint32_t i;
-            float f;
-        } data_cast;
-        data_cast.i = input_pkt.data;
-        features[i] = data_cast.f; // Properly convert the data back to fixed-point float
+    weights[0] = 50; // Bias term (scaled to fixed-point)
+    for (int i = 1; i < WEIGHTS_SIZE; i++) {
+        weights[i] = (std::rand() % 21) - 10; // Random between -10 and 10 (scaled to fixed-point)
     }
 
-    // Perform logistic regression computation
-    fixed_t linear_sum = weights[0]; // Bias term
+    std::vector<std::vector<fixed_t>> test_inputs(5, std::vector<fixed_t>(N_FEATURES));
+    for (auto &input : test_inputs) {
+        input[0] = keep_in_range(((float)rand() / RAND_MAX) * 100.0f, 0.0f, 100.0f); // Age: Random between 0 and 100
+        input[1] = keep_in_range(((float)rand() / RAND_MAX) * 60.0f, 0.0f, 60.0f); // Tenure: Random between 0 and 60
+        input[2] = keep_in_range(((float)rand() / RAND_MAX) * 200.0f, 0.0f, 200.0f); // Monthly Charge: Random between 0 and 200
+        input[3] = keep_in_range(((float)rand() / RAND_MAX) * 10.0f, 0.0f, 10.0f); // Support Calls: Random between 0 and 10
 
-    compute_linear_sum: for (int i = 0; i < N_FEATURES; i++) {
-        #pragma HLS PIPELINE II=1 // Pipeline to maintain a consistent initiation interval
-        linear_sum += (fixed_t)weights[i + 1] * features[i]; // Convert weights to fixed_t for multiplication
+        for (int i = 4; i < N_FEATURES; i++) {
+            input[i] = ((float)rand() / RAND_MAX) * 2.0f - 1.0f; // Random between -1.0 and 1.0
+            input[i] = keep_in_range(input[i], -0.5f, 0.5f); // Keep between -0.5 and 0.5
+        }
     }
 
-    // Apply sigmoid function using an approximation to reduce DSP usage
-    fixed_t probability = fixed_t(0.5) + linear_sum / (fixed_t(4.0) + fixed_t(hls::abs(linear_sum.to_float()))); // Fixed-point sigmoid approximation to reduce resource usage
+    // Run test cases
+    int pass_count = 0;
+    int fail_count = 0;
 
-    // Classify based on threshold of 0.5
-    fixed_t output = (probability.to_float() >= 0.5f) ? fixed_t(1.0f) : fixed_t(0.0f);
+    for (size_t test_idx = 0; test_idx < test_inputs.size(); ++test_idx) {
+        // Prepare input stream
+        for (int i = 0; i < N_FEATURES; i++) {
+            axis_pkt pkt;
+            pkt.data = test_inputs[test_idx][i].range(); // Set fixed-point data directly
+            pkt.last = (i == N_FEATURES - 1) ? 1 : 0;
+            in_stream.write(pkt);
+        }
 
-    // Write output to AXI-Stream
-    axis_pkt output_pkt;
-    union {
-        float f;
-        uint32_t i;
-    } output_cast;
-    output_cast.f = output.to_float();
-    output_pkt.data = output_cast.i;
-    output_pkt.last = 1;
-    out_stream.write(output_pkt);
+        // Expected output calculation (CPU reference)
+        fixed_t linear_sum = (fixed_t)weights[0]; // Bias term
+        for (int i = 0; i < N_FEATURES; i++) {
+            linear_sum += (fixed_t)weights[i + 1] * test_inputs[test_idx][i];
+        }
+
+        // Apply sigmoid approximation to get the probability
+        fixed_t abs_linear_sum = (linear_sum >= fixed_t(0)) ? linear_sum : (fixed_t)(-linear_sum);
+        fixed_t probability = fixed_t(0.5) + linear_sum / (fixed_t(4.0) + abs_linear_sum); // Fixed-point sigmoid approximation
+
+        std::cout << " Testbench Probabilities" << std::endl;
+        std::cout << "---------------------------------------------" << std::endl;
+        std::cout << "  Linear Sum: " << linear_sum << "\n Probability (before rounding): " << probability << std::endl;
+        std::cout << "---------------------------------------------" << std::endl;
+
+        fixed_t expected_output = (probability >= fixed_t(0.5)) ? fixed_t(1.0) : fixed_t(0.0);
+
+        // Call the logistic_regression function
+        logistic_regression(in_stream, out_stream, weights);
+
+        // Read output
+        if (!out_stream.empty()) {
+            axis_pkt output_pkt = out_stream.read();
+            union {
+                uint32_t i;
+                float f;
+            } output_cast;
+            output_cast.i = output_pkt.data;
+            fixed_t output = (fixed_t)output_cast.f;
+
+            std::cout << "Test Case " << test_idx + 1 << ":" << std::endl;
+            std::cout << "  Logistic Regression Output: " << output << std::endl;
+            std::cout << "  Expected Output: " << expected_output << std::endl;
+
+            // Compare expected and actual output
+            if (std::abs(output.to_float() - expected_output.to_float()) < 1e-3) {
+                pass_count++;
+                std::cout << "  Test Passed!" << std::endl;
+            } else {
+                fail_count++;
+                std::cout << "  Test Failed!" << std::endl;
+            }
+        } else {
+            fail_count++;
+            std::cout << "Error: Output stream is empty." << std::endl;
+        }
+    }
+
+    // Output total pass/fail count
+    std::cout << " Summary of Test Results:" << std::endl;
+    std::cout << "  Total Passed: " << pass_count << std::endl;
+    std::cout << "  Total Failed: " << fail_count << std::endl;
+    if (fail_count == 0) {
+        std::cout << "  Overall Result: PASS" << std::endl;
+    } else {
+        std::cout << "  Overall Result: FAIL" << std::endl;
+    }
+
+    return 0;
 }
