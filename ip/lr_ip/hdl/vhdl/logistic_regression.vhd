@@ -49,7 +49,7 @@ end;
 architecture behav of logistic_regression is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "logistic_regression_logistic_regression,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.972000,HLS_SYN_LAT=302,HLS_SYN_TPT=172,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=18293,HLS_SYN_LUT=16528,HLS_VERSION=2022_1}";
+    "logistic_regression_logistic_regression,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.972000,HLS_SYN_LAT=92,HLS_SYN_TPT=58,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=4897,HLS_SYN_LUT=5737,HLS_VERSION=2022_1}";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
     constant ap_const_logic_1 : STD_LOGIC := '1';
@@ -62,134 +62,38 @@ architecture behav of logistic_regression is
     signal Loop_read_input_features_proc2_U0_ap_idle : STD_LOGIC;
     signal Loop_read_input_features_proc2_U0_ap_ready : STD_LOGIC;
     signal Loop_read_input_features_proc2_U0_in_stream_TREADY : STD_LOGIC;
-    signal Loop_read_input_features_proc2_U0_ap_return_0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_1 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_2 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_3 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_4 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_5 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_6 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_7 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_8 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_9 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_10 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_11 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_12 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_13 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_14 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_15 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_16 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_17 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_18 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_19 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_20 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_21 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_22 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_23 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_24 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_25 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_26 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_27 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_28 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_29 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_30 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_31 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_32 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_33 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_34 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_35 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_36 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_37 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_38 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_39 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_40 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_41 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_42 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_43 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_44 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_45 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_46 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_47 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_48 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_49 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_50 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_51 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_52 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_53 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_54 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_55 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_56 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_57 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_58 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_59 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_60 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_61 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_62 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_63 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_64 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_65 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_66 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_67 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_68 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_69 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_70 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_71 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_72 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_73 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_74 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_75 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_76 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_77 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_78 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_79 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_80 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_81 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_82 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_83 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_84 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_85 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_86 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_87 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_88 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_89 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_90 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_91 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_92 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_93 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_94 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_95 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_96 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_97 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_98 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_99 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_100 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_101 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_102 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_103 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_104 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_105 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_106 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_107 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_108 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_109 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_110 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_111 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_112 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_113 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_114 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_115 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_116 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_117 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_118 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_119 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_120 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_121 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_122 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_123 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_124 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_125 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_126 : STD_LOGIC_VECTOR (15 downto 0);
-    signal Loop_read_input_features_proc2_U0_ap_return_127 : STD_LOGIC_VECTOR (15 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_2 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_3 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_4 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_5 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_6 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_7 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_8 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_9 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_10 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_11 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_12 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_13 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_14 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_15 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_16 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_17 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_18 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_19 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_20 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_21 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_22 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_23 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_24 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_25 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_26 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_27 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_28 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_29 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_30 : STD_LOGIC_VECTOR (7 downto 0);
+    signal Loop_read_input_features_proc2_U0_ap_return_31 : STD_LOGIC_VECTOR (7 downto 0);
     signal ap_channel_done_features_V_loc_channel : STD_LOGIC;
     signal features_V_loc_channel_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_features_V_loc_channel : STD_LOGIC := '0';
@@ -318,390 +222,6 @@ architecture behav of logistic_regression is
     signal features_V_31_loc_channel_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_features_V_31_loc_channel : STD_LOGIC := '0';
     signal ap_sync_channel_write_features_V_31_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_32_loc_channel : STD_LOGIC;
-    signal features_V_32_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_32_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_32_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_33_loc_channel : STD_LOGIC;
-    signal features_V_33_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_33_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_33_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_34_loc_channel : STD_LOGIC;
-    signal features_V_34_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_34_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_34_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_35_loc_channel : STD_LOGIC;
-    signal features_V_35_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_35_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_35_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_36_loc_channel : STD_LOGIC;
-    signal features_V_36_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_36_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_36_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_37_loc_channel : STD_LOGIC;
-    signal features_V_37_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_37_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_37_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_38_loc_channel : STD_LOGIC;
-    signal features_V_38_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_38_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_38_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_39_loc_channel : STD_LOGIC;
-    signal features_V_39_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_39_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_39_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_40_loc_channel : STD_LOGIC;
-    signal features_V_40_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_40_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_40_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_41_loc_channel : STD_LOGIC;
-    signal features_V_41_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_41_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_41_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_42_loc_channel : STD_LOGIC;
-    signal features_V_42_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_42_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_42_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_43_loc_channel : STD_LOGIC;
-    signal features_V_43_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_43_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_43_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_44_loc_channel : STD_LOGIC;
-    signal features_V_44_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_44_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_44_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_45_loc_channel : STD_LOGIC;
-    signal features_V_45_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_45_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_45_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_46_loc_channel : STD_LOGIC;
-    signal features_V_46_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_46_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_46_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_47_loc_channel : STD_LOGIC;
-    signal features_V_47_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_47_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_47_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_48_loc_channel : STD_LOGIC;
-    signal features_V_48_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_48_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_48_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_49_loc_channel : STD_LOGIC;
-    signal features_V_49_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_49_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_49_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_50_loc_channel : STD_LOGIC;
-    signal features_V_50_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_50_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_50_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_51_loc_channel : STD_LOGIC;
-    signal features_V_51_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_51_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_51_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_52_loc_channel : STD_LOGIC;
-    signal features_V_52_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_52_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_52_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_53_loc_channel : STD_LOGIC;
-    signal features_V_53_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_53_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_53_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_54_loc_channel : STD_LOGIC;
-    signal features_V_54_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_54_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_54_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_55_loc_channel : STD_LOGIC;
-    signal features_V_55_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_55_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_55_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_56_loc_channel : STD_LOGIC;
-    signal features_V_56_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_56_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_56_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_57_loc_channel : STD_LOGIC;
-    signal features_V_57_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_57_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_57_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_58_loc_channel : STD_LOGIC;
-    signal features_V_58_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_58_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_58_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_59_loc_channel : STD_LOGIC;
-    signal features_V_59_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_59_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_59_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_60_loc_channel : STD_LOGIC;
-    signal features_V_60_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_60_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_60_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_61_loc_channel : STD_LOGIC;
-    signal features_V_61_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_61_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_61_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_62_loc_channel : STD_LOGIC;
-    signal features_V_62_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_62_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_62_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_63_loc_channel : STD_LOGIC;
-    signal features_V_63_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_63_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_63_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_64_loc_channel : STD_LOGIC;
-    signal features_V_64_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_64_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_64_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_65_loc_channel : STD_LOGIC;
-    signal features_V_65_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_65_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_65_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_66_loc_channel : STD_LOGIC;
-    signal features_V_66_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_66_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_66_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_67_loc_channel : STD_LOGIC;
-    signal features_V_67_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_67_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_67_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_68_loc_channel : STD_LOGIC;
-    signal features_V_68_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_68_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_68_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_69_loc_channel : STD_LOGIC;
-    signal features_V_69_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_69_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_69_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_70_loc_channel : STD_LOGIC;
-    signal features_V_70_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_70_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_70_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_71_loc_channel : STD_LOGIC;
-    signal features_V_71_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_71_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_71_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_72_loc_channel : STD_LOGIC;
-    signal features_V_72_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_72_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_72_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_73_loc_channel : STD_LOGIC;
-    signal features_V_73_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_73_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_73_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_74_loc_channel : STD_LOGIC;
-    signal features_V_74_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_74_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_74_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_75_loc_channel : STD_LOGIC;
-    signal features_V_75_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_75_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_75_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_76_loc_channel : STD_LOGIC;
-    signal features_V_76_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_76_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_76_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_77_loc_channel : STD_LOGIC;
-    signal features_V_77_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_77_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_77_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_78_loc_channel : STD_LOGIC;
-    signal features_V_78_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_78_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_78_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_79_loc_channel : STD_LOGIC;
-    signal features_V_79_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_79_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_79_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_80_loc_channel : STD_LOGIC;
-    signal features_V_80_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_80_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_80_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_81_loc_channel : STD_LOGIC;
-    signal features_V_81_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_81_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_81_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_82_loc_channel : STD_LOGIC;
-    signal features_V_82_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_82_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_82_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_83_loc_channel : STD_LOGIC;
-    signal features_V_83_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_83_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_83_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_84_loc_channel : STD_LOGIC;
-    signal features_V_84_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_84_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_84_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_85_loc_channel : STD_LOGIC;
-    signal features_V_85_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_85_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_85_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_86_loc_channel : STD_LOGIC;
-    signal features_V_86_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_86_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_86_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_87_loc_channel : STD_LOGIC;
-    signal features_V_87_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_87_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_87_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_88_loc_channel : STD_LOGIC;
-    signal features_V_88_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_88_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_88_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_89_loc_channel : STD_LOGIC;
-    signal features_V_89_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_89_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_89_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_90_loc_channel : STD_LOGIC;
-    signal features_V_90_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_90_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_90_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_91_loc_channel : STD_LOGIC;
-    signal features_V_91_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_91_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_91_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_92_loc_channel : STD_LOGIC;
-    signal features_V_92_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_92_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_92_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_93_loc_channel : STD_LOGIC;
-    signal features_V_93_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_93_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_93_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_94_loc_channel : STD_LOGIC;
-    signal features_V_94_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_94_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_94_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_95_loc_channel : STD_LOGIC;
-    signal features_V_95_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_95_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_95_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_96_loc_channel : STD_LOGIC;
-    signal features_V_96_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_96_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_96_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_97_loc_channel : STD_LOGIC;
-    signal features_V_97_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_97_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_97_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_98_loc_channel : STD_LOGIC;
-    signal features_V_98_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_98_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_98_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_99_loc_channel : STD_LOGIC;
-    signal features_V_99_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_99_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_99_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_100_loc_channel : STD_LOGIC;
-    signal features_V_100_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_100_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_100_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_101_loc_channel : STD_LOGIC;
-    signal features_V_101_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_101_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_101_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_102_loc_channel : STD_LOGIC;
-    signal features_V_102_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_102_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_102_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_103_loc_channel : STD_LOGIC;
-    signal features_V_103_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_103_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_103_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_104_loc_channel : STD_LOGIC;
-    signal features_V_104_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_104_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_104_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_105_loc_channel : STD_LOGIC;
-    signal features_V_105_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_105_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_105_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_106_loc_channel : STD_LOGIC;
-    signal features_V_106_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_106_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_106_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_107_loc_channel : STD_LOGIC;
-    signal features_V_107_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_107_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_107_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_108_loc_channel : STD_LOGIC;
-    signal features_V_108_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_108_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_108_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_109_loc_channel : STD_LOGIC;
-    signal features_V_109_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_109_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_109_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_110_loc_channel : STD_LOGIC;
-    signal features_V_110_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_110_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_110_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_111_loc_channel : STD_LOGIC;
-    signal features_V_111_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_111_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_111_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_112_loc_channel : STD_LOGIC;
-    signal features_V_112_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_112_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_112_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_113_loc_channel : STD_LOGIC;
-    signal features_V_113_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_113_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_113_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_114_loc_channel : STD_LOGIC;
-    signal features_V_114_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_114_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_114_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_115_loc_channel : STD_LOGIC;
-    signal features_V_115_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_115_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_115_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_116_loc_channel : STD_LOGIC;
-    signal features_V_116_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_116_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_116_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_117_loc_channel : STD_LOGIC;
-    signal features_V_117_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_117_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_117_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_118_loc_channel : STD_LOGIC;
-    signal features_V_118_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_118_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_118_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_119_loc_channel : STD_LOGIC;
-    signal features_V_119_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_119_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_119_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_120_loc_channel : STD_LOGIC;
-    signal features_V_120_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_120_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_120_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_121_loc_channel : STD_LOGIC;
-    signal features_V_121_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_121_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_121_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_122_loc_channel : STD_LOGIC;
-    signal features_V_122_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_122_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_122_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_123_loc_channel : STD_LOGIC;
-    signal features_V_123_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_123_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_123_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_124_loc_channel : STD_LOGIC;
-    signal features_V_124_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_124_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_124_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_125_loc_channel : STD_LOGIC;
-    signal features_V_125_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_125_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_125_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_126_loc_channel : STD_LOGIC;
-    signal features_V_126_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_126_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_126_loc_channel : STD_LOGIC;
-    signal ap_channel_done_features_V_127_loc_channel : STD_LOGIC;
-    signal features_V_127_loc_channel_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_features_V_127_loc_channel : STD_LOGIC := '0';
-    signal ap_sync_channel_write_features_V_127_loc_channel : STD_LOGIC;
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start : STD_LOGIC;
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_ap_done : STD_LOGIC;
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_ap_continue : STD_LOGIC;
@@ -720,515 +240,131 @@ architecture behav of logistic_regression is
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TKEEP : STD_LOGIC_VECTOR (3 downto 0);
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TSTRB : STD_LOGIC_VECTOR (3 downto 0);
     signal Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TLAST : STD_LOGIC_VECTOR (0 downto 0);
-    signal features_V_127_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_127_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_127_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_127_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_126_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_126_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_126_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_126_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_125_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_125_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_125_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_125_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_124_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_124_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_124_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_124_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_123_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_123_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_123_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_123_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_122_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_122_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_122_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_122_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_121_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_121_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_121_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_121_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_120_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_120_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_120_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_120_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_119_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_119_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_119_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_119_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_118_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_118_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_118_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_118_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_117_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_117_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_117_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_117_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_116_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_116_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_116_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_116_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_115_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_115_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_115_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_115_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_114_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_114_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_114_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_114_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_113_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_113_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_113_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_113_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_112_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_112_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_112_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_112_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_111_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_111_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_111_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_111_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_110_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_110_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_110_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_110_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_109_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_109_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_109_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_109_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_108_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_108_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_108_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_108_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_107_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_107_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_107_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_107_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_106_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_106_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_106_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_106_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_105_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_105_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_105_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_105_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_104_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_104_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_104_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_104_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_103_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_103_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_103_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_103_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_102_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_102_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_102_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_102_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_101_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_101_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_101_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_101_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_100_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_100_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_100_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_100_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_99_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_99_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_99_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_99_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_98_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_98_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_98_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_98_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_97_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_97_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_97_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_97_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_96_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_96_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_96_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_96_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_95_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_95_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_95_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_95_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_94_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_94_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_94_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_94_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_93_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_93_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_93_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_93_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_92_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_92_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_92_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_92_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_91_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_91_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_91_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_91_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_90_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_90_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_90_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_90_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_89_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_89_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_89_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_89_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_88_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_88_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_88_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_88_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_87_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_87_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_87_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_87_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_86_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_86_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_86_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_86_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_85_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_85_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_85_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_85_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_84_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_84_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_84_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_84_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_83_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_83_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_83_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_83_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_82_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_82_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_82_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_82_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_81_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_81_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_81_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_81_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_80_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_80_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_80_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_80_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_79_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_79_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_79_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_79_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_78_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_78_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_78_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_78_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_77_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_77_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_77_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_77_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_76_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_76_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_76_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_76_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_75_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_75_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_75_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_75_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_74_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_74_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_74_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_74_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_73_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_73_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_73_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_73_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_72_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_72_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_72_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_72_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_71_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_71_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_71_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_71_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_70_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_70_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_70_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_70_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_69_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_69_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_69_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_69_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_68_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_68_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_68_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_68_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_67_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_67_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_67_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_67_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_66_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_66_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_66_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_66_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_65_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_65_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_65_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_65_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_64_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_64_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_64_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_64_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_63_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_63_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_63_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_63_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_62_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_62_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_62_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_62_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_61_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_61_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_61_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_61_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_60_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_60_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_60_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_60_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_59_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_59_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_59_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_59_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_58_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_58_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_58_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_58_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_57_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_57_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_57_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_57_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_56_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_56_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_56_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_56_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_55_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_55_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_55_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_55_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_54_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_54_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_54_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_54_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_53_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_53_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_53_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_53_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_52_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_52_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_52_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_52_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_51_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_51_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_51_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_51_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_50_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_50_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_50_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_50_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_49_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_49_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_49_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_49_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_48_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_48_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_48_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_48_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_47_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_47_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_47_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_47_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_46_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_46_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_46_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_46_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_45_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_45_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_45_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_45_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_44_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_44_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_44_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_44_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_43_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_43_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_43_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_43_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_42_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_42_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_42_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_42_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_41_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_41_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_41_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_41_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_40_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_40_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_40_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_40_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_39_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_39_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_39_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_39_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_38_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_38_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_38_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_38_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_37_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_37_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_37_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_37_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_36_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_36_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_36_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_36_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_35_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_35_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_35_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_35_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_34_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_34_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_34_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_34_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_33_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_33_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_33_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_33_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_32_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
-    signal features_V_32_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_32_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
-    signal features_V_32_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_31_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_31_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_31_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_31_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_31_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_30_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_30_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_30_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_30_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_30_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_29_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_29_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_29_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_29_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_29_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_28_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_28_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_28_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_28_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_28_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_27_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_27_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_27_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_27_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_27_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_26_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_26_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_26_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_26_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_26_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_25_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_25_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_25_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_25_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_25_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_24_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_24_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_24_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_24_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_24_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_23_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_23_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_23_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_23_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_23_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_22_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_22_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_22_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_22_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_22_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_21_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_21_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_21_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_21_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_21_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_20_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_20_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_20_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_20_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_20_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_19_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_19_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_19_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_19_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_19_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_18_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_18_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_18_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_18_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_18_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_17_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_17_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_17_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_17_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_17_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_16_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_16_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_16_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_16_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_16_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_15_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_15_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_15_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_15_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_15_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_14_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_14_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_14_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_14_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_14_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_13_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_13_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_13_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_13_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_13_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_12_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_12_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_12_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_12_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_12_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_11_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_11_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_11_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_11_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_11_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_10_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_10_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_10_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_10_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_10_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_9_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_9_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_9_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_9_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_9_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_8_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_8_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_8_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_8_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_8_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_7_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_7_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_7_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_7_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_7_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_6_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_6_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_6_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_6_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_6_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_5_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_5_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_5_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_5_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_5_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_4_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_4_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_4_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_4_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_4_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_3_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_3_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_3_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_3_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_3_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_2_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_2_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_2_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_2_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_2_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_1_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_1_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_1_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_1_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_1_loc_channel_empty_n : STD_LOGIC;
-    signal features_V_loc_channel_dout : STD_LOGIC_VECTOR (15 downto 0);
+    signal features_V_loc_channel_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal features_V_loc_channel_num_data_valid : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_loc_channel_fifo_cap : STD_LOGIC_VECTOR (1 downto 0);
     signal features_V_loc_channel_empty_n : STD_LOGIC;
@@ -1254,134 +390,38 @@ architecture behav of logistic_regression is
         in_stream_TKEEP : IN STD_LOGIC_VECTOR (3 downto 0);
         in_stream_TSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
         in_stream_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
-        ap_return_0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_1 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_2 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_3 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_4 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_5 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_6 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_7 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_8 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_9 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_10 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_11 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_12 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_13 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_14 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_15 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_16 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_17 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_18 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_19 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_20 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_21 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_22 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_23 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_24 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_25 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_26 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_27 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_28 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_29 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_30 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_31 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_32 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_33 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_34 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_35 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_36 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_37 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_38 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_39 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_40 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_41 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_42 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_43 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_44 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_45 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_46 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_47 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_48 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_49 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_50 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_51 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_52 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_53 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_54 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_55 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_56 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_57 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_58 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_59 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_60 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_61 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_62 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_63 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_64 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_65 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_66 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_67 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_68 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_69 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_70 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_71 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_72 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_73 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_74 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_75 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_76 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_77 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_78 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_79 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_80 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_81 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_82 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_83 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_84 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_85 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_86 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_87 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_88 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_89 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_90 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_91 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_92 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_93 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_94 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_95 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_96 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_97 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_98 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_99 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_100 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_101 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_102 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_103 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_104 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_105 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_106 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_107 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_108 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_109 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_110 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_111 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_112 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_113 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_114 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_115 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_116 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_117 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_118 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_119 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_120 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_121 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_122 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_123 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_124 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_125 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_126 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        ap_return_127 : OUT STD_LOGIC_VECTOR (15 downto 0) );
+        ap_return_0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_2 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_3 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_4 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_5 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_6 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_7 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_8 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_9 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_10 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_11 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_12 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_13 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_14 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_15 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_16 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_17 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_18 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_19 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_20 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_21 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_22 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_23 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_24 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_25 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_26 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_27 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_28 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_29 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_30 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ap_return_31 : OUT STD_LOGIC_VECTOR (7 downto 0) );
     end component;
 
 
@@ -1404,134 +444,38 @@ architecture behav of logistic_regression is
         weights_WEN_B : OUT STD_LOGIC_VECTOR (1 downto 0);
         weights_Din_B : OUT STD_LOGIC_VECTOR (15 downto 0);
         weights_Dout_B : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read1 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read2 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read3 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read4 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read5 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read6 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read7 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read8 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read9 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read10 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read11 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read12 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read13 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read14 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read15 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read16 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read17 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read18 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read19 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read20 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read21 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read22 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read23 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read24 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read25 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read26 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read27 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read28 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read29 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read30 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read31 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read32 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read33 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read34 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read35 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read36 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read37 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read38 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read39 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read40 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read41 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read42 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read43 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read44 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read45 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read46 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read47 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read48 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read49 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read50 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read51 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read52 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read53 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read54 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read55 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read56 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read57 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read58 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read59 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read60 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read61 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read62 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read63 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read64 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read65 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read66 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read67 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read68 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read69 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read70 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read71 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read72 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read73 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read74 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read75 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read76 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read77 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read78 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read79 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read80 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read81 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read82 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read83 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read84 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read85 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read86 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read87 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read88 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read89 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read90 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read91 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read92 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read93 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read94 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read95 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read96 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read97 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read98 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read99 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read100 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read101 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read102 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read103 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read104 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read105 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read106 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read107 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read108 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read109 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read110 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read111 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read112 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read113 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read114 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read115 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read116 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read117 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read118 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read119 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read120 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read121 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read122 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read123 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read124 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read125 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read126 : IN STD_LOGIC_VECTOR (15 downto 0);
-        p_read127 : IN STD_LOGIC_VECTOR (15 downto 0);
+        p_read : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read2 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read3 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read4 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read5 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read6 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read7 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read8 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read9 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read10 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read11 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read12 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read13 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read14 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read15 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read16 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read17 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read18 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read19 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read20 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read21 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read22 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read23 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read24 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read25 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read26 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read27 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read28 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read29 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read30 : IN STD_LOGIC_VECTOR (7 downto 0);
+        p_read31 : IN STD_LOGIC_VECTOR (7 downto 0);
         out_stream_TDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
         out_stream_TVALID : OUT STD_LOGIC;
         out_stream_TREADY : IN STD_LOGIC;
@@ -1541,16 +485,16 @@ architecture behav of logistic_regression is
     end component;
 
 
-    component logistic_regression_fifo_w16_d2_S IS
+    component logistic_regression_fifo_w8_d2_S IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (15 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (7 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (15 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (7 downto 0);
         if_num_data_valid : OUT STD_LOGIC_VECTOR (1 downto 0);
         if_fifo_cap : OUT STD_LOGIC_VECTOR (1 downto 0);
         if_empty_n : OUT STD_LOGIC;
@@ -1606,103 +550,7 @@ begin
         ap_return_28 => Loop_read_input_features_proc2_U0_ap_return_28,
         ap_return_29 => Loop_read_input_features_proc2_U0_ap_return_29,
         ap_return_30 => Loop_read_input_features_proc2_U0_ap_return_30,
-        ap_return_31 => Loop_read_input_features_proc2_U0_ap_return_31,
-        ap_return_32 => Loop_read_input_features_proc2_U0_ap_return_32,
-        ap_return_33 => Loop_read_input_features_proc2_U0_ap_return_33,
-        ap_return_34 => Loop_read_input_features_proc2_U0_ap_return_34,
-        ap_return_35 => Loop_read_input_features_proc2_U0_ap_return_35,
-        ap_return_36 => Loop_read_input_features_proc2_U0_ap_return_36,
-        ap_return_37 => Loop_read_input_features_proc2_U0_ap_return_37,
-        ap_return_38 => Loop_read_input_features_proc2_U0_ap_return_38,
-        ap_return_39 => Loop_read_input_features_proc2_U0_ap_return_39,
-        ap_return_40 => Loop_read_input_features_proc2_U0_ap_return_40,
-        ap_return_41 => Loop_read_input_features_proc2_U0_ap_return_41,
-        ap_return_42 => Loop_read_input_features_proc2_U0_ap_return_42,
-        ap_return_43 => Loop_read_input_features_proc2_U0_ap_return_43,
-        ap_return_44 => Loop_read_input_features_proc2_U0_ap_return_44,
-        ap_return_45 => Loop_read_input_features_proc2_U0_ap_return_45,
-        ap_return_46 => Loop_read_input_features_proc2_U0_ap_return_46,
-        ap_return_47 => Loop_read_input_features_proc2_U0_ap_return_47,
-        ap_return_48 => Loop_read_input_features_proc2_U0_ap_return_48,
-        ap_return_49 => Loop_read_input_features_proc2_U0_ap_return_49,
-        ap_return_50 => Loop_read_input_features_proc2_U0_ap_return_50,
-        ap_return_51 => Loop_read_input_features_proc2_U0_ap_return_51,
-        ap_return_52 => Loop_read_input_features_proc2_U0_ap_return_52,
-        ap_return_53 => Loop_read_input_features_proc2_U0_ap_return_53,
-        ap_return_54 => Loop_read_input_features_proc2_U0_ap_return_54,
-        ap_return_55 => Loop_read_input_features_proc2_U0_ap_return_55,
-        ap_return_56 => Loop_read_input_features_proc2_U0_ap_return_56,
-        ap_return_57 => Loop_read_input_features_proc2_U0_ap_return_57,
-        ap_return_58 => Loop_read_input_features_proc2_U0_ap_return_58,
-        ap_return_59 => Loop_read_input_features_proc2_U0_ap_return_59,
-        ap_return_60 => Loop_read_input_features_proc2_U0_ap_return_60,
-        ap_return_61 => Loop_read_input_features_proc2_U0_ap_return_61,
-        ap_return_62 => Loop_read_input_features_proc2_U0_ap_return_62,
-        ap_return_63 => Loop_read_input_features_proc2_U0_ap_return_63,
-        ap_return_64 => Loop_read_input_features_proc2_U0_ap_return_64,
-        ap_return_65 => Loop_read_input_features_proc2_U0_ap_return_65,
-        ap_return_66 => Loop_read_input_features_proc2_U0_ap_return_66,
-        ap_return_67 => Loop_read_input_features_proc2_U0_ap_return_67,
-        ap_return_68 => Loop_read_input_features_proc2_U0_ap_return_68,
-        ap_return_69 => Loop_read_input_features_proc2_U0_ap_return_69,
-        ap_return_70 => Loop_read_input_features_proc2_U0_ap_return_70,
-        ap_return_71 => Loop_read_input_features_proc2_U0_ap_return_71,
-        ap_return_72 => Loop_read_input_features_proc2_U0_ap_return_72,
-        ap_return_73 => Loop_read_input_features_proc2_U0_ap_return_73,
-        ap_return_74 => Loop_read_input_features_proc2_U0_ap_return_74,
-        ap_return_75 => Loop_read_input_features_proc2_U0_ap_return_75,
-        ap_return_76 => Loop_read_input_features_proc2_U0_ap_return_76,
-        ap_return_77 => Loop_read_input_features_proc2_U0_ap_return_77,
-        ap_return_78 => Loop_read_input_features_proc2_U0_ap_return_78,
-        ap_return_79 => Loop_read_input_features_proc2_U0_ap_return_79,
-        ap_return_80 => Loop_read_input_features_proc2_U0_ap_return_80,
-        ap_return_81 => Loop_read_input_features_proc2_U0_ap_return_81,
-        ap_return_82 => Loop_read_input_features_proc2_U0_ap_return_82,
-        ap_return_83 => Loop_read_input_features_proc2_U0_ap_return_83,
-        ap_return_84 => Loop_read_input_features_proc2_U0_ap_return_84,
-        ap_return_85 => Loop_read_input_features_proc2_U0_ap_return_85,
-        ap_return_86 => Loop_read_input_features_proc2_U0_ap_return_86,
-        ap_return_87 => Loop_read_input_features_proc2_U0_ap_return_87,
-        ap_return_88 => Loop_read_input_features_proc2_U0_ap_return_88,
-        ap_return_89 => Loop_read_input_features_proc2_U0_ap_return_89,
-        ap_return_90 => Loop_read_input_features_proc2_U0_ap_return_90,
-        ap_return_91 => Loop_read_input_features_proc2_U0_ap_return_91,
-        ap_return_92 => Loop_read_input_features_proc2_U0_ap_return_92,
-        ap_return_93 => Loop_read_input_features_proc2_U0_ap_return_93,
-        ap_return_94 => Loop_read_input_features_proc2_U0_ap_return_94,
-        ap_return_95 => Loop_read_input_features_proc2_U0_ap_return_95,
-        ap_return_96 => Loop_read_input_features_proc2_U0_ap_return_96,
-        ap_return_97 => Loop_read_input_features_proc2_U0_ap_return_97,
-        ap_return_98 => Loop_read_input_features_proc2_U0_ap_return_98,
-        ap_return_99 => Loop_read_input_features_proc2_U0_ap_return_99,
-        ap_return_100 => Loop_read_input_features_proc2_U0_ap_return_100,
-        ap_return_101 => Loop_read_input_features_proc2_U0_ap_return_101,
-        ap_return_102 => Loop_read_input_features_proc2_U0_ap_return_102,
-        ap_return_103 => Loop_read_input_features_proc2_U0_ap_return_103,
-        ap_return_104 => Loop_read_input_features_proc2_U0_ap_return_104,
-        ap_return_105 => Loop_read_input_features_proc2_U0_ap_return_105,
-        ap_return_106 => Loop_read_input_features_proc2_U0_ap_return_106,
-        ap_return_107 => Loop_read_input_features_proc2_U0_ap_return_107,
-        ap_return_108 => Loop_read_input_features_proc2_U0_ap_return_108,
-        ap_return_109 => Loop_read_input_features_proc2_U0_ap_return_109,
-        ap_return_110 => Loop_read_input_features_proc2_U0_ap_return_110,
-        ap_return_111 => Loop_read_input_features_proc2_U0_ap_return_111,
-        ap_return_112 => Loop_read_input_features_proc2_U0_ap_return_112,
-        ap_return_113 => Loop_read_input_features_proc2_U0_ap_return_113,
-        ap_return_114 => Loop_read_input_features_proc2_U0_ap_return_114,
-        ap_return_115 => Loop_read_input_features_proc2_U0_ap_return_115,
-        ap_return_116 => Loop_read_input_features_proc2_U0_ap_return_116,
-        ap_return_117 => Loop_read_input_features_proc2_U0_ap_return_117,
-        ap_return_118 => Loop_read_input_features_proc2_U0_ap_return_118,
-        ap_return_119 => Loop_read_input_features_proc2_U0_ap_return_119,
-        ap_return_120 => Loop_read_input_features_proc2_U0_ap_return_120,
-        ap_return_121 => Loop_read_input_features_proc2_U0_ap_return_121,
-        ap_return_122 => Loop_read_input_features_proc2_U0_ap_return_122,
-        ap_return_123 => Loop_read_input_features_proc2_U0_ap_return_123,
-        ap_return_124 => Loop_read_input_features_proc2_U0_ap_return_124,
-        ap_return_125 => Loop_read_input_features_proc2_U0_ap_return_125,
-        ap_return_126 => Loop_read_input_features_proc2_U0_ap_return_126,
-        ap_return_127 => Loop_read_input_features_proc2_U0_ap_return_127);
+        ap_return_31 => Loop_read_input_features_proc2_U0_ap_return_31);
 
     Block_logistic_regression_for_cond_i_exit_proc_U0 : component logistic_regression_Block_logistic_regression_for_cond_i_exit_proc
     port map (
@@ -1755,102 +603,6 @@ begin
         p_read29 => features_V_29_loc_channel_dout,
         p_read30 => features_V_30_loc_channel_dout,
         p_read31 => features_V_31_loc_channel_dout,
-        p_read32 => features_V_32_loc_channel_dout,
-        p_read33 => features_V_33_loc_channel_dout,
-        p_read34 => features_V_34_loc_channel_dout,
-        p_read35 => features_V_35_loc_channel_dout,
-        p_read36 => features_V_36_loc_channel_dout,
-        p_read37 => features_V_37_loc_channel_dout,
-        p_read38 => features_V_38_loc_channel_dout,
-        p_read39 => features_V_39_loc_channel_dout,
-        p_read40 => features_V_40_loc_channel_dout,
-        p_read41 => features_V_41_loc_channel_dout,
-        p_read42 => features_V_42_loc_channel_dout,
-        p_read43 => features_V_43_loc_channel_dout,
-        p_read44 => features_V_44_loc_channel_dout,
-        p_read45 => features_V_45_loc_channel_dout,
-        p_read46 => features_V_46_loc_channel_dout,
-        p_read47 => features_V_47_loc_channel_dout,
-        p_read48 => features_V_48_loc_channel_dout,
-        p_read49 => features_V_49_loc_channel_dout,
-        p_read50 => features_V_50_loc_channel_dout,
-        p_read51 => features_V_51_loc_channel_dout,
-        p_read52 => features_V_52_loc_channel_dout,
-        p_read53 => features_V_53_loc_channel_dout,
-        p_read54 => features_V_54_loc_channel_dout,
-        p_read55 => features_V_55_loc_channel_dout,
-        p_read56 => features_V_56_loc_channel_dout,
-        p_read57 => features_V_57_loc_channel_dout,
-        p_read58 => features_V_58_loc_channel_dout,
-        p_read59 => features_V_59_loc_channel_dout,
-        p_read60 => features_V_60_loc_channel_dout,
-        p_read61 => features_V_61_loc_channel_dout,
-        p_read62 => features_V_62_loc_channel_dout,
-        p_read63 => features_V_63_loc_channel_dout,
-        p_read64 => features_V_64_loc_channel_dout,
-        p_read65 => features_V_65_loc_channel_dout,
-        p_read66 => features_V_66_loc_channel_dout,
-        p_read67 => features_V_67_loc_channel_dout,
-        p_read68 => features_V_68_loc_channel_dout,
-        p_read69 => features_V_69_loc_channel_dout,
-        p_read70 => features_V_70_loc_channel_dout,
-        p_read71 => features_V_71_loc_channel_dout,
-        p_read72 => features_V_72_loc_channel_dout,
-        p_read73 => features_V_73_loc_channel_dout,
-        p_read74 => features_V_74_loc_channel_dout,
-        p_read75 => features_V_75_loc_channel_dout,
-        p_read76 => features_V_76_loc_channel_dout,
-        p_read77 => features_V_77_loc_channel_dout,
-        p_read78 => features_V_78_loc_channel_dout,
-        p_read79 => features_V_79_loc_channel_dout,
-        p_read80 => features_V_80_loc_channel_dout,
-        p_read81 => features_V_81_loc_channel_dout,
-        p_read82 => features_V_82_loc_channel_dout,
-        p_read83 => features_V_83_loc_channel_dout,
-        p_read84 => features_V_84_loc_channel_dout,
-        p_read85 => features_V_85_loc_channel_dout,
-        p_read86 => features_V_86_loc_channel_dout,
-        p_read87 => features_V_87_loc_channel_dout,
-        p_read88 => features_V_88_loc_channel_dout,
-        p_read89 => features_V_89_loc_channel_dout,
-        p_read90 => features_V_90_loc_channel_dout,
-        p_read91 => features_V_91_loc_channel_dout,
-        p_read92 => features_V_92_loc_channel_dout,
-        p_read93 => features_V_93_loc_channel_dout,
-        p_read94 => features_V_94_loc_channel_dout,
-        p_read95 => features_V_95_loc_channel_dout,
-        p_read96 => features_V_96_loc_channel_dout,
-        p_read97 => features_V_97_loc_channel_dout,
-        p_read98 => features_V_98_loc_channel_dout,
-        p_read99 => features_V_99_loc_channel_dout,
-        p_read100 => features_V_100_loc_channel_dout,
-        p_read101 => features_V_101_loc_channel_dout,
-        p_read102 => features_V_102_loc_channel_dout,
-        p_read103 => features_V_103_loc_channel_dout,
-        p_read104 => features_V_104_loc_channel_dout,
-        p_read105 => features_V_105_loc_channel_dout,
-        p_read106 => features_V_106_loc_channel_dout,
-        p_read107 => features_V_107_loc_channel_dout,
-        p_read108 => features_V_108_loc_channel_dout,
-        p_read109 => features_V_109_loc_channel_dout,
-        p_read110 => features_V_110_loc_channel_dout,
-        p_read111 => features_V_111_loc_channel_dout,
-        p_read112 => features_V_112_loc_channel_dout,
-        p_read113 => features_V_113_loc_channel_dout,
-        p_read114 => features_V_114_loc_channel_dout,
-        p_read115 => features_V_115_loc_channel_dout,
-        p_read116 => features_V_116_loc_channel_dout,
-        p_read117 => features_V_117_loc_channel_dout,
-        p_read118 => features_V_118_loc_channel_dout,
-        p_read119 => features_V_119_loc_channel_dout,
-        p_read120 => features_V_120_loc_channel_dout,
-        p_read121 => features_V_121_loc_channel_dout,
-        p_read122 => features_V_122_loc_channel_dout,
-        p_read123 => features_V_123_loc_channel_dout,
-        p_read124 => features_V_124_loc_channel_dout,
-        p_read125 => features_V_125_loc_channel_dout,
-        p_read126 => features_V_126_loc_channel_dout,
-        p_read127 => features_V_127_loc_channel_dout,
         out_stream_TDATA => Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TDATA,
         out_stream_TVALID => Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TVALID,
         out_stream_TREADY => out_stream_TREADY,
@@ -1858,1453 +610,13 @@ begin
         out_stream_TSTRB => Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TSTRB,
         out_stream_TLAST => Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TLAST);
 
-    features_V_127_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_31_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
         if_din => Loop_read_input_features_proc2_U0_ap_return_0,
-        if_full_n => features_V_127_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_127_loc_channel,
-        if_dout => features_V_127_loc_channel_dout,
-        if_num_data_valid => features_V_127_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_127_loc_channel_fifo_cap,
-        if_empty_n => features_V_127_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_126_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_1,
-        if_full_n => features_V_126_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_126_loc_channel,
-        if_dout => features_V_126_loc_channel_dout,
-        if_num_data_valid => features_V_126_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_126_loc_channel_fifo_cap,
-        if_empty_n => features_V_126_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_125_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_2,
-        if_full_n => features_V_125_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_125_loc_channel,
-        if_dout => features_V_125_loc_channel_dout,
-        if_num_data_valid => features_V_125_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_125_loc_channel_fifo_cap,
-        if_empty_n => features_V_125_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_124_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_3,
-        if_full_n => features_V_124_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_124_loc_channel,
-        if_dout => features_V_124_loc_channel_dout,
-        if_num_data_valid => features_V_124_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_124_loc_channel_fifo_cap,
-        if_empty_n => features_V_124_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_123_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_4,
-        if_full_n => features_V_123_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_123_loc_channel,
-        if_dout => features_V_123_loc_channel_dout,
-        if_num_data_valid => features_V_123_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_123_loc_channel_fifo_cap,
-        if_empty_n => features_V_123_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_122_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_5,
-        if_full_n => features_V_122_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_122_loc_channel,
-        if_dout => features_V_122_loc_channel_dout,
-        if_num_data_valid => features_V_122_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_122_loc_channel_fifo_cap,
-        if_empty_n => features_V_122_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_121_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_6,
-        if_full_n => features_V_121_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_121_loc_channel,
-        if_dout => features_V_121_loc_channel_dout,
-        if_num_data_valid => features_V_121_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_121_loc_channel_fifo_cap,
-        if_empty_n => features_V_121_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_120_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_7,
-        if_full_n => features_V_120_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_120_loc_channel,
-        if_dout => features_V_120_loc_channel_dout,
-        if_num_data_valid => features_V_120_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_120_loc_channel_fifo_cap,
-        if_empty_n => features_V_120_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_119_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_8,
-        if_full_n => features_V_119_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_119_loc_channel,
-        if_dout => features_V_119_loc_channel_dout,
-        if_num_data_valid => features_V_119_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_119_loc_channel_fifo_cap,
-        if_empty_n => features_V_119_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_118_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_9,
-        if_full_n => features_V_118_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_118_loc_channel,
-        if_dout => features_V_118_loc_channel_dout,
-        if_num_data_valid => features_V_118_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_118_loc_channel_fifo_cap,
-        if_empty_n => features_V_118_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_117_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_10,
-        if_full_n => features_V_117_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_117_loc_channel,
-        if_dout => features_V_117_loc_channel_dout,
-        if_num_data_valid => features_V_117_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_117_loc_channel_fifo_cap,
-        if_empty_n => features_V_117_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_116_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_11,
-        if_full_n => features_V_116_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_116_loc_channel,
-        if_dout => features_V_116_loc_channel_dout,
-        if_num_data_valid => features_V_116_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_116_loc_channel_fifo_cap,
-        if_empty_n => features_V_116_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_115_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_12,
-        if_full_n => features_V_115_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_115_loc_channel,
-        if_dout => features_V_115_loc_channel_dout,
-        if_num_data_valid => features_V_115_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_115_loc_channel_fifo_cap,
-        if_empty_n => features_V_115_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_114_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_13,
-        if_full_n => features_V_114_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_114_loc_channel,
-        if_dout => features_V_114_loc_channel_dout,
-        if_num_data_valid => features_V_114_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_114_loc_channel_fifo_cap,
-        if_empty_n => features_V_114_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_113_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_14,
-        if_full_n => features_V_113_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_113_loc_channel,
-        if_dout => features_V_113_loc_channel_dout,
-        if_num_data_valid => features_V_113_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_113_loc_channel_fifo_cap,
-        if_empty_n => features_V_113_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_112_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_15,
-        if_full_n => features_V_112_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_112_loc_channel,
-        if_dout => features_V_112_loc_channel_dout,
-        if_num_data_valid => features_V_112_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_112_loc_channel_fifo_cap,
-        if_empty_n => features_V_112_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_111_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_16,
-        if_full_n => features_V_111_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_111_loc_channel,
-        if_dout => features_V_111_loc_channel_dout,
-        if_num_data_valid => features_V_111_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_111_loc_channel_fifo_cap,
-        if_empty_n => features_V_111_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_110_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_17,
-        if_full_n => features_V_110_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_110_loc_channel,
-        if_dout => features_V_110_loc_channel_dout,
-        if_num_data_valid => features_V_110_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_110_loc_channel_fifo_cap,
-        if_empty_n => features_V_110_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_109_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_18,
-        if_full_n => features_V_109_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_109_loc_channel,
-        if_dout => features_V_109_loc_channel_dout,
-        if_num_data_valid => features_V_109_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_109_loc_channel_fifo_cap,
-        if_empty_n => features_V_109_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_108_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_19,
-        if_full_n => features_V_108_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_108_loc_channel,
-        if_dout => features_V_108_loc_channel_dout,
-        if_num_data_valid => features_V_108_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_108_loc_channel_fifo_cap,
-        if_empty_n => features_V_108_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_107_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_20,
-        if_full_n => features_V_107_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_107_loc_channel,
-        if_dout => features_V_107_loc_channel_dout,
-        if_num_data_valid => features_V_107_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_107_loc_channel_fifo_cap,
-        if_empty_n => features_V_107_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_106_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_21,
-        if_full_n => features_V_106_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_106_loc_channel,
-        if_dout => features_V_106_loc_channel_dout,
-        if_num_data_valid => features_V_106_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_106_loc_channel_fifo_cap,
-        if_empty_n => features_V_106_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_105_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_22,
-        if_full_n => features_V_105_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_105_loc_channel,
-        if_dout => features_V_105_loc_channel_dout,
-        if_num_data_valid => features_V_105_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_105_loc_channel_fifo_cap,
-        if_empty_n => features_V_105_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_104_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_23,
-        if_full_n => features_V_104_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_104_loc_channel,
-        if_dout => features_V_104_loc_channel_dout,
-        if_num_data_valid => features_V_104_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_104_loc_channel_fifo_cap,
-        if_empty_n => features_V_104_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_103_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_24,
-        if_full_n => features_V_103_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_103_loc_channel,
-        if_dout => features_V_103_loc_channel_dout,
-        if_num_data_valid => features_V_103_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_103_loc_channel_fifo_cap,
-        if_empty_n => features_V_103_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_102_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_25,
-        if_full_n => features_V_102_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_102_loc_channel,
-        if_dout => features_V_102_loc_channel_dout,
-        if_num_data_valid => features_V_102_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_102_loc_channel_fifo_cap,
-        if_empty_n => features_V_102_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_101_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_26,
-        if_full_n => features_V_101_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_101_loc_channel,
-        if_dout => features_V_101_loc_channel_dout,
-        if_num_data_valid => features_V_101_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_101_loc_channel_fifo_cap,
-        if_empty_n => features_V_101_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_100_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_27,
-        if_full_n => features_V_100_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_100_loc_channel,
-        if_dout => features_V_100_loc_channel_dout,
-        if_num_data_valid => features_V_100_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_100_loc_channel_fifo_cap,
-        if_empty_n => features_V_100_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_99_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_28,
-        if_full_n => features_V_99_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_99_loc_channel,
-        if_dout => features_V_99_loc_channel_dout,
-        if_num_data_valid => features_V_99_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_99_loc_channel_fifo_cap,
-        if_empty_n => features_V_99_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_98_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_29,
-        if_full_n => features_V_98_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_98_loc_channel,
-        if_dout => features_V_98_loc_channel_dout,
-        if_num_data_valid => features_V_98_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_98_loc_channel_fifo_cap,
-        if_empty_n => features_V_98_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_97_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_30,
-        if_full_n => features_V_97_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_97_loc_channel,
-        if_dout => features_V_97_loc_channel_dout,
-        if_num_data_valid => features_V_97_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_97_loc_channel_fifo_cap,
-        if_empty_n => features_V_97_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_96_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_31,
-        if_full_n => features_V_96_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_96_loc_channel,
-        if_dout => features_V_96_loc_channel_dout,
-        if_num_data_valid => features_V_96_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_96_loc_channel_fifo_cap,
-        if_empty_n => features_V_96_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_95_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_32,
-        if_full_n => features_V_95_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_95_loc_channel,
-        if_dout => features_V_95_loc_channel_dout,
-        if_num_data_valid => features_V_95_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_95_loc_channel_fifo_cap,
-        if_empty_n => features_V_95_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_94_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_33,
-        if_full_n => features_V_94_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_94_loc_channel,
-        if_dout => features_V_94_loc_channel_dout,
-        if_num_data_valid => features_V_94_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_94_loc_channel_fifo_cap,
-        if_empty_n => features_V_94_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_93_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_34,
-        if_full_n => features_V_93_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_93_loc_channel,
-        if_dout => features_V_93_loc_channel_dout,
-        if_num_data_valid => features_V_93_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_93_loc_channel_fifo_cap,
-        if_empty_n => features_V_93_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_92_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_35,
-        if_full_n => features_V_92_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_92_loc_channel,
-        if_dout => features_V_92_loc_channel_dout,
-        if_num_data_valid => features_V_92_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_92_loc_channel_fifo_cap,
-        if_empty_n => features_V_92_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_91_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_36,
-        if_full_n => features_V_91_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_91_loc_channel,
-        if_dout => features_V_91_loc_channel_dout,
-        if_num_data_valid => features_V_91_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_91_loc_channel_fifo_cap,
-        if_empty_n => features_V_91_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_90_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_37,
-        if_full_n => features_V_90_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_90_loc_channel,
-        if_dout => features_V_90_loc_channel_dout,
-        if_num_data_valid => features_V_90_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_90_loc_channel_fifo_cap,
-        if_empty_n => features_V_90_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_89_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_38,
-        if_full_n => features_V_89_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_89_loc_channel,
-        if_dout => features_V_89_loc_channel_dout,
-        if_num_data_valid => features_V_89_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_89_loc_channel_fifo_cap,
-        if_empty_n => features_V_89_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_88_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_39,
-        if_full_n => features_V_88_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_88_loc_channel,
-        if_dout => features_V_88_loc_channel_dout,
-        if_num_data_valid => features_V_88_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_88_loc_channel_fifo_cap,
-        if_empty_n => features_V_88_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_87_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_40,
-        if_full_n => features_V_87_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_87_loc_channel,
-        if_dout => features_V_87_loc_channel_dout,
-        if_num_data_valid => features_V_87_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_87_loc_channel_fifo_cap,
-        if_empty_n => features_V_87_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_86_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_41,
-        if_full_n => features_V_86_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_86_loc_channel,
-        if_dout => features_V_86_loc_channel_dout,
-        if_num_data_valid => features_V_86_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_86_loc_channel_fifo_cap,
-        if_empty_n => features_V_86_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_85_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_42,
-        if_full_n => features_V_85_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_85_loc_channel,
-        if_dout => features_V_85_loc_channel_dout,
-        if_num_data_valid => features_V_85_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_85_loc_channel_fifo_cap,
-        if_empty_n => features_V_85_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_84_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_43,
-        if_full_n => features_V_84_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_84_loc_channel,
-        if_dout => features_V_84_loc_channel_dout,
-        if_num_data_valid => features_V_84_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_84_loc_channel_fifo_cap,
-        if_empty_n => features_V_84_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_83_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_44,
-        if_full_n => features_V_83_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_83_loc_channel,
-        if_dout => features_V_83_loc_channel_dout,
-        if_num_data_valid => features_V_83_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_83_loc_channel_fifo_cap,
-        if_empty_n => features_V_83_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_82_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_45,
-        if_full_n => features_V_82_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_82_loc_channel,
-        if_dout => features_V_82_loc_channel_dout,
-        if_num_data_valid => features_V_82_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_82_loc_channel_fifo_cap,
-        if_empty_n => features_V_82_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_81_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_46,
-        if_full_n => features_V_81_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_81_loc_channel,
-        if_dout => features_V_81_loc_channel_dout,
-        if_num_data_valid => features_V_81_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_81_loc_channel_fifo_cap,
-        if_empty_n => features_V_81_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_80_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_47,
-        if_full_n => features_V_80_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_80_loc_channel,
-        if_dout => features_V_80_loc_channel_dout,
-        if_num_data_valid => features_V_80_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_80_loc_channel_fifo_cap,
-        if_empty_n => features_V_80_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_79_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_48,
-        if_full_n => features_V_79_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_79_loc_channel,
-        if_dout => features_V_79_loc_channel_dout,
-        if_num_data_valid => features_V_79_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_79_loc_channel_fifo_cap,
-        if_empty_n => features_V_79_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_78_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_49,
-        if_full_n => features_V_78_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_78_loc_channel,
-        if_dout => features_V_78_loc_channel_dout,
-        if_num_data_valid => features_V_78_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_78_loc_channel_fifo_cap,
-        if_empty_n => features_V_78_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_77_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_50,
-        if_full_n => features_V_77_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_77_loc_channel,
-        if_dout => features_V_77_loc_channel_dout,
-        if_num_data_valid => features_V_77_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_77_loc_channel_fifo_cap,
-        if_empty_n => features_V_77_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_76_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_51,
-        if_full_n => features_V_76_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_76_loc_channel,
-        if_dout => features_V_76_loc_channel_dout,
-        if_num_data_valid => features_V_76_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_76_loc_channel_fifo_cap,
-        if_empty_n => features_V_76_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_75_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_52,
-        if_full_n => features_V_75_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_75_loc_channel,
-        if_dout => features_V_75_loc_channel_dout,
-        if_num_data_valid => features_V_75_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_75_loc_channel_fifo_cap,
-        if_empty_n => features_V_75_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_74_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_53,
-        if_full_n => features_V_74_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_74_loc_channel,
-        if_dout => features_V_74_loc_channel_dout,
-        if_num_data_valid => features_V_74_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_74_loc_channel_fifo_cap,
-        if_empty_n => features_V_74_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_73_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_54,
-        if_full_n => features_V_73_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_73_loc_channel,
-        if_dout => features_V_73_loc_channel_dout,
-        if_num_data_valid => features_V_73_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_73_loc_channel_fifo_cap,
-        if_empty_n => features_V_73_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_72_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_55,
-        if_full_n => features_V_72_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_72_loc_channel,
-        if_dout => features_V_72_loc_channel_dout,
-        if_num_data_valid => features_V_72_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_72_loc_channel_fifo_cap,
-        if_empty_n => features_V_72_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_71_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_56,
-        if_full_n => features_V_71_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_71_loc_channel,
-        if_dout => features_V_71_loc_channel_dout,
-        if_num_data_valid => features_V_71_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_71_loc_channel_fifo_cap,
-        if_empty_n => features_V_71_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_70_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_57,
-        if_full_n => features_V_70_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_70_loc_channel,
-        if_dout => features_V_70_loc_channel_dout,
-        if_num_data_valid => features_V_70_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_70_loc_channel_fifo_cap,
-        if_empty_n => features_V_70_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_69_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_58,
-        if_full_n => features_V_69_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_69_loc_channel,
-        if_dout => features_V_69_loc_channel_dout,
-        if_num_data_valid => features_V_69_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_69_loc_channel_fifo_cap,
-        if_empty_n => features_V_69_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_68_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_59,
-        if_full_n => features_V_68_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_68_loc_channel,
-        if_dout => features_V_68_loc_channel_dout,
-        if_num_data_valid => features_V_68_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_68_loc_channel_fifo_cap,
-        if_empty_n => features_V_68_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_67_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_60,
-        if_full_n => features_V_67_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_67_loc_channel,
-        if_dout => features_V_67_loc_channel_dout,
-        if_num_data_valid => features_V_67_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_67_loc_channel_fifo_cap,
-        if_empty_n => features_V_67_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_66_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_61,
-        if_full_n => features_V_66_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_66_loc_channel,
-        if_dout => features_V_66_loc_channel_dout,
-        if_num_data_valid => features_V_66_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_66_loc_channel_fifo_cap,
-        if_empty_n => features_V_66_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_65_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_62,
-        if_full_n => features_V_65_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_65_loc_channel,
-        if_dout => features_V_65_loc_channel_dout,
-        if_num_data_valid => features_V_65_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_65_loc_channel_fifo_cap,
-        if_empty_n => features_V_65_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_64_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_63,
-        if_full_n => features_V_64_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_64_loc_channel,
-        if_dout => features_V_64_loc_channel_dout,
-        if_num_data_valid => features_V_64_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_64_loc_channel_fifo_cap,
-        if_empty_n => features_V_64_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_63_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_64,
-        if_full_n => features_V_63_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_63_loc_channel,
-        if_dout => features_V_63_loc_channel_dout,
-        if_num_data_valid => features_V_63_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_63_loc_channel_fifo_cap,
-        if_empty_n => features_V_63_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_62_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_65,
-        if_full_n => features_V_62_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_62_loc_channel,
-        if_dout => features_V_62_loc_channel_dout,
-        if_num_data_valid => features_V_62_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_62_loc_channel_fifo_cap,
-        if_empty_n => features_V_62_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_61_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_66,
-        if_full_n => features_V_61_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_61_loc_channel,
-        if_dout => features_V_61_loc_channel_dout,
-        if_num_data_valid => features_V_61_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_61_loc_channel_fifo_cap,
-        if_empty_n => features_V_61_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_60_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_67,
-        if_full_n => features_V_60_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_60_loc_channel,
-        if_dout => features_V_60_loc_channel_dout,
-        if_num_data_valid => features_V_60_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_60_loc_channel_fifo_cap,
-        if_empty_n => features_V_60_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_59_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_68,
-        if_full_n => features_V_59_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_59_loc_channel,
-        if_dout => features_V_59_loc_channel_dout,
-        if_num_data_valid => features_V_59_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_59_loc_channel_fifo_cap,
-        if_empty_n => features_V_59_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_58_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_69,
-        if_full_n => features_V_58_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_58_loc_channel,
-        if_dout => features_V_58_loc_channel_dout,
-        if_num_data_valid => features_V_58_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_58_loc_channel_fifo_cap,
-        if_empty_n => features_V_58_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_57_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_70,
-        if_full_n => features_V_57_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_57_loc_channel,
-        if_dout => features_V_57_loc_channel_dout,
-        if_num_data_valid => features_V_57_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_57_loc_channel_fifo_cap,
-        if_empty_n => features_V_57_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_56_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_71,
-        if_full_n => features_V_56_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_56_loc_channel,
-        if_dout => features_V_56_loc_channel_dout,
-        if_num_data_valid => features_V_56_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_56_loc_channel_fifo_cap,
-        if_empty_n => features_V_56_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_55_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_72,
-        if_full_n => features_V_55_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_55_loc_channel,
-        if_dout => features_V_55_loc_channel_dout,
-        if_num_data_valid => features_V_55_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_55_loc_channel_fifo_cap,
-        if_empty_n => features_V_55_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_54_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_73,
-        if_full_n => features_V_54_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_54_loc_channel,
-        if_dout => features_V_54_loc_channel_dout,
-        if_num_data_valid => features_V_54_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_54_loc_channel_fifo_cap,
-        if_empty_n => features_V_54_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_53_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_74,
-        if_full_n => features_V_53_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_53_loc_channel,
-        if_dout => features_V_53_loc_channel_dout,
-        if_num_data_valid => features_V_53_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_53_loc_channel_fifo_cap,
-        if_empty_n => features_V_53_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_52_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_75,
-        if_full_n => features_V_52_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_52_loc_channel,
-        if_dout => features_V_52_loc_channel_dout,
-        if_num_data_valid => features_V_52_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_52_loc_channel_fifo_cap,
-        if_empty_n => features_V_52_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_51_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_76,
-        if_full_n => features_V_51_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_51_loc_channel,
-        if_dout => features_V_51_loc_channel_dout,
-        if_num_data_valid => features_V_51_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_51_loc_channel_fifo_cap,
-        if_empty_n => features_V_51_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_50_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_77,
-        if_full_n => features_V_50_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_50_loc_channel,
-        if_dout => features_V_50_loc_channel_dout,
-        if_num_data_valid => features_V_50_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_50_loc_channel_fifo_cap,
-        if_empty_n => features_V_50_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_49_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_78,
-        if_full_n => features_V_49_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_49_loc_channel,
-        if_dout => features_V_49_loc_channel_dout,
-        if_num_data_valid => features_V_49_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_49_loc_channel_fifo_cap,
-        if_empty_n => features_V_49_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_48_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_79,
-        if_full_n => features_V_48_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_48_loc_channel,
-        if_dout => features_V_48_loc_channel_dout,
-        if_num_data_valid => features_V_48_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_48_loc_channel_fifo_cap,
-        if_empty_n => features_V_48_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_47_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_80,
-        if_full_n => features_V_47_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_47_loc_channel,
-        if_dout => features_V_47_loc_channel_dout,
-        if_num_data_valid => features_V_47_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_47_loc_channel_fifo_cap,
-        if_empty_n => features_V_47_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_46_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_81,
-        if_full_n => features_V_46_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_46_loc_channel,
-        if_dout => features_V_46_loc_channel_dout,
-        if_num_data_valid => features_V_46_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_46_loc_channel_fifo_cap,
-        if_empty_n => features_V_46_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_45_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_82,
-        if_full_n => features_V_45_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_45_loc_channel,
-        if_dout => features_V_45_loc_channel_dout,
-        if_num_data_valid => features_V_45_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_45_loc_channel_fifo_cap,
-        if_empty_n => features_V_45_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_44_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_83,
-        if_full_n => features_V_44_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_44_loc_channel,
-        if_dout => features_V_44_loc_channel_dout,
-        if_num_data_valid => features_V_44_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_44_loc_channel_fifo_cap,
-        if_empty_n => features_V_44_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_43_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_84,
-        if_full_n => features_V_43_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_43_loc_channel,
-        if_dout => features_V_43_loc_channel_dout,
-        if_num_data_valid => features_V_43_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_43_loc_channel_fifo_cap,
-        if_empty_n => features_V_43_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_42_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_85,
-        if_full_n => features_V_42_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_42_loc_channel,
-        if_dout => features_V_42_loc_channel_dout,
-        if_num_data_valid => features_V_42_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_42_loc_channel_fifo_cap,
-        if_empty_n => features_V_42_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_41_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_86,
-        if_full_n => features_V_41_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_41_loc_channel,
-        if_dout => features_V_41_loc_channel_dout,
-        if_num_data_valid => features_V_41_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_41_loc_channel_fifo_cap,
-        if_empty_n => features_V_41_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_40_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_87,
-        if_full_n => features_V_40_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_40_loc_channel,
-        if_dout => features_V_40_loc_channel_dout,
-        if_num_data_valid => features_V_40_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_40_loc_channel_fifo_cap,
-        if_empty_n => features_V_40_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_39_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_88,
-        if_full_n => features_V_39_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_39_loc_channel,
-        if_dout => features_V_39_loc_channel_dout,
-        if_num_data_valid => features_V_39_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_39_loc_channel_fifo_cap,
-        if_empty_n => features_V_39_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_38_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_89,
-        if_full_n => features_V_38_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_38_loc_channel,
-        if_dout => features_V_38_loc_channel_dout,
-        if_num_data_valid => features_V_38_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_38_loc_channel_fifo_cap,
-        if_empty_n => features_V_38_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_37_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_90,
-        if_full_n => features_V_37_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_37_loc_channel,
-        if_dout => features_V_37_loc_channel_dout,
-        if_num_data_valid => features_V_37_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_37_loc_channel_fifo_cap,
-        if_empty_n => features_V_37_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_36_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_91,
-        if_full_n => features_V_36_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_36_loc_channel,
-        if_dout => features_V_36_loc_channel_dout,
-        if_num_data_valid => features_V_36_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_36_loc_channel_fifo_cap,
-        if_empty_n => features_V_36_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_35_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_92,
-        if_full_n => features_V_35_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_35_loc_channel,
-        if_dout => features_V_35_loc_channel_dout,
-        if_num_data_valid => features_V_35_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_35_loc_channel_fifo_cap,
-        if_empty_n => features_V_35_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_34_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_93,
-        if_full_n => features_V_34_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_34_loc_channel,
-        if_dout => features_V_34_loc_channel_dout,
-        if_num_data_valid => features_V_34_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_34_loc_channel_fifo_cap,
-        if_empty_n => features_V_34_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_33_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_94,
-        if_full_n => features_V_33_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_33_loc_channel,
-        if_dout => features_V_33_loc_channel_dout,
-        if_num_data_valid => features_V_33_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_33_loc_channel_fifo_cap,
-        if_empty_n => features_V_33_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_32_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_95,
-        if_full_n => features_V_32_loc_channel_full_n,
-        if_write => ap_channel_done_features_V_32_loc_channel,
-        if_dout => features_V_32_loc_channel_dout,
-        if_num_data_valid => features_V_32_loc_channel_num_data_valid,
-        if_fifo_cap => features_V_32_loc_channel_fifo_cap,
-        if_empty_n => features_V_32_loc_channel_empty_n,
-        if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
-
-    features_V_31_loc_channel_U : component logistic_regression_fifo_w16_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_96,
         if_full_n => features_V_31_loc_channel_full_n,
         if_write => ap_channel_done_features_V_31_loc_channel,
         if_dout => features_V_31_loc_channel_dout,
@@ -3313,13 +625,13 @@ begin
         if_empty_n => features_V_31_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_30_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_30_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_97,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_1,
         if_full_n => features_V_30_loc_channel_full_n,
         if_write => ap_channel_done_features_V_30_loc_channel,
         if_dout => features_V_30_loc_channel_dout,
@@ -3328,13 +640,13 @@ begin
         if_empty_n => features_V_30_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_29_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_29_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_98,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_2,
         if_full_n => features_V_29_loc_channel_full_n,
         if_write => ap_channel_done_features_V_29_loc_channel,
         if_dout => features_V_29_loc_channel_dout,
@@ -3343,13 +655,13 @@ begin
         if_empty_n => features_V_29_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_28_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_28_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_99,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_3,
         if_full_n => features_V_28_loc_channel_full_n,
         if_write => ap_channel_done_features_V_28_loc_channel,
         if_dout => features_V_28_loc_channel_dout,
@@ -3358,13 +670,13 @@ begin
         if_empty_n => features_V_28_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_27_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_27_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_100,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_4,
         if_full_n => features_V_27_loc_channel_full_n,
         if_write => ap_channel_done_features_V_27_loc_channel,
         if_dout => features_V_27_loc_channel_dout,
@@ -3373,13 +685,13 @@ begin
         if_empty_n => features_V_27_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_26_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_26_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_101,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_5,
         if_full_n => features_V_26_loc_channel_full_n,
         if_write => ap_channel_done_features_V_26_loc_channel,
         if_dout => features_V_26_loc_channel_dout,
@@ -3388,13 +700,13 @@ begin
         if_empty_n => features_V_26_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_25_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_25_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_102,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_6,
         if_full_n => features_V_25_loc_channel_full_n,
         if_write => ap_channel_done_features_V_25_loc_channel,
         if_dout => features_V_25_loc_channel_dout,
@@ -3403,13 +715,13 @@ begin
         if_empty_n => features_V_25_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_24_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_24_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_103,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_7,
         if_full_n => features_V_24_loc_channel_full_n,
         if_write => ap_channel_done_features_V_24_loc_channel,
         if_dout => features_V_24_loc_channel_dout,
@@ -3418,13 +730,13 @@ begin
         if_empty_n => features_V_24_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_23_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_23_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_104,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_8,
         if_full_n => features_V_23_loc_channel_full_n,
         if_write => ap_channel_done_features_V_23_loc_channel,
         if_dout => features_V_23_loc_channel_dout,
@@ -3433,13 +745,13 @@ begin
         if_empty_n => features_V_23_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_22_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_22_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_105,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_9,
         if_full_n => features_V_22_loc_channel_full_n,
         if_write => ap_channel_done_features_V_22_loc_channel,
         if_dout => features_V_22_loc_channel_dout,
@@ -3448,13 +760,13 @@ begin
         if_empty_n => features_V_22_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_21_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_21_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_106,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_10,
         if_full_n => features_V_21_loc_channel_full_n,
         if_write => ap_channel_done_features_V_21_loc_channel,
         if_dout => features_V_21_loc_channel_dout,
@@ -3463,13 +775,13 @@ begin
         if_empty_n => features_V_21_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_20_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_20_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_107,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_11,
         if_full_n => features_V_20_loc_channel_full_n,
         if_write => ap_channel_done_features_V_20_loc_channel,
         if_dout => features_V_20_loc_channel_dout,
@@ -3478,13 +790,13 @@ begin
         if_empty_n => features_V_20_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_19_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_19_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_108,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_12,
         if_full_n => features_V_19_loc_channel_full_n,
         if_write => ap_channel_done_features_V_19_loc_channel,
         if_dout => features_V_19_loc_channel_dout,
@@ -3493,13 +805,13 @@ begin
         if_empty_n => features_V_19_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_18_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_18_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_109,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_13,
         if_full_n => features_V_18_loc_channel_full_n,
         if_write => ap_channel_done_features_V_18_loc_channel,
         if_dout => features_V_18_loc_channel_dout,
@@ -3508,13 +820,13 @@ begin
         if_empty_n => features_V_18_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_17_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_17_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_110,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_14,
         if_full_n => features_V_17_loc_channel_full_n,
         if_write => ap_channel_done_features_V_17_loc_channel,
         if_dout => features_V_17_loc_channel_dout,
@@ -3523,13 +835,13 @@ begin
         if_empty_n => features_V_17_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_16_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_16_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_111,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_15,
         if_full_n => features_V_16_loc_channel_full_n,
         if_write => ap_channel_done_features_V_16_loc_channel,
         if_dout => features_V_16_loc_channel_dout,
@@ -3538,13 +850,13 @@ begin
         if_empty_n => features_V_16_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_15_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_15_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_112,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_16,
         if_full_n => features_V_15_loc_channel_full_n,
         if_write => ap_channel_done_features_V_15_loc_channel,
         if_dout => features_V_15_loc_channel_dout,
@@ -3553,13 +865,13 @@ begin
         if_empty_n => features_V_15_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_14_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_14_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_113,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_17,
         if_full_n => features_V_14_loc_channel_full_n,
         if_write => ap_channel_done_features_V_14_loc_channel,
         if_dout => features_V_14_loc_channel_dout,
@@ -3568,13 +880,13 @@ begin
         if_empty_n => features_V_14_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_13_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_13_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_114,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_18,
         if_full_n => features_V_13_loc_channel_full_n,
         if_write => ap_channel_done_features_V_13_loc_channel,
         if_dout => features_V_13_loc_channel_dout,
@@ -3583,13 +895,13 @@ begin
         if_empty_n => features_V_13_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_12_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_12_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_115,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_19,
         if_full_n => features_V_12_loc_channel_full_n,
         if_write => ap_channel_done_features_V_12_loc_channel,
         if_dout => features_V_12_loc_channel_dout,
@@ -3598,13 +910,13 @@ begin
         if_empty_n => features_V_12_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_11_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_11_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_116,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_20,
         if_full_n => features_V_11_loc_channel_full_n,
         if_write => ap_channel_done_features_V_11_loc_channel,
         if_dout => features_V_11_loc_channel_dout,
@@ -3613,13 +925,13 @@ begin
         if_empty_n => features_V_11_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_10_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_10_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_117,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_21,
         if_full_n => features_V_10_loc_channel_full_n,
         if_write => ap_channel_done_features_V_10_loc_channel,
         if_dout => features_V_10_loc_channel_dout,
@@ -3628,13 +940,13 @@ begin
         if_empty_n => features_V_10_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_9_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_9_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_118,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_22,
         if_full_n => features_V_9_loc_channel_full_n,
         if_write => ap_channel_done_features_V_9_loc_channel,
         if_dout => features_V_9_loc_channel_dout,
@@ -3643,13 +955,13 @@ begin
         if_empty_n => features_V_9_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_8_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_8_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_119,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_23,
         if_full_n => features_V_8_loc_channel_full_n,
         if_write => ap_channel_done_features_V_8_loc_channel,
         if_dout => features_V_8_loc_channel_dout,
@@ -3658,13 +970,13 @@ begin
         if_empty_n => features_V_8_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_7_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_7_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_120,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_24,
         if_full_n => features_V_7_loc_channel_full_n,
         if_write => ap_channel_done_features_V_7_loc_channel,
         if_dout => features_V_7_loc_channel_dout,
@@ -3673,13 +985,13 @@ begin
         if_empty_n => features_V_7_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_6_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_6_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_121,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_25,
         if_full_n => features_V_6_loc_channel_full_n,
         if_write => ap_channel_done_features_V_6_loc_channel,
         if_dout => features_V_6_loc_channel_dout,
@@ -3688,13 +1000,13 @@ begin
         if_empty_n => features_V_6_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_5_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_5_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_122,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_26,
         if_full_n => features_V_5_loc_channel_full_n,
         if_write => ap_channel_done_features_V_5_loc_channel,
         if_dout => features_V_5_loc_channel_dout,
@@ -3703,13 +1015,13 @@ begin
         if_empty_n => features_V_5_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_4_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_4_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_123,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_27,
         if_full_n => features_V_4_loc_channel_full_n,
         if_write => ap_channel_done_features_V_4_loc_channel,
         if_dout => features_V_4_loc_channel_dout,
@@ -3718,13 +1030,13 @@ begin
         if_empty_n => features_V_4_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_3_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_3_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_124,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_28,
         if_full_n => features_V_3_loc_channel_full_n,
         if_write => ap_channel_done_features_V_3_loc_channel,
         if_dout => features_V_3_loc_channel_dout,
@@ -3733,13 +1045,13 @@ begin
         if_empty_n => features_V_3_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_2_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_2_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_125,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_29,
         if_full_n => features_V_2_loc_channel_full_n,
         if_write => ap_channel_done_features_V_2_loc_channel,
         if_dout => features_V_2_loc_channel_dout,
@@ -3748,13 +1060,13 @@ begin
         if_empty_n => features_V_2_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_1_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_1_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_126,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_30,
         if_full_n => features_V_1_loc_channel_full_n,
         if_write => ap_channel_done_features_V_1_loc_channel,
         if_dout => features_V_1_loc_channel_dout,
@@ -3763,13 +1075,13 @@ begin
         if_empty_n => features_V_1_loc_channel_empty_n,
         if_read => Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
 
-    features_V_loc_channel_U : component logistic_regression_fifo_w16_d2_S
+    features_V_loc_channel_U : component logistic_regression_fifo_w8_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => Loop_read_input_features_proc2_U0_ap_return_127,
+        if_din => Loop_read_input_features_proc2_U0_ap_return_31,
         if_full_n => features_V_loc_channel_full_n,
         if_write => ap_channel_done_features_V_loc_channel,
         if_dout => features_V_loc_channel_dout,
@@ -3814,166 +1126,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_100_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_100_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_100_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_100_loc_channel <= ap_sync_channel_write_features_V_100_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_101_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_101_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_101_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_101_loc_channel <= ap_sync_channel_write_features_V_101_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_102_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_102_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_102_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_102_loc_channel <= ap_sync_channel_write_features_V_102_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_103_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_103_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_103_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_103_loc_channel <= ap_sync_channel_write_features_V_103_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_104_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_104_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_104_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_104_loc_channel <= ap_sync_channel_write_features_V_104_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_105_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_105_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_105_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_105_loc_channel <= ap_sync_channel_write_features_V_105_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_106_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_106_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_106_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_106_loc_channel <= ap_sync_channel_write_features_V_106_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_107_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_107_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_107_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_107_loc_channel <= ap_sync_channel_write_features_V_107_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_108_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_108_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_108_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_108_loc_channel <= ap_sync_channel_write_features_V_108_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_109_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_109_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_109_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_109_loc_channel <= ap_sync_channel_write_features_V_109_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_10_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -3990,166 +1142,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_110_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_110_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_110_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_110_loc_channel <= ap_sync_channel_write_features_V_110_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_111_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_111_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_111_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_111_loc_channel <= ap_sync_channel_write_features_V_111_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_112_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_112_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_112_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_112_loc_channel <= ap_sync_channel_write_features_V_112_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_113_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_113_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_113_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_113_loc_channel <= ap_sync_channel_write_features_V_113_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_114_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_114_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_114_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_114_loc_channel <= ap_sync_channel_write_features_V_114_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_115_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_115_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_115_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_115_loc_channel <= ap_sync_channel_write_features_V_115_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_116_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_116_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_116_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_116_loc_channel <= ap_sync_channel_write_features_V_116_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_117_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_117_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_117_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_117_loc_channel <= ap_sync_channel_write_features_V_117_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_118_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_118_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_118_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_118_loc_channel <= ap_sync_channel_write_features_V_118_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_119_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_119_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_119_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_119_loc_channel <= ap_sync_channel_write_features_V_119_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_11_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -4160,134 +1152,6 @@ begin
                     ap_sync_reg_channel_write_features_V_11_loc_channel <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_features_V_11_loc_channel <= ap_sync_channel_write_features_V_11_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_120_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_120_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_120_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_120_loc_channel <= ap_sync_channel_write_features_V_120_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_121_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_121_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_121_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_121_loc_channel <= ap_sync_channel_write_features_V_121_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_122_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_122_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_122_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_122_loc_channel <= ap_sync_channel_write_features_V_122_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_123_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_123_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_123_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_123_loc_channel <= ap_sync_channel_write_features_V_123_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_124_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_124_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_124_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_124_loc_channel <= ap_sync_channel_write_features_V_124_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_125_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_125_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_125_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_125_loc_channel <= ap_sync_channel_write_features_V_125_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_126_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_126_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_126_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_126_loc_channel <= ap_sync_channel_write_features_V_126_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_127_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_127_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_127_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_127_loc_channel <= ap_sync_channel_write_features_V_127_loc_channel;
                 end if; 
             end if;
         end if;
@@ -4646,134 +1510,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_32_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_32_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_32_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_32_loc_channel <= ap_sync_channel_write_features_V_32_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_33_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_33_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_33_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_33_loc_channel <= ap_sync_channel_write_features_V_33_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_34_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_34_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_34_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_34_loc_channel <= ap_sync_channel_write_features_V_34_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_35_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_35_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_35_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_35_loc_channel <= ap_sync_channel_write_features_V_35_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_36_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_36_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_36_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_36_loc_channel <= ap_sync_channel_write_features_V_36_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_37_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_37_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_37_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_37_loc_channel <= ap_sync_channel_write_features_V_37_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_38_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_38_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_38_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_38_loc_channel <= ap_sync_channel_write_features_V_38_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_39_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_39_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_39_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_39_loc_channel <= ap_sync_channel_write_features_V_39_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_3_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -4784,166 +1520,6 @@ begin
                     ap_sync_reg_channel_write_features_V_3_loc_channel <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_features_V_3_loc_channel <= ap_sync_channel_write_features_V_3_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_40_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_40_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_40_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_40_loc_channel <= ap_sync_channel_write_features_V_40_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_41_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_41_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_41_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_41_loc_channel <= ap_sync_channel_write_features_V_41_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_42_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_42_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_42_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_42_loc_channel <= ap_sync_channel_write_features_V_42_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_43_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_43_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_43_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_43_loc_channel <= ap_sync_channel_write_features_V_43_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_44_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_44_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_44_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_44_loc_channel <= ap_sync_channel_write_features_V_44_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_45_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_45_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_45_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_45_loc_channel <= ap_sync_channel_write_features_V_45_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_46_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_46_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_46_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_46_loc_channel <= ap_sync_channel_write_features_V_46_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_47_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_47_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_47_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_47_loc_channel <= ap_sync_channel_write_features_V_47_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_48_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_48_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_48_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_48_loc_channel <= ap_sync_channel_write_features_V_48_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_49_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_49_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_49_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_49_loc_channel <= ap_sync_channel_write_features_V_49_loc_channel;
                 end if; 
             end if;
         end if;
@@ -4966,166 +1542,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_50_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_50_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_50_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_50_loc_channel <= ap_sync_channel_write_features_V_50_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_51_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_51_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_51_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_51_loc_channel <= ap_sync_channel_write_features_V_51_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_52_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_52_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_52_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_52_loc_channel <= ap_sync_channel_write_features_V_52_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_53_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_53_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_53_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_53_loc_channel <= ap_sync_channel_write_features_V_53_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_54_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_54_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_54_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_54_loc_channel <= ap_sync_channel_write_features_V_54_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_55_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_55_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_55_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_55_loc_channel <= ap_sync_channel_write_features_V_55_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_56_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_56_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_56_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_56_loc_channel <= ap_sync_channel_write_features_V_56_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_57_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_57_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_57_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_57_loc_channel <= ap_sync_channel_write_features_V_57_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_58_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_58_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_58_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_58_loc_channel <= ap_sync_channel_write_features_V_58_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_59_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_59_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_59_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_59_loc_channel <= ap_sync_channel_write_features_V_59_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_5_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -5136,166 +1552,6 @@ begin
                     ap_sync_reg_channel_write_features_V_5_loc_channel <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_features_V_5_loc_channel <= ap_sync_channel_write_features_V_5_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_60_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_60_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_60_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_60_loc_channel <= ap_sync_channel_write_features_V_60_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_61_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_61_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_61_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_61_loc_channel <= ap_sync_channel_write_features_V_61_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_62_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_62_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_62_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_62_loc_channel <= ap_sync_channel_write_features_V_62_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_63_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_63_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_63_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_63_loc_channel <= ap_sync_channel_write_features_V_63_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_64_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_64_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_64_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_64_loc_channel <= ap_sync_channel_write_features_V_64_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_65_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_65_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_65_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_65_loc_channel <= ap_sync_channel_write_features_V_65_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_66_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_66_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_66_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_66_loc_channel <= ap_sync_channel_write_features_V_66_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_67_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_67_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_67_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_67_loc_channel <= ap_sync_channel_write_features_V_67_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_68_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_68_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_68_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_68_loc_channel <= ap_sync_channel_write_features_V_68_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_69_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_69_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_69_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_69_loc_channel <= ap_sync_channel_write_features_V_69_loc_channel;
                 end if; 
             end if;
         end if;
@@ -5318,166 +1574,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_70_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_70_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_70_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_70_loc_channel <= ap_sync_channel_write_features_V_70_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_71_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_71_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_71_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_71_loc_channel <= ap_sync_channel_write_features_V_71_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_72_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_72_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_72_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_72_loc_channel <= ap_sync_channel_write_features_V_72_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_73_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_73_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_73_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_73_loc_channel <= ap_sync_channel_write_features_V_73_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_74_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_74_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_74_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_74_loc_channel <= ap_sync_channel_write_features_V_74_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_75_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_75_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_75_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_75_loc_channel <= ap_sync_channel_write_features_V_75_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_76_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_76_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_76_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_76_loc_channel <= ap_sync_channel_write_features_V_76_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_77_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_77_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_77_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_77_loc_channel <= ap_sync_channel_write_features_V_77_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_78_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_78_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_78_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_78_loc_channel <= ap_sync_channel_write_features_V_78_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_79_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_79_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_79_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_79_loc_channel <= ap_sync_channel_write_features_V_79_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_7_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -5494,166 +1590,6 @@ begin
     end process;
 
 
-    ap_sync_reg_channel_write_features_V_80_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_80_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_80_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_80_loc_channel <= ap_sync_channel_write_features_V_80_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_81_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_81_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_81_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_81_loc_channel <= ap_sync_channel_write_features_V_81_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_82_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_82_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_82_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_82_loc_channel <= ap_sync_channel_write_features_V_82_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_83_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_83_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_83_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_83_loc_channel <= ap_sync_channel_write_features_V_83_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_84_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_84_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_84_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_84_loc_channel <= ap_sync_channel_write_features_V_84_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_85_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_85_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_85_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_85_loc_channel <= ap_sync_channel_write_features_V_85_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_86_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_86_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_86_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_86_loc_channel <= ap_sync_channel_write_features_V_86_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_87_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_87_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_87_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_87_loc_channel <= ap_sync_channel_write_features_V_87_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_88_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_88_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_88_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_88_loc_channel <= ap_sync_channel_write_features_V_88_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_89_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_89_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_89_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_89_loc_channel <= ap_sync_channel_write_features_V_89_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
     ap_sync_reg_channel_write_features_V_8_loc_channel_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
@@ -5664,166 +1600,6 @@ begin
                     ap_sync_reg_channel_write_features_V_8_loc_channel <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_features_V_8_loc_channel <= ap_sync_channel_write_features_V_8_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_90_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_90_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_90_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_90_loc_channel <= ap_sync_channel_write_features_V_90_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_91_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_91_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_91_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_91_loc_channel <= ap_sync_channel_write_features_V_91_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_92_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_92_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_92_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_92_loc_channel <= ap_sync_channel_write_features_V_92_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_93_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_93_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_93_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_93_loc_channel <= ap_sync_channel_write_features_V_93_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_94_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_94_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_94_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_94_loc_channel <= ap_sync_channel_write_features_V_94_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_95_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_95_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_95_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_95_loc_channel <= ap_sync_channel_write_features_V_95_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_96_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_96_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_96_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_96_loc_channel <= ap_sync_channel_write_features_V_96_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_97_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_97_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_97_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_97_loc_channel <= ap_sync_channel_write_features_V_97_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_98_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_98_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_98_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_98_loc_channel <= ap_sync_channel_write_features_V_98_loc_channel;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_features_V_99_loc_channel_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_features_V_99_loc_channel <= ap_const_logic_0;
-            else
-                if (((Loop_read_input_features_proc2_U0_ap_done and Loop_read_input_features_proc2_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_features_V_99_loc_channel <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_features_V_99_loc_channel <= ap_sync_channel_write_features_V_99_loc_channel;
                 end if; 
             end if;
         end if;
@@ -5862,39 +1638,11 @@ begin
     end process;
 
     Block_logistic_regression_for_cond_i_exit_proc_U0_ap_continue <= ap_const_logic_1;
-    Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start <= (features_V_loc_channel_empty_n and features_V_9_loc_channel_empty_n and features_V_99_loc_channel_empty_n and features_V_98_loc_channel_empty_n and features_V_97_loc_channel_empty_n and features_V_96_loc_channel_empty_n and features_V_95_loc_channel_empty_n and features_V_94_loc_channel_empty_n and features_V_93_loc_channel_empty_n and features_V_92_loc_channel_empty_n and features_V_91_loc_channel_empty_n and features_V_90_loc_channel_empty_n and features_V_8_loc_channel_empty_n and features_V_89_loc_channel_empty_n and features_V_88_loc_channel_empty_n and features_V_87_loc_channel_empty_n and features_V_86_loc_channel_empty_n and features_V_85_loc_channel_empty_n and features_V_84_loc_channel_empty_n and features_V_83_loc_channel_empty_n and features_V_82_loc_channel_empty_n and features_V_81_loc_channel_empty_n and features_V_80_loc_channel_empty_n and features_V_7_loc_channel_empty_n and features_V_79_loc_channel_empty_n and features_V_78_loc_channel_empty_n and features_V_77_loc_channel_empty_n and features_V_76_loc_channel_empty_n and features_V_75_loc_channel_empty_n and features_V_74_loc_channel_empty_n and features_V_73_loc_channel_empty_n and features_V_72_loc_channel_empty_n and features_V_71_loc_channel_empty_n and features_V_70_loc_channel_empty_n and features_V_6_loc_channel_empty_n and features_V_69_loc_channel_empty_n and features_V_68_loc_channel_empty_n and features_V_67_loc_channel_empty_n and features_V_66_loc_channel_empty_n and features_V_65_loc_channel_empty_n and features_V_64_loc_channel_empty_n and features_V_63_loc_channel_empty_n and features_V_62_loc_channel_empty_n and features_V_61_loc_channel_empty_n and features_V_60_loc_channel_empty_n and features_V_5_loc_channel_empty_n and features_V_59_loc_channel_empty_n and features_V_58_loc_channel_empty_n and features_V_57_loc_channel_empty_n and features_V_56_loc_channel_empty_n and features_V_55_loc_channel_empty_n and features_V_54_loc_channel_empty_n and features_V_53_loc_channel_empty_n and features_V_52_loc_channel_empty_n and features_V_51_loc_channel_empty_n and features_V_50_loc_channel_empty_n and features_V_4_loc_channel_empty_n and features_V_49_loc_channel_empty_n and features_V_48_loc_channel_empty_n and features_V_47_loc_channel_empty_n and features_V_46_loc_channel_empty_n and features_V_45_loc_channel_empty_n and features_V_44_loc_channel_empty_n and features_V_43_loc_channel_empty_n and features_V_42_loc_channel_empty_n and features_V_41_loc_channel_empty_n and features_V_40_loc_channel_empty_n and features_V_3_loc_channel_empty_n and features_V_39_loc_channel_empty_n and features_V_38_loc_channel_empty_n and features_V_37_loc_channel_empty_n and features_V_36_loc_channel_empty_n and features_V_35_loc_channel_empty_n and features_V_34_loc_channel_empty_n and features_V_33_loc_channel_empty_n and features_V_32_loc_channel_empty_n and features_V_31_loc_channel_empty_n and features_V_30_loc_channel_empty_n and features_V_2_loc_channel_empty_n and features_V_29_loc_channel_empty_n and features_V_28_loc_channel_empty_n and features_V_27_loc_channel_empty_n and features_V_26_loc_channel_empty_n and features_V_25_loc_channel_empty_n and features_V_24_loc_channel_empty_n and features_V_23_loc_channel_empty_n and features_V_22_loc_channel_empty_n and features_V_21_loc_channel_empty_n and features_V_20_loc_channel_empty_n and features_V_1_loc_channel_empty_n and features_V_19_loc_channel_empty_n and features_V_18_loc_channel_empty_n and features_V_17_loc_channel_empty_n and features_V_16_loc_channel_empty_n and features_V_15_loc_channel_empty_n and features_V_14_loc_channel_empty_n and features_V_13_loc_channel_empty_n and features_V_12_loc_channel_empty_n and features_V_127_loc_channel_empty_n and features_V_126_loc_channel_empty_n and features_V_125_loc_channel_empty_n and features_V_124_loc_channel_empty_n and features_V_123_loc_channel_empty_n and features_V_122_loc_channel_empty_n and features_V_121_loc_channel_empty_n and features_V_120_loc_channel_empty_n and features_V_11_loc_channel_empty_n and features_V_119_loc_channel_empty_n and features_V_118_loc_channel_empty_n and features_V_117_loc_channel_empty_n and features_V_116_loc_channel_empty_n and features_V_115_loc_channel_empty_n and features_V_114_loc_channel_empty_n and features_V_113_loc_channel_empty_n and features_V_112_loc_channel_empty_n and features_V_111_loc_channel_empty_n and features_V_110_loc_channel_empty_n and features_V_10_loc_channel_empty_n and features_V_109_loc_channel_empty_n and features_V_108_loc_channel_empty_n and features_V_107_loc_channel_empty_n and features_V_106_loc_channel_empty_n and features_V_105_loc_channel_empty_n and features_V_104_loc_channel_empty_n and features_V_103_loc_channel_empty_n and features_V_102_loc_channel_empty_n and features_V_101_loc_channel_empty_n and features_V_100_loc_channel_empty_n and (ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready xor ap_const_logic_1) and ap_start);
-    Loop_read_input_features_proc2_U0_ap_continue <= (ap_sync_channel_write_features_V_loc_channel and ap_sync_channel_write_features_V_9_loc_channel and ap_sync_channel_write_features_V_99_loc_channel and ap_sync_channel_write_features_V_98_loc_channel and ap_sync_channel_write_features_V_97_loc_channel and ap_sync_channel_write_features_V_96_loc_channel and ap_sync_channel_write_features_V_95_loc_channel and ap_sync_channel_write_features_V_94_loc_channel and ap_sync_channel_write_features_V_93_loc_channel and ap_sync_channel_write_features_V_92_loc_channel and ap_sync_channel_write_features_V_91_loc_channel and ap_sync_channel_write_features_V_90_loc_channel and ap_sync_channel_write_features_V_8_loc_channel and ap_sync_channel_write_features_V_89_loc_channel and ap_sync_channel_write_features_V_88_loc_channel and ap_sync_channel_write_features_V_87_loc_channel and ap_sync_channel_write_features_V_86_loc_channel and ap_sync_channel_write_features_V_85_loc_channel and ap_sync_channel_write_features_V_84_loc_channel and ap_sync_channel_write_features_V_83_loc_channel and ap_sync_channel_write_features_V_82_loc_channel and ap_sync_channel_write_features_V_81_loc_channel and ap_sync_channel_write_features_V_80_loc_channel and ap_sync_channel_write_features_V_7_loc_channel and ap_sync_channel_write_features_V_79_loc_channel and ap_sync_channel_write_features_V_78_loc_channel and ap_sync_channel_write_features_V_77_loc_channel and ap_sync_channel_write_features_V_76_loc_channel and ap_sync_channel_write_features_V_75_loc_channel and ap_sync_channel_write_features_V_74_loc_channel and ap_sync_channel_write_features_V_73_loc_channel and ap_sync_channel_write_features_V_72_loc_channel and ap_sync_channel_write_features_V_71_loc_channel and ap_sync_channel_write_features_V_70_loc_channel and ap_sync_channel_write_features_V_6_loc_channel and ap_sync_channel_write_features_V_69_loc_channel and ap_sync_channel_write_features_V_68_loc_channel and ap_sync_channel_write_features_V_67_loc_channel and ap_sync_channel_write_features_V_66_loc_channel and ap_sync_channel_write_features_V_65_loc_channel and ap_sync_channel_write_features_V_64_loc_channel and ap_sync_channel_write_features_V_63_loc_channel and ap_sync_channel_write_features_V_62_loc_channel and ap_sync_channel_write_features_V_61_loc_channel and ap_sync_channel_write_features_V_60_loc_channel and ap_sync_channel_write_features_V_5_loc_channel and ap_sync_channel_write_features_V_59_loc_channel and ap_sync_channel_write_features_V_58_loc_channel and ap_sync_channel_write_features_V_57_loc_channel and ap_sync_channel_write_features_V_56_loc_channel and ap_sync_channel_write_features_V_55_loc_channel and ap_sync_channel_write_features_V_54_loc_channel and ap_sync_channel_write_features_V_53_loc_channel and ap_sync_channel_write_features_V_52_loc_channel and ap_sync_channel_write_features_V_51_loc_channel and ap_sync_channel_write_features_V_50_loc_channel and ap_sync_channel_write_features_V_4_loc_channel and ap_sync_channel_write_features_V_49_loc_channel and ap_sync_channel_write_features_V_48_loc_channel and ap_sync_channel_write_features_V_47_loc_channel and ap_sync_channel_write_features_V_46_loc_channel and ap_sync_channel_write_features_V_45_loc_channel and ap_sync_channel_write_features_V_44_loc_channel and ap_sync_channel_write_features_V_43_loc_channel and ap_sync_channel_write_features_V_42_loc_channel and ap_sync_channel_write_features_V_41_loc_channel and ap_sync_channel_write_features_V_40_loc_channel and ap_sync_channel_write_features_V_3_loc_channel and ap_sync_channel_write_features_V_39_loc_channel and ap_sync_channel_write_features_V_38_loc_channel and ap_sync_channel_write_features_V_37_loc_channel and ap_sync_channel_write_features_V_36_loc_channel and ap_sync_channel_write_features_V_35_loc_channel and ap_sync_channel_write_features_V_34_loc_channel and ap_sync_channel_write_features_V_33_loc_channel and ap_sync_channel_write_features_V_32_loc_channel and ap_sync_channel_write_features_V_31_loc_channel and ap_sync_channel_write_features_V_30_loc_channel and ap_sync_channel_write_features_V_2_loc_channel and ap_sync_channel_write_features_V_29_loc_channel and ap_sync_channel_write_features_V_28_loc_channel and ap_sync_channel_write_features_V_27_loc_channel and ap_sync_channel_write_features_V_26_loc_channel and ap_sync_channel_write_features_V_25_loc_channel and ap_sync_channel_write_features_V_24_loc_channel and ap_sync_channel_write_features_V_23_loc_channel and ap_sync_channel_write_features_V_22_loc_channel and ap_sync_channel_write_features_V_21_loc_channel and ap_sync_channel_write_features_V_20_loc_channel and ap_sync_channel_write_features_V_1_loc_channel and ap_sync_channel_write_features_V_19_loc_channel and ap_sync_channel_write_features_V_18_loc_channel and ap_sync_channel_write_features_V_17_loc_channel and ap_sync_channel_write_features_V_16_loc_channel and ap_sync_channel_write_features_V_15_loc_channel and ap_sync_channel_write_features_V_14_loc_channel and ap_sync_channel_write_features_V_13_loc_channel and ap_sync_channel_write_features_V_12_loc_channel and ap_sync_channel_write_features_V_127_loc_channel and ap_sync_channel_write_features_V_126_loc_channel and ap_sync_channel_write_features_V_125_loc_channel and ap_sync_channel_write_features_V_124_loc_channel and ap_sync_channel_write_features_V_123_loc_channel and ap_sync_channel_write_features_V_122_loc_channel and ap_sync_channel_write_features_V_121_loc_channel and ap_sync_channel_write_features_V_120_loc_channel and ap_sync_channel_write_features_V_11_loc_channel and ap_sync_channel_write_features_V_119_loc_channel and ap_sync_channel_write_features_V_118_loc_channel and ap_sync_channel_write_features_V_117_loc_channel and ap_sync_channel_write_features_V_116_loc_channel and ap_sync_channel_write_features_V_115_loc_channel and ap_sync_channel_write_features_V_114_loc_channel and ap_sync_channel_write_features_V_113_loc_channel and ap_sync_channel_write_features_V_112_loc_channel and ap_sync_channel_write_features_V_111_loc_channel and ap_sync_channel_write_features_V_110_loc_channel and ap_sync_channel_write_features_V_10_loc_channel and ap_sync_channel_write_features_V_109_loc_channel and ap_sync_channel_write_features_V_108_loc_channel and ap_sync_channel_write_features_V_107_loc_channel and ap_sync_channel_write_features_V_106_loc_channel and ap_sync_channel_write_features_V_105_loc_channel and ap_sync_channel_write_features_V_104_loc_channel and ap_sync_channel_write_features_V_103_loc_channel and ap_sync_channel_write_features_V_102_loc_channel and ap_sync_channel_write_features_V_101_loc_channel and ap_sync_channel_write_features_V_100_loc_channel);
+    Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start <= (features_V_loc_channel_empty_n and features_V_9_loc_channel_empty_n and features_V_8_loc_channel_empty_n and features_V_7_loc_channel_empty_n and features_V_6_loc_channel_empty_n and features_V_5_loc_channel_empty_n and features_V_4_loc_channel_empty_n and features_V_3_loc_channel_empty_n and features_V_31_loc_channel_empty_n and features_V_30_loc_channel_empty_n and features_V_2_loc_channel_empty_n and features_V_29_loc_channel_empty_n and features_V_28_loc_channel_empty_n and features_V_27_loc_channel_empty_n and features_V_26_loc_channel_empty_n and features_V_25_loc_channel_empty_n and features_V_24_loc_channel_empty_n and features_V_23_loc_channel_empty_n and features_V_22_loc_channel_empty_n and features_V_21_loc_channel_empty_n and features_V_20_loc_channel_empty_n and features_V_1_loc_channel_empty_n and features_V_19_loc_channel_empty_n and features_V_18_loc_channel_empty_n and features_V_17_loc_channel_empty_n and features_V_16_loc_channel_empty_n and features_V_15_loc_channel_empty_n and features_V_14_loc_channel_empty_n and features_V_13_loc_channel_empty_n and features_V_12_loc_channel_empty_n and features_V_11_loc_channel_empty_n and features_V_10_loc_channel_empty_n and (ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready xor ap_const_logic_1) and ap_start);
+    Loop_read_input_features_proc2_U0_ap_continue <= (ap_sync_channel_write_features_V_loc_channel and ap_sync_channel_write_features_V_9_loc_channel and ap_sync_channel_write_features_V_8_loc_channel and ap_sync_channel_write_features_V_7_loc_channel and ap_sync_channel_write_features_V_6_loc_channel and ap_sync_channel_write_features_V_5_loc_channel and ap_sync_channel_write_features_V_4_loc_channel and ap_sync_channel_write_features_V_3_loc_channel and ap_sync_channel_write_features_V_31_loc_channel and ap_sync_channel_write_features_V_30_loc_channel and ap_sync_channel_write_features_V_2_loc_channel and ap_sync_channel_write_features_V_29_loc_channel and ap_sync_channel_write_features_V_28_loc_channel and ap_sync_channel_write_features_V_27_loc_channel and ap_sync_channel_write_features_V_26_loc_channel and ap_sync_channel_write_features_V_25_loc_channel and ap_sync_channel_write_features_V_24_loc_channel and ap_sync_channel_write_features_V_23_loc_channel and ap_sync_channel_write_features_V_22_loc_channel and ap_sync_channel_write_features_V_21_loc_channel and ap_sync_channel_write_features_V_20_loc_channel and ap_sync_channel_write_features_V_1_loc_channel and ap_sync_channel_write_features_V_19_loc_channel and ap_sync_channel_write_features_V_18_loc_channel and ap_sync_channel_write_features_V_17_loc_channel and ap_sync_channel_write_features_V_16_loc_channel and ap_sync_channel_write_features_V_15_loc_channel and ap_sync_channel_write_features_V_14_loc_channel and ap_sync_channel_write_features_V_13_loc_channel and ap_sync_channel_write_features_V_12_loc_channel and ap_sync_channel_write_features_V_11_loc_channel and ap_sync_channel_write_features_V_10_loc_channel);
     Loop_read_input_features_proc2_U0_ap_start <= ((ap_sync_reg_Loop_read_input_features_proc2_U0_ap_ready xor ap_const_logic_1) and ap_start);
-    ap_channel_done_features_V_100_loc_channel <= ((ap_sync_reg_channel_write_features_V_100_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_101_loc_channel <= ((ap_sync_reg_channel_write_features_V_101_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_102_loc_channel <= ((ap_sync_reg_channel_write_features_V_102_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_103_loc_channel <= ((ap_sync_reg_channel_write_features_V_103_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_104_loc_channel <= ((ap_sync_reg_channel_write_features_V_104_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_105_loc_channel <= ((ap_sync_reg_channel_write_features_V_105_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_106_loc_channel <= ((ap_sync_reg_channel_write_features_V_106_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_107_loc_channel <= ((ap_sync_reg_channel_write_features_V_107_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_108_loc_channel <= ((ap_sync_reg_channel_write_features_V_108_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_109_loc_channel <= ((ap_sync_reg_channel_write_features_V_109_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_10_loc_channel <= ((ap_sync_reg_channel_write_features_V_10_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_110_loc_channel <= ((ap_sync_reg_channel_write_features_V_110_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_111_loc_channel <= ((ap_sync_reg_channel_write_features_V_111_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_112_loc_channel <= ((ap_sync_reg_channel_write_features_V_112_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_113_loc_channel <= ((ap_sync_reg_channel_write_features_V_113_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_114_loc_channel <= ((ap_sync_reg_channel_write_features_V_114_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_115_loc_channel <= ((ap_sync_reg_channel_write_features_V_115_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_116_loc_channel <= ((ap_sync_reg_channel_write_features_V_116_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_117_loc_channel <= ((ap_sync_reg_channel_write_features_V_117_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_118_loc_channel <= ((ap_sync_reg_channel_write_features_V_118_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_119_loc_channel <= ((ap_sync_reg_channel_write_features_V_119_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_11_loc_channel <= ((ap_sync_reg_channel_write_features_V_11_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_120_loc_channel <= ((ap_sync_reg_channel_write_features_V_120_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_121_loc_channel <= ((ap_sync_reg_channel_write_features_V_121_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_122_loc_channel <= ((ap_sync_reg_channel_write_features_V_122_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_123_loc_channel <= ((ap_sync_reg_channel_write_features_V_123_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_124_loc_channel <= ((ap_sync_reg_channel_write_features_V_124_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_125_loc_channel <= ((ap_sync_reg_channel_write_features_V_125_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_126_loc_channel <= ((ap_sync_reg_channel_write_features_V_126_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_127_loc_channel <= ((ap_sync_reg_channel_write_features_V_127_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_12_loc_channel <= ((ap_sync_reg_channel_write_features_V_12_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_13_loc_channel <= ((ap_sync_reg_channel_write_features_V_13_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_14_loc_channel <= ((ap_sync_reg_channel_write_features_V_14_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
@@ -5917,84 +1665,16 @@ begin
     ap_channel_done_features_V_2_loc_channel <= ((ap_sync_reg_channel_write_features_V_2_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_30_loc_channel <= ((ap_sync_reg_channel_write_features_V_30_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_31_loc_channel <= ((ap_sync_reg_channel_write_features_V_31_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_32_loc_channel <= ((ap_sync_reg_channel_write_features_V_32_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_33_loc_channel <= ((ap_sync_reg_channel_write_features_V_33_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_34_loc_channel <= ((ap_sync_reg_channel_write_features_V_34_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_35_loc_channel <= ((ap_sync_reg_channel_write_features_V_35_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_36_loc_channel <= ((ap_sync_reg_channel_write_features_V_36_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_37_loc_channel <= ((ap_sync_reg_channel_write_features_V_37_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_38_loc_channel <= ((ap_sync_reg_channel_write_features_V_38_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_39_loc_channel <= ((ap_sync_reg_channel_write_features_V_39_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_3_loc_channel <= ((ap_sync_reg_channel_write_features_V_3_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_40_loc_channel <= ((ap_sync_reg_channel_write_features_V_40_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_41_loc_channel <= ((ap_sync_reg_channel_write_features_V_41_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_42_loc_channel <= ((ap_sync_reg_channel_write_features_V_42_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_43_loc_channel <= ((ap_sync_reg_channel_write_features_V_43_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_44_loc_channel <= ((ap_sync_reg_channel_write_features_V_44_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_45_loc_channel <= ((ap_sync_reg_channel_write_features_V_45_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_46_loc_channel <= ((ap_sync_reg_channel_write_features_V_46_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_47_loc_channel <= ((ap_sync_reg_channel_write_features_V_47_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_48_loc_channel <= ((ap_sync_reg_channel_write_features_V_48_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_49_loc_channel <= ((ap_sync_reg_channel_write_features_V_49_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_4_loc_channel <= ((ap_sync_reg_channel_write_features_V_4_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_50_loc_channel <= ((ap_sync_reg_channel_write_features_V_50_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_51_loc_channel <= ((ap_sync_reg_channel_write_features_V_51_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_52_loc_channel <= ((ap_sync_reg_channel_write_features_V_52_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_53_loc_channel <= ((ap_sync_reg_channel_write_features_V_53_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_54_loc_channel <= ((ap_sync_reg_channel_write_features_V_54_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_55_loc_channel <= ((ap_sync_reg_channel_write_features_V_55_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_56_loc_channel <= ((ap_sync_reg_channel_write_features_V_56_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_57_loc_channel <= ((ap_sync_reg_channel_write_features_V_57_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_58_loc_channel <= ((ap_sync_reg_channel_write_features_V_58_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_59_loc_channel <= ((ap_sync_reg_channel_write_features_V_59_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_5_loc_channel <= ((ap_sync_reg_channel_write_features_V_5_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_60_loc_channel <= ((ap_sync_reg_channel_write_features_V_60_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_61_loc_channel <= ((ap_sync_reg_channel_write_features_V_61_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_62_loc_channel <= ((ap_sync_reg_channel_write_features_V_62_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_63_loc_channel <= ((ap_sync_reg_channel_write_features_V_63_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_64_loc_channel <= ((ap_sync_reg_channel_write_features_V_64_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_65_loc_channel <= ((ap_sync_reg_channel_write_features_V_65_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_66_loc_channel <= ((ap_sync_reg_channel_write_features_V_66_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_67_loc_channel <= ((ap_sync_reg_channel_write_features_V_67_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_68_loc_channel <= ((ap_sync_reg_channel_write_features_V_68_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_69_loc_channel <= ((ap_sync_reg_channel_write_features_V_69_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_6_loc_channel <= ((ap_sync_reg_channel_write_features_V_6_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_70_loc_channel <= ((ap_sync_reg_channel_write_features_V_70_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_71_loc_channel <= ((ap_sync_reg_channel_write_features_V_71_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_72_loc_channel <= ((ap_sync_reg_channel_write_features_V_72_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_73_loc_channel <= ((ap_sync_reg_channel_write_features_V_73_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_74_loc_channel <= ((ap_sync_reg_channel_write_features_V_74_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_75_loc_channel <= ((ap_sync_reg_channel_write_features_V_75_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_76_loc_channel <= ((ap_sync_reg_channel_write_features_V_76_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_77_loc_channel <= ((ap_sync_reg_channel_write_features_V_77_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_78_loc_channel <= ((ap_sync_reg_channel_write_features_V_78_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_79_loc_channel <= ((ap_sync_reg_channel_write_features_V_79_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_7_loc_channel <= ((ap_sync_reg_channel_write_features_V_7_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_80_loc_channel <= ((ap_sync_reg_channel_write_features_V_80_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_81_loc_channel <= ((ap_sync_reg_channel_write_features_V_81_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_82_loc_channel <= ((ap_sync_reg_channel_write_features_V_82_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_83_loc_channel <= ((ap_sync_reg_channel_write_features_V_83_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_84_loc_channel <= ((ap_sync_reg_channel_write_features_V_84_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_85_loc_channel <= ((ap_sync_reg_channel_write_features_V_85_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_86_loc_channel <= ((ap_sync_reg_channel_write_features_V_86_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_87_loc_channel <= ((ap_sync_reg_channel_write_features_V_87_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_88_loc_channel <= ((ap_sync_reg_channel_write_features_V_88_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_89_loc_channel <= ((ap_sync_reg_channel_write_features_V_89_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_8_loc_channel <= ((ap_sync_reg_channel_write_features_V_8_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_90_loc_channel <= ((ap_sync_reg_channel_write_features_V_90_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_91_loc_channel <= ((ap_sync_reg_channel_write_features_V_91_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_92_loc_channel <= ((ap_sync_reg_channel_write_features_V_92_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_93_loc_channel <= ((ap_sync_reg_channel_write_features_V_93_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_94_loc_channel <= ((ap_sync_reg_channel_write_features_V_94_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_95_loc_channel <= ((ap_sync_reg_channel_write_features_V_95_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_96_loc_channel <= ((ap_sync_reg_channel_write_features_V_96_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_97_loc_channel <= ((ap_sync_reg_channel_write_features_V_97_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_98_loc_channel <= ((ap_sync_reg_channel_write_features_V_98_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
-    ap_channel_done_features_V_99_loc_channel <= ((ap_sync_reg_channel_write_features_V_99_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_9_loc_channel <= ((ap_sync_reg_channel_write_features_V_9_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_channel_done_features_V_loc_channel <= ((ap_sync_reg_channel_write_features_V_loc_channel xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_done);
     ap_done <= Block_logistic_regression_for_cond_i_exit_proc_U0_ap_done;
-    ap_idle <= ((features_V_loc_channel_empty_n xor ap_const_logic_1) and (features_V_1_loc_channel_empty_n xor ap_const_logic_1) and (features_V_2_loc_channel_empty_n xor ap_const_logic_1) and (features_V_3_loc_channel_empty_n xor ap_const_logic_1) and (features_V_4_loc_channel_empty_n xor ap_const_logic_1) and (features_V_5_loc_channel_empty_n xor ap_const_logic_1) and (features_V_6_loc_channel_empty_n xor ap_const_logic_1) and (features_V_7_loc_channel_empty_n xor ap_const_logic_1) and (features_V_8_loc_channel_empty_n xor ap_const_logic_1) and (features_V_9_loc_channel_empty_n xor ap_const_logic_1) and (features_V_10_loc_channel_empty_n xor ap_const_logic_1) and (features_V_11_loc_channel_empty_n xor ap_const_logic_1) and (features_V_12_loc_channel_empty_n xor ap_const_logic_1) and (features_V_13_loc_channel_empty_n xor ap_const_logic_1) and (features_V_14_loc_channel_empty_n xor ap_const_logic_1) and (features_V_15_loc_channel_empty_n xor ap_const_logic_1) and (features_V_16_loc_channel_empty_n xor ap_const_logic_1) and (features_V_17_loc_channel_empty_n xor ap_const_logic_1) and (features_V_18_loc_channel_empty_n xor ap_const_logic_1) and (features_V_19_loc_channel_empty_n xor ap_const_logic_1) and (features_V_20_loc_channel_empty_n xor ap_const_logic_1) and (features_V_21_loc_channel_empty_n xor ap_const_logic_1) and (features_V_22_loc_channel_empty_n xor ap_const_logic_1) and (features_V_23_loc_channel_empty_n xor ap_const_logic_1) and (features_V_24_loc_channel_empty_n xor ap_const_logic_1) and (features_V_25_loc_channel_empty_n xor ap_const_logic_1) and (features_V_26_loc_channel_empty_n xor ap_const_logic_1) and (features_V_27_loc_channel_empty_n xor ap_const_logic_1) and (features_V_28_loc_channel_empty_n xor ap_const_logic_1) and (features_V_29_loc_channel_empty_n xor ap_const_logic_1) and (features_V_30_loc_channel_empty_n xor ap_const_logic_1) and (features_V_31_loc_channel_empty_n xor ap_const_logic_1) and (features_V_32_loc_channel_empty_n xor ap_const_logic_1) and (features_V_33_loc_channel_empty_n xor ap_const_logic_1) and (features_V_34_loc_channel_empty_n xor ap_const_logic_1) and (features_V_35_loc_channel_empty_n xor ap_const_logic_1) and (features_V_36_loc_channel_empty_n xor ap_const_logic_1) and (features_V_37_loc_channel_empty_n xor ap_const_logic_1) and (features_V_38_loc_channel_empty_n xor ap_const_logic_1) and (features_V_39_loc_channel_empty_n xor ap_const_logic_1) and (features_V_40_loc_channel_empty_n xor ap_const_logic_1) and (features_V_41_loc_channel_empty_n xor ap_const_logic_1) and (features_V_42_loc_channel_empty_n xor ap_const_logic_1) and (features_V_43_loc_channel_empty_n xor ap_const_logic_1) and (features_V_44_loc_channel_empty_n xor ap_const_logic_1) and (features_V_45_loc_channel_empty_n xor ap_const_logic_1) and (features_V_46_loc_channel_empty_n xor ap_const_logic_1) and (features_V_47_loc_channel_empty_n xor ap_const_logic_1) and (features_V_48_loc_channel_empty_n xor ap_const_logic_1) and (features_V_49_loc_channel_empty_n xor ap_const_logic_1) and (features_V_50_loc_channel_empty_n xor ap_const_logic_1) and (features_V_51_loc_channel_empty_n xor ap_const_logic_1) and (features_V_52_loc_channel_empty_n xor ap_const_logic_1) and (features_V_53_loc_channel_empty_n xor ap_const_logic_1) and (features_V_54_loc_channel_empty_n xor ap_const_logic_1) and (features_V_55_loc_channel_empty_n xor ap_const_logic_1) and (features_V_56_loc_channel_empty_n xor ap_const_logic_1) and (features_V_57_loc_channel_empty_n xor ap_const_logic_1) and (features_V_58_loc_channel_empty_n xor ap_const_logic_1) and (features_V_59_loc_channel_empty_n xor ap_const_logic_1) and (features_V_60_loc_channel_empty_n xor ap_const_logic_1) and (features_V_61_loc_channel_empty_n xor ap_const_logic_1) and (features_V_62_loc_channel_empty_n xor ap_const_logic_1) and (features_V_63_loc_channel_empty_n xor ap_const_logic_1) and (features_V_64_loc_channel_empty_n xor ap_const_logic_1) and (features_V_65_loc_channel_empty_n xor ap_const_logic_1) and (features_V_66_loc_channel_empty_n xor ap_const_logic_1) and (features_V_67_loc_channel_empty_n xor ap_const_logic_1) and (features_V_68_loc_channel_empty_n xor ap_const_logic_1) and (features_V_69_loc_channel_empty_n xor ap_const_logic_1) and (features_V_70_loc_channel_empty_n xor ap_const_logic_1) and (features_V_71_loc_channel_empty_n xor ap_const_logic_1) and (features_V_72_loc_channel_empty_n xor ap_const_logic_1) and (features_V_73_loc_channel_empty_n xor ap_const_logic_1) and (features_V_74_loc_channel_empty_n xor ap_const_logic_1) and (features_V_75_loc_channel_empty_n xor ap_const_logic_1) and (features_V_76_loc_channel_empty_n xor ap_const_logic_1) and (features_V_77_loc_channel_empty_n xor ap_const_logic_1) and (features_V_78_loc_channel_empty_n xor ap_const_logic_1) and (features_V_79_loc_channel_empty_n xor ap_const_logic_1) and (features_V_80_loc_channel_empty_n xor ap_const_logic_1) and (features_V_81_loc_channel_empty_n xor ap_const_logic_1) and (features_V_82_loc_channel_empty_n xor ap_const_logic_1) and (features_V_83_loc_channel_empty_n xor ap_const_logic_1) and (features_V_84_loc_channel_empty_n xor ap_const_logic_1) and (features_V_85_loc_channel_empty_n xor ap_const_logic_1) and (features_V_86_loc_channel_empty_n xor ap_const_logic_1) and (features_V_87_loc_channel_empty_n xor ap_const_logic_1) and (features_V_88_loc_channel_empty_n xor ap_const_logic_1) and (features_V_89_loc_channel_empty_n xor ap_const_logic_1) and (features_V_90_loc_channel_empty_n xor ap_const_logic_1) and (features_V_91_loc_channel_empty_n xor ap_const_logic_1) and (features_V_92_loc_channel_empty_n xor ap_const_logic_1) and (features_V_93_loc_channel_empty_n xor ap_const_logic_1) and (features_V_94_loc_channel_empty_n xor ap_const_logic_1) and (features_V_95_loc_channel_empty_n xor ap_const_logic_1) and (features_V_96_loc_channel_empty_n xor ap_const_logic_1) and (features_V_97_loc_channel_empty_n xor ap_const_logic_1) and (features_V_98_loc_channel_empty_n xor ap_const_logic_1) and (features_V_99_loc_channel_empty_n xor ap_const_logic_1) and (features_V_100_loc_channel_empty_n xor ap_const_logic_1) and (features_V_101_loc_channel_empty_n xor ap_const_logic_1) and (features_V_102_loc_channel_empty_n xor ap_const_logic_1) and (features_V_103_loc_channel_empty_n xor ap_const_logic_1) and (features_V_104_loc_channel_empty_n xor ap_const_logic_1) and (features_V_105_loc_channel_empty_n xor ap_const_logic_1) and (features_V_106_loc_channel_empty_n xor ap_const_logic_1) and (features_V_107_loc_channel_empty_n xor ap_const_logic_1) and (features_V_108_loc_channel_empty_n xor ap_const_logic_1) and (features_V_109_loc_channel_empty_n xor ap_const_logic_1) and (features_V_110_loc_channel_empty_n xor ap_const_logic_1) and (features_V_111_loc_channel_empty_n xor ap_const_logic_1) and (features_V_112_loc_channel_empty_n xor ap_const_logic_1) and (features_V_113_loc_channel_empty_n xor ap_const_logic_1) and (features_V_114_loc_channel_empty_n xor ap_const_logic_1) and (features_V_115_loc_channel_empty_n xor ap_const_logic_1) and (features_V_116_loc_channel_empty_n xor ap_const_logic_1) and (features_V_117_loc_channel_empty_n xor ap_const_logic_1) and (features_V_118_loc_channel_empty_n xor ap_const_logic_1) and (features_V_119_loc_channel_empty_n xor ap_const_logic_1) and (features_V_120_loc_channel_empty_n xor ap_const_logic_1) and (features_V_121_loc_channel_empty_n xor ap_const_logic_1) and (features_V_122_loc_channel_empty_n xor ap_const_logic_1) and (features_V_123_loc_channel_empty_n xor ap_const_logic_1) and (features_V_124_loc_channel_empty_n xor ap_const_logic_1) and (features_V_125_loc_channel_empty_n xor ap_const_logic_1) and (features_V_126_loc_channel_empty_n xor ap_const_logic_1) and (features_V_127_loc_channel_empty_n xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_idle and Block_logistic_regression_for_cond_i_exit_proc_U0_ap_idle);
+    ap_idle <= ((features_V_loc_channel_empty_n xor ap_const_logic_1) and (features_V_1_loc_channel_empty_n xor ap_const_logic_1) and (features_V_2_loc_channel_empty_n xor ap_const_logic_1) and (features_V_3_loc_channel_empty_n xor ap_const_logic_1) and (features_V_4_loc_channel_empty_n xor ap_const_logic_1) and (features_V_5_loc_channel_empty_n xor ap_const_logic_1) and (features_V_6_loc_channel_empty_n xor ap_const_logic_1) and (features_V_7_loc_channel_empty_n xor ap_const_logic_1) and (features_V_8_loc_channel_empty_n xor ap_const_logic_1) and (features_V_9_loc_channel_empty_n xor ap_const_logic_1) and (features_V_10_loc_channel_empty_n xor ap_const_logic_1) and (features_V_11_loc_channel_empty_n xor ap_const_logic_1) and (features_V_12_loc_channel_empty_n xor ap_const_logic_1) and (features_V_13_loc_channel_empty_n xor ap_const_logic_1) and (features_V_14_loc_channel_empty_n xor ap_const_logic_1) and (features_V_15_loc_channel_empty_n xor ap_const_logic_1) and (features_V_16_loc_channel_empty_n xor ap_const_logic_1) and (features_V_17_loc_channel_empty_n xor ap_const_logic_1) and (features_V_18_loc_channel_empty_n xor ap_const_logic_1) and (features_V_19_loc_channel_empty_n xor ap_const_logic_1) and (features_V_20_loc_channel_empty_n xor ap_const_logic_1) and (features_V_21_loc_channel_empty_n xor ap_const_logic_1) and (features_V_22_loc_channel_empty_n xor ap_const_logic_1) and (features_V_23_loc_channel_empty_n xor ap_const_logic_1) and (features_V_24_loc_channel_empty_n xor ap_const_logic_1) and (features_V_25_loc_channel_empty_n xor ap_const_logic_1) and (features_V_26_loc_channel_empty_n xor ap_const_logic_1) and (features_V_27_loc_channel_empty_n xor ap_const_logic_1) and (features_V_28_loc_channel_empty_n xor ap_const_logic_1) and (features_V_29_loc_channel_empty_n xor ap_const_logic_1) and (features_V_30_loc_channel_empty_n xor ap_const_logic_1) and (features_V_31_loc_channel_empty_n xor ap_const_logic_1) and Loop_read_input_features_proc2_U0_ap_idle and Block_logistic_regression_for_cond_i_exit_proc_U0_ap_idle);
     ap_ready <= ap_sync_ready;
 
     ap_rst_n_inv_assign_proc : process(ap_rst_n)
@@ -6004,36 +1684,8 @@ begin
 
     ap_sync_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready <= (ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready or Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);
     ap_sync_Loop_read_input_features_proc2_U0_ap_ready <= (ap_sync_reg_Loop_read_input_features_proc2_U0_ap_ready or Loop_read_input_features_proc2_U0_ap_ready);
-    ap_sync_channel_write_features_V_100_loc_channel <= ((features_V_100_loc_channel_full_n and ap_channel_done_features_V_100_loc_channel) or ap_sync_reg_channel_write_features_V_100_loc_channel);
-    ap_sync_channel_write_features_V_101_loc_channel <= ((features_V_101_loc_channel_full_n and ap_channel_done_features_V_101_loc_channel) or ap_sync_reg_channel_write_features_V_101_loc_channel);
-    ap_sync_channel_write_features_V_102_loc_channel <= ((features_V_102_loc_channel_full_n and ap_channel_done_features_V_102_loc_channel) or ap_sync_reg_channel_write_features_V_102_loc_channel);
-    ap_sync_channel_write_features_V_103_loc_channel <= ((features_V_103_loc_channel_full_n and ap_channel_done_features_V_103_loc_channel) or ap_sync_reg_channel_write_features_V_103_loc_channel);
-    ap_sync_channel_write_features_V_104_loc_channel <= ((features_V_104_loc_channel_full_n and ap_channel_done_features_V_104_loc_channel) or ap_sync_reg_channel_write_features_V_104_loc_channel);
-    ap_sync_channel_write_features_V_105_loc_channel <= ((features_V_105_loc_channel_full_n and ap_channel_done_features_V_105_loc_channel) or ap_sync_reg_channel_write_features_V_105_loc_channel);
-    ap_sync_channel_write_features_V_106_loc_channel <= ((features_V_106_loc_channel_full_n and ap_channel_done_features_V_106_loc_channel) or ap_sync_reg_channel_write_features_V_106_loc_channel);
-    ap_sync_channel_write_features_V_107_loc_channel <= ((features_V_107_loc_channel_full_n and ap_channel_done_features_V_107_loc_channel) or ap_sync_reg_channel_write_features_V_107_loc_channel);
-    ap_sync_channel_write_features_V_108_loc_channel <= ((features_V_108_loc_channel_full_n and ap_channel_done_features_V_108_loc_channel) or ap_sync_reg_channel_write_features_V_108_loc_channel);
-    ap_sync_channel_write_features_V_109_loc_channel <= ((features_V_109_loc_channel_full_n and ap_channel_done_features_V_109_loc_channel) or ap_sync_reg_channel_write_features_V_109_loc_channel);
     ap_sync_channel_write_features_V_10_loc_channel <= ((features_V_10_loc_channel_full_n and ap_channel_done_features_V_10_loc_channel) or ap_sync_reg_channel_write_features_V_10_loc_channel);
-    ap_sync_channel_write_features_V_110_loc_channel <= ((features_V_110_loc_channel_full_n and ap_channel_done_features_V_110_loc_channel) or ap_sync_reg_channel_write_features_V_110_loc_channel);
-    ap_sync_channel_write_features_V_111_loc_channel <= ((features_V_111_loc_channel_full_n and ap_channel_done_features_V_111_loc_channel) or ap_sync_reg_channel_write_features_V_111_loc_channel);
-    ap_sync_channel_write_features_V_112_loc_channel <= ((features_V_112_loc_channel_full_n and ap_channel_done_features_V_112_loc_channel) or ap_sync_reg_channel_write_features_V_112_loc_channel);
-    ap_sync_channel_write_features_V_113_loc_channel <= ((features_V_113_loc_channel_full_n and ap_channel_done_features_V_113_loc_channel) or ap_sync_reg_channel_write_features_V_113_loc_channel);
-    ap_sync_channel_write_features_V_114_loc_channel <= ((features_V_114_loc_channel_full_n and ap_channel_done_features_V_114_loc_channel) or ap_sync_reg_channel_write_features_V_114_loc_channel);
-    ap_sync_channel_write_features_V_115_loc_channel <= ((features_V_115_loc_channel_full_n and ap_channel_done_features_V_115_loc_channel) or ap_sync_reg_channel_write_features_V_115_loc_channel);
-    ap_sync_channel_write_features_V_116_loc_channel <= ((features_V_116_loc_channel_full_n and ap_channel_done_features_V_116_loc_channel) or ap_sync_reg_channel_write_features_V_116_loc_channel);
-    ap_sync_channel_write_features_V_117_loc_channel <= ((features_V_117_loc_channel_full_n and ap_channel_done_features_V_117_loc_channel) or ap_sync_reg_channel_write_features_V_117_loc_channel);
-    ap_sync_channel_write_features_V_118_loc_channel <= ((features_V_118_loc_channel_full_n and ap_channel_done_features_V_118_loc_channel) or ap_sync_reg_channel_write_features_V_118_loc_channel);
-    ap_sync_channel_write_features_V_119_loc_channel <= ((features_V_119_loc_channel_full_n and ap_channel_done_features_V_119_loc_channel) or ap_sync_reg_channel_write_features_V_119_loc_channel);
     ap_sync_channel_write_features_V_11_loc_channel <= ((features_V_11_loc_channel_full_n and ap_channel_done_features_V_11_loc_channel) or ap_sync_reg_channel_write_features_V_11_loc_channel);
-    ap_sync_channel_write_features_V_120_loc_channel <= ((features_V_120_loc_channel_full_n and ap_channel_done_features_V_120_loc_channel) or ap_sync_reg_channel_write_features_V_120_loc_channel);
-    ap_sync_channel_write_features_V_121_loc_channel <= ((features_V_121_loc_channel_full_n and ap_channel_done_features_V_121_loc_channel) or ap_sync_reg_channel_write_features_V_121_loc_channel);
-    ap_sync_channel_write_features_V_122_loc_channel <= ((features_V_122_loc_channel_full_n and ap_channel_done_features_V_122_loc_channel) or ap_sync_reg_channel_write_features_V_122_loc_channel);
-    ap_sync_channel_write_features_V_123_loc_channel <= ((features_V_123_loc_channel_full_n and ap_channel_done_features_V_123_loc_channel) or ap_sync_reg_channel_write_features_V_123_loc_channel);
-    ap_sync_channel_write_features_V_124_loc_channel <= ((features_V_124_loc_channel_full_n and ap_channel_done_features_V_124_loc_channel) or ap_sync_reg_channel_write_features_V_124_loc_channel);
-    ap_sync_channel_write_features_V_125_loc_channel <= ((features_V_125_loc_channel_full_n and ap_channel_done_features_V_125_loc_channel) or ap_sync_reg_channel_write_features_V_125_loc_channel);
-    ap_sync_channel_write_features_V_126_loc_channel <= ((features_V_126_loc_channel_full_n and ap_channel_done_features_V_126_loc_channel) or ap_sync_reg_channel_write_features_V_126_loc_channel);
-    ap_sync_channel_write_features_V_127_loc_channel <= ((features_V_127_loc_channel_full_n and ap_channel_done_features_V_127_loc_channel) or ap_sync_reg_channel_write_features_V_127_loc_channel);
     ap_sync_channel_write_features_V_12_loc_channel <= ((features_V_12_loc_channel_full_n and ap_channel_done_features_V_12_loc_channel) or ap_sync_reg_channel_write_features_V_12_loc_channel);
     ap_sync_channel_write_features_V_13_loc_channel <= ((features_V_13_loc_channel_full_n and ap_channel_done_features_V_13_loc_channel) or ap_sync_reg_channel_write_features_V_13_loc_channel);
     ap_sync_channel_write_features_V_14_loc_channel <= ((features_V_14_loc_channel_full_n and ap_channel_done_features_V_14_loc_channel) or ap_sync_reg_channel_write_features_V_14_loc_channel);
@@ -6056,80 +1708,12 @@ begin
     ap_sync_channel_write_features_V_2_loc_channel <= ((features_V_2_loc_channel_full_n and ap_channel_done_features_V_2_loc_channel) or ap_sync_reg_channel_write_features_V_2_loc_channel);
     ap_sync_channel_write_features_V_30_loc_channel <= ((features_V_30_loc_channel_full_n and ap_channel_done_features_V_30_loc_channel) or ap_sync_reg_channel_write_features_V_30_loc_channel);
     ap_sync_channel_write_features_V_31_loc_channel <= ((features_V_31_loc_channel_full_n and ap_channel_done_features_V_31_loc_channel) or ap_sync_reg_channel_write_features_V_31_loc_channel);
-    ap_sync_channel_write_features_V_32_loc_channel <= ((features_V_32_loc_channel_full_n and ap_channel_done_features_V_32_loc_channel) or ap_sync_reg_channel_write_features_V_32_loc_channel);
-    ap_sync_channel_write_features_V_33_loc_channel <= ((features_V_33_loc_channel_full_n and ap_channel_done_features_V_33_loc_channel) or ap_sync_reg_channel_write_features_V_33_loc_channel);
-    ap_sync_channel_write_features_V_34_loc_channel <= ((features_V_34_loc_channel_full_n and ap_channel_done_features_V_34_loc_channel) or ap_sync_reg_channel_write_features_V_34_loc_channel);
-    ap_sync_channel_write_features_V_35_loc_channel <= ((features_V_35_loc_channel_full_n and ap_channel_done_features_V_35_loc_channel) or ap_sync_reg_channel_write_features_V_35_loc_channel);
-    ap_sync_channel_write_features_V_36_loc_channel <= ((features_V_36_loc_channel_full_n and ap_channel_done_features_V_36_loc_channel) or ap_sync_reg_channel_write_features_V_36_loc_channel);
-    ap_sync_channel_write_features_V_37_loc_channel <= ((features_V_37_loc_channel_full_n and ap_channel_done_features_V_37_loc_channel) or ap_sync_reg_channel_write_features_V_37_loc_channel);
-    ap_sync_channel_write_features_V_38_loc_channel <= ((features_V_38_loc_channel_full_n and ap_channel_done_features_V_38_loc_channel) or ap_sync_reg_channel_write_features_V_38_loc_channel);
-    ap_sync_channel_write_features_V_39_loc_channel <= ((features_V_39_loc_channel_full_n and ap_channel_done_features_V_39_loc_channel) or ap_sync_reg_channel_write_features_V_39_loc_channel);
     ap_sync_channel_write_features_V_3_loc_channel <= ((features_V_3_loc_channel_full_n and ap_channel_done_features_V_3_loc_channel) or ap_sync_reg_channel_write_features_V_3_loc_channel);
-    ap_sync_channel_write_features_V_40_loc_channel <= ((features_V_40_loc_channel_full_n and ap_channel_done_features_V_40_loc_channel) or ap_sync_reg_channel_write_features_V_40_loc_channel);
-    ap_sync_channel_write_features_V_41_loc_channel <= ((features_V_41_loc_channel_full_n and ap_channel_done_features_V_41_loc_channel) or ap_sync_reg_channel_write_features_V_41_loc_channel);
-    ap_sync_channel_write_features_V_42_loc_channel <= ((features_V_42_loc_channel_full_n and ap_channel_done_features_V_42_loc_channel) or ap_sync_reg_channel_write_features_V_42_loc_channel);
-    ap_sync_channel_write_features_V_43_loc_channel <= ((features_V_43_loc_channel_full_n and ap_channel_done_features_V_43_loc_channel) or ap_sync_reg_channel_write_features_V_43_loc_channel);
-    ap_sync_channel_write_features_V_44_loc_channel <= ((features_V_44_loc_channel_full_n and ap_channel_done_features_V_44_loc_channel) or ap_sync_reg_channel_write_features_V_44_loc_channel);
-    ap_sync_channel_write_features_V_45_loc_channel <= ((features_V_45_loc_channel_full_n and ap_channel_done_features_V_45_loc_channel) or ap_sync_reg_channel_write_features_V_45_loc_channel);
-    ap_sync_channel_write_features_V_46_loc_channel <= ((features_V_46_loc_channel_full_n and ap_channel_done_features_V_46_loc_channel) or ap_sync_reg_channel_write_features_V_46_loc_channel);
-    ap_sync_channel_write_features_V_47_loc_channel <= ((features_V_47_loc_channel_full_n and ap_channel_done_features_V_47_loc_channel) or ap_sync_reg_channel_write_features_V_47_loc_channel);
-    ap_sync_channel_write_features_V_48_loc_channel <= ((features_V_48_loc_channel_full_n and ap_channel_done_features_V_48_loc_channel) or ap_sync_reg_channel_write_features_V_48_loc_channel);
-    ap_sync_channel_write_features_V_49_loc_channel <= ((features_V_49_loc_channel_full_n and ap_channel_done_features_V_49_loc_channel) or ap_sync_reg_channel_write_features_V_49_loc_channel);
     ap_sync_channel_write_features_V_4_loc_channel <= ((features_V_4_loc_channel_full_n and ap_channel_done_features_V_4_loc_channel) or ap_sync_reg_channel_write_features_V_4_loc_channel);
-    ap_sync_channel_write_features_V_50_loc_channel <= ((features_V_50_loc_channel_full_n and ap_channel_done_features_V_50_loc_channel) or ap_sync_reg_channel_write_features_V_50_loc_channel);
-    ap_sync_channel_write_features_V_51_loc_channel <= ((features_V_51_loc_channel_full_n and ap_channel_done_features_V_51_loc_channel) or ap_sync_reg_channel_write_features_V_51_loc_channel);
-    ap_sync_channel_write_features_V_52_loc_channel <= ((features_V_52_loc_channel_full_n and ap_channel_done_features_V_52_loc_channel) or ap_sync_reg_channel_write_features_V_52_loc_channel);
-    ap_sync_channel_write_features_V_53_loc_channel <= ((features_V_53_loc_channel_full_n and ap_channel_done_features_V_53_loc_channel) or ap_sync_reg_channel_write_features_V_53_loc_channel);
-    ap_sync_channel_write_features_V_54_loc_channel <= ((features_V_54_loc_channel_full_n and ap_channel_done_features_V_54_loc_channel) or ap_sync_reg_channel_write_features_V_54_loc_channel);
-    ap_sync_channel_write_features_V_55_loc_channel <= ((features_V_55_loc_channel_full_n and ap_channel_done_features_V_55_loc_channel) or ap_sync_reg_channel_write_features_V_55_loc_channel);
-    ap_sync_channel_write_features_V_56_loc_channel <= ((features_V_56_loc_channel_full_n and ap_channel_done_features_V_56_loc_channel) or ap_sync_reg_channel_write_features_V_56_loc_channel);
-    ap_sync_channel_write_features_V_57_loc_channel <= ((features_V_57_loc_channel_full_n and ap_channel_done_features_V_57_loc_channel) or ap_sync_reg_channel_write_features_V_57_loc_channel);
-    ap_sync_channel_write_features_V_58_loc_channel <= ((features_V_58_loc_channel_full_n and ap_channel_done_features_V_58_loc_channel) or ap_sync_reg_channel_write_features_V_58_loc_channel);
-    ap_sync_channel_write_features_V_59_loc_channel <= ((features_V_59_loc_channel_full_n and ap_channel_done_features_V_59_loc_channel) or ap_sync_reg_channel_write_features_V_59_loc_channel);
     ap_sync_channel_write_features_V_5_loc_channel <= ((features_V_5_loc_channel_full_n and ap_channel_done_features_V_5_loc_channel) or ap_sync_reg_channel_write_features_V_5_loc_channel);
-    ap_sync_channel_write_features_V_60_loc_channel <= ((features_V_60_loc_channel_full_n and ap_channel_done_features_V_60_loc_channel) or ap_sync_reg_channel_write_features_V_60_loc_channel);
-    ap_sync_channel_write_features_V_61_loc_channel <= ((features_V_61_loc_channel_full_n and ap_channel_done_features_V_61_loc_channel) or ap_sync_reg_channel_write_features_V_61_loc_channel);
-    ap_sync_channel_write_features_V_62_loc_channel <= ((features_V_62_loc_channel_full_n and ap_channel_done_features_V_62_loc_channel) or ap_sync_reg_channel_write_features_V_62_loc_channel);
-    ap_sync_channel_write_features_V_63_loc_channel <= ((features_V_63_loc_channel_full_n and ap_channel_done_features_V_63_loc_channel) or ap_sync_reg_channel_write_features_V_63_loc_channel);
-    ap_sync_channel_write_features_V_64_loc_channel <= ((features_V_64_loc_channel_full_n and ap_channel_done_features_V_64_loc_channel) or ap_sync_reg_channel_write_features_V_64_loc_channel);
-    ap_sync_channel_write_features_V_65_loc_channel <= ((features_V_65_loc_channel_full_n and ap_channel_done_features_V_65_loc_channel) or ap_sync_reg_channel_write_features_V_65_loc_channel);
-    ap_sync_channel_write_features_V_66_loc_channel <= ((features_V_66_loc_channel_full_n and ap_channel_done_features_V_66_loc_channel) or ap_sync_reg_channel_write_features_V_66_loc_channel);
-    ap_sync_channel_write_features_V_67_loc_channel <= ((features_V_67_loc_channel_full_n and ap_channel_done_features_V_67_loc_channel) or ap_sync_reg_channel_write_features_V_67_loc_channel);
-    ap_sync_channel_write_features_V_68_loc_channel <= ((features_V_68_loc_channel_full_n and ap_channel_done_features_V_68_loc_channel) or ap_sync_reg_channel_write_features_V_68_loc_channel);
-    ap_sync_channel_write_features_V_69_loc_channel <= ((features_V_69_loc_channel_full_n and ap_channel_done_features_V_69_loc_channel) or ap_sync_reg_channel_write_features_V_69_loc_channel);
     ap_sync_channel_write_features_V_6_loc_channel <= ((features_V_6_loc_channel_full_n and ap_channel_done_features_V_6_loc_channel) or ap_sync_reg_channel_write_features_V_6_loc_channel);
-    ap_sync_channel_write_features_V_70_loc_channel <= ((features_V_70_loc_channel_full_n and ap_channel_done_features_V_70_loc_channel) or ap_sync_reg_channel_write_features_V_70_loc_channel);
-    ap_sync_channel_write_features_V_71_loc_channel <= ((features_V_71_loc_channel_full_n and ap_channel_done_features_V_71_loc_channel) or ap_sync_reg_channel_write_features_V_71_loc_channel);
-    ap_sync_channel_write_features_V_72_loc_channel <= ((features_V_72_loc_channel_full_n and ap_channel_done_features_V_72_loc_channel) or ap_sync_reg_channel_write_features_V_72_loc_channel);
-    ap_sync_channel_write_features_V_73_loc_channel <= ((features_V_73_loc_channel_full_n and ap_channel_done_features_V_73_loc_channel) or ap_sync_reg_channel_write_features_V_73_loc_channel);
-    ap_sync_channel_write_features_V_74_loc_channel <= ((features_V_74_loc_channel_full_n and ap_channel_done_features_V_74_loc_channel) or ap_sync_reg_channel_write_features_V_74_loc_channel);
-    ap_sync_channel_write_features_V_75_loc_channel <= ((features_V_75_loc_channel_full_n and ap_channel_done_features_V_75_loc_channel) or ap_sync_reg_channel_write_features_V_75_loc_channel);
-    ap_sync_channel_write_features_V_76_loc_channel <= ((features_V_76_loc_channel_full_n and ap_channel_done_features_V_76_loc_channel) or ap_sync_reg_channel_write_features_V_76_loc_channel);
-    ap_sync_channel_write_features_V_77_loc_channel <= ((features_V_77_loc_channel_full_n and ap_channel_done_features_V_77_loc_channel) or ap_sync_reg_channel_write_features_V_77_loc_channel);
-    ap_sync_channel_write_features_V_78_loc_channel <= ((features_V_78_loc_channel_full_n and ap_channel_done_features_V_78_loc_channel) or ap_sync_reg_channel_write_features_V_78_loc_channel);
-    ap_sync_channel_write_features_V_79_loc_channel <= ((features_V_79_loc_channel_full_n and ap_channel_done_features_V_79_loc_channel) or ap_sync_reg_channel_write_features_V_79_loc_channel);
     ap_sync_channel_write_features_V_7_loc_channel <= ((features_V_7_loc_channel_full_n and ap_channel_done_features_V_7_loc_channel) or ap_sync_reg_channel_write_features_V_7_loc_channel);
-    ap_sync_channel_write_features_V_80_loc_channel <= ((features_V_80_loc_channel_full_n and ap_channel_done_features_V_80_loc_channel) or ap_sync_reg_channel_write_features_V_80_loc_channel);
-    ap_sync_channel_write_features_V_81_loc_channel <= ((features_V_81_loc_channel_full_n and ap_channel_done_features_V_81_loc_channel) or ap_sync_reg_channel_write_features_V_81_loc_channel);
-    ap_sync_channel_write_features_V_82_loc_channel <= ((features_V_82_loc_channel_full_n and ap_channel_done_features_V_82_loc_channel) or ap_sync_reg_channel_write_features_V_82_loc_channel);
-    ap_sync_channel_write_features_V_83_loc_channel <= ((features_V_83_loc_channel_full_n and ap_channel_done_features_V_83_loc_channel) or ap_sync_reg_channel_write_features_V_83_loc_channel);
-    ap_sync_channel_write_features_V_84_loc_channel <= ((features_V_84_loc_channel_full_n and ap_channel_done_features_V_84_loc_channel) or ap_sync_reg_channel_write_features_V_84_loc_channel);
-    ap_sync_channel_write_features_V_85_loc_channel <= ((features_V_85_loc_channel_full_n and ap_channel_done_features_V_85_loc_channel) or ap_sync_reg_channel_write_features_V_85_loc_channel);
-    ap_sync_channel_write_features_V_86_loc_channel <= ((features_V_86_loc_channel_full_n and ap_channel_done_features_V_86_loc_channel) or ap_sync_reg_channel_write_features_V_86_loc_channel);
-    ap_sync_channel_write_features_V_87_loc_channel <= ((features_V_87_loc_channel_full_n and ap_channel_done_features_V_87_loc_channel) or ap_sync_reg_channel_write_features_V_87_loc_channel);
-    ap_sync_channel_write_features_V_88_loc_channel <= ((features_V_88_loc_channel_full_n and ap_channel_done_features_V_88_loc_channel) or ap_sync_reg_channel_write_features_V_88_loc_channel);
-    ap_sync_channel_write_features_V_89_loc_channel <= ((features_V_89_loc_channel_full_n and ap_channel_done_features_V_89_loc_channel) or ap_sync_reg_channel_write_features_V_89_loc_channel);
     ap_sync_channel_write_features_V_8_loc_channel <= ((features_V_8_loc_channel_full_n and ap_channel_done_features_V_8_loc_channel) or ap_sync_reg_channel_write_features_V_8_loc_channel);
-    ap_sync_channel_write_features_V_90_loc_channel <= ((features_V_90_loc_channel_full_n and ap_channel_done_features_V_90_loc_channel) or ap_sync_reg_channel_write_features_V_90_loc_channel);
-    ap_sync_channel_write_features_V_91_loc_channel <= ((features_V_91_loc_channel_full_n and ap_channel_done_features_V_91_loc_channel) or ap_sync_reg_channel_write_features_V_91_loc_channel);
-    ap_sync_channel_write_features_V_92_loc_channel <= ((features_V_92_loc_channel_full_n and ap_channel_done_features_V_92_loc_channel) or ap_sync_reg_channel_write_features_V_92_loc_channel);
-    ap_sync_channel_write_features_V_93_loc_channel <= ((features_V_93_loc_channel_full_n and ap_channel_done_features_V_93_loc_channel) or ap_sync_reg_channel_write_features_V_93_loc_channel);
-    ap_sync_channel_write_features_V_94_loc_channel <= ((features_V_94_loc_channel_full_n and ap_channel_done_features_V_94_loc_channel) or ap_sync_reg_channel_write_features_V_94_loc_channel);
-    ap_sync_channel_write_features_V_95_loc_channel <= ((features_V_95_loc_channel_full_n and ap_channel_done_features_V_95_loc_channel) or ap_sync_reg_channel_write_features_V_95_loc_channel);
-    ap_sync_channel_write_features_V_96_loc_channel <= ((features_V_96_loc_channel_full_n and ap_channel_done_features_V_96_loc_channel) or ap_sync_reg_channel_write_features_V_96_loc_channel);
-    ap_sync_channel_write_features_V_97_loc_channel <= ((features_V_97_loc_channel_full_n and ap_channel_done_features_V_97_loc_channel) or ap_sync_reg_channel_write_features_V_97_loc_channel);
-    ap_sync_channel_write_features_V_98_loc_channel <= ((features_V_98_loc_channel_full_n and ap_channel_done_features_V_98_loc_channel) or ap_sync_reg_channel_write_features_V_98_loc_channel);
-    ap_sync_channel_write_features_V_99_loc_channel <= ((features_V_99_loc_channel_full_n and ap_channel_done_features_V_99_loc_channel) or ap_sync_reg_channel_write_features_V_99_loc_channel);
     ap_sync_channel_write_features_V_9_loc_channel <= ((features_V_9_loc_channel_full_n and ap_channel_done_features_V_9_loc_channel) or ap_sync_reg_channel_write_features_V_9_loc_channel);
     ap_sync_channel_write_features_V_loc_channel <= ((features_V_loc_channel_full_n and ap_channel_done_features_V_loc_channel) or ap_sync_reg_channel_write_features_V_loc_channel);
     ap_sync_ready <= (ap_sync_Loop_read_input_features_proc2_U0_ap_ready and ap_sync_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready);

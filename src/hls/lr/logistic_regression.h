@@ -7,12 +7,13 @@
 #include <ap_axi_sdata.h> // Required for ap_axis type
 #include <ap_fixed.h>
 
-#define N_FEATURES 128
+#define N_FEATURES 32
 #define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
 
 typedef ap_axis<32, 0, 0, 0> axis_pkt;
 typedef ap_fixed<16, 8> fixed_t; // 16-bit fixed-point type with 8 integer bits
 typedef ap_int<16> fixed_int16_t; // Use fixed-point integer type for weights to reduce DSP usage
+typedef ap_int<8> fixed_int8_t;   // 8-bit fixed-point integer type for inputs
 
 // Top-level function prototype
 // Top-level function prototype

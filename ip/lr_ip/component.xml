@@ -407,7 +407,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fbe9ab61</spirit:value>
+            <spirit:value>fffabf06</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -426,7 +426,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ef77b521</spirit:value>
+            <spirit:value>963f1510</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -445,7 +445,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7f179a45</spirit:value>
+            <spirit:value>b5e6731f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -464,7 +464,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fd5a4596</spirit:value>
+            <spirit:value>c8b0d448</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1032,7 +1032,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/logistic_regression_fifo_w16_d2_S.v</spirit:name>
+        <spirit:name>hdl/verilog/logistic_regression_fifo_w8_d2_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1103,7 +1103,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/logistic_regression_fifo_w16_d2_S.v</spirit:name>
+        <spirit:name>hdl/verilog/logistic_regression_fifo_w8_d2_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1198,7 +1198,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/logistic_regression_fifo_w16_d2_S.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/logistic_regression_fifo_w8_d2_S.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1224,7 +1224,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/logistic_regression.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_83b8ac2b</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_0d26be8c</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1250,7 +1250,7 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/logistic_regression_fifo_w16_d2_S.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/logistic_regression_fifo_w8_d2_S.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1352,7 +1352,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">302</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">92</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -1369,8 +1369,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Logistic_regression</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113799629</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-10-30T02:50:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2113819586</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-11-12T23:26:45Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -1379,9 +1379,9 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="89a9fa63"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4e8e484d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="dc6ecf29"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a8c59835"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="76153bfa"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a88d2e2d"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

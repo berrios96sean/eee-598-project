@@ -25,7 +25,7 @@ int main() {
         weights[i] = (std::rand() % 21) - 10; // Random between -10 and 10 (scaled to fixed-point)
     }
 
-    std::vector<std::vector<fixed_t>> test_inputs(5, std::vector<fixed_t>(N_FEATURES));
+    std::vector<std::vector<fixed_int8_t>> test_inputs(5, std::vector<fixed_int8_t>(N_FEATURES));
     for (auto &input : test_inputs) {
         input[0] = keep_in_range(((float)rand() / RAND_MAX) * 100.0f, 0.0f, 100.0f); // Age: Random between 0 and 100
         input[1] = keep_in_range(((float)rand() / RAND_MAX) * 60.0f, 0.0f, 60.0f); // Tenure: Random between 0 and 60
@@ -54,7 +54,7 @@ int main() {
         // Expected output calculation (CPU reference)
         fixed_t linear_sum = (fixed_t)weights[0]; // Bias term
         for (int i = 0; i < N_FEATURES; i++) {
-            linear_sum += (fixed_t)weights[i + 1] * test_inputs[test_idx][i];
+            linear_sum += (fixed_t)weights[i + 1] * (fixed_t)test_inputs[test_idx][i];
         }
 
         // Apply sigmoid approximation to get the probability
@@ -66,7 +66,8 @@ int main() {
         std::cout << "  Linear Sum: " << linear_sum << "\n Probability (before rounding): " << probability << std::endl;
         std::cout << "---------------------------------------------" << std::endl;
 
-        fixed_t expected_output = (probability >= fixed_t(0.5)) ? fixed_t(1.0) : fixed_t(0.0);
+        // Classification decision based on threshold of 0.5
+        fixed_int8_t expected_output = (probability >= fixed_t(0.5)) ? fixed_int8_t(1) : fixed_int8_t(0);
 
         // Call the logistic_regression function
         logistic_regression(in_stream, out_stream, weights);
@@ -79,14 +80,14 @@ int main() {
                 float f;
             } output_cast;
             output_cast.i = output_pkt.data;
-            fixed_t output = (fixed_t)output_cast.f;
+            fixed_int8_t output = (fixed_int8_t)std::round(output_cast.f); // Cast and round to fixed-point int8
 
             std::cout << "Test Case " << test_idx + 1 << ":" << std::endl;
-            std::cout << "  Logistic Regression Output: " << output << std::endl;
-            std::cout << "  Expected Output: " << expected_output << std::endl;
+            std::cout << "  Logistic Regression Output: " << (int)output << std::endl;
+            std::cout << "  Expected Output: " << (int)expected_output << std::endl;
 
             // Compare expected and actual output
-            if (std::abs(output.to_float() - expected_output.to_float()) < 1e-3) {
+            if (output == expected_output) {
                 pass_count++;
                 std::cout << "  Test Passed!" << std::endl;
             } else {

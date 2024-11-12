@@ -6,14 +6,14 @@
 
 `timescale 1 ns / 1 ps
 
-module logistic_regression_fifo_w16_d2_S_shiftReg (
+module logistic_regression_fifo_w8_d2_S_shiftReg (
     clk,
     data,
     ce,
     a,
     q);
 
-parameter DATA_WIDTH = 32'd16;
+parameter DATA_WIDTH = 32'd8;
 parameter ADDR_WIDTH = 32'd1;
 parameter DEPTH = 2'd2;
 
@@ -40,7 +40,7 @@ assign q = SRL_SIG[a];
 
 endmodule
 
-module logistic_regression_fifo_w16_d2_S (
+module logistic_regression_fifo_w8_d2_S (
     clk,
     reset,
     if_num_data_valid,
@@ -55,7 +55,7 @@ module logistic_regression_fifo_w16_d2_S (
     if_din);
 
 parameter MEM_STYLE   = "shiftreg";
-parameter DATA_WIDTH  = 32'd16;
+parameter DATA_WIDTH  = 32'd8;
 parameter ADDR_WIDTH  = 32'd1;
 parameter DEPTH       = 2'd2;
 
@@ -116,12 +116,12 @@ assign shiftReg_ce = (if_write & if_write_ce) & internal_full_n;
 assign if_num_data_valid = mOutPtr + 1'b1;
 assign if_fifo_cap = DEPTH;
 
-logistic_regression_fifo_w16_d2_S_shiftReg 
+logistic_regression_fifo_w8_d2_S_shiftReg 
 #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
     .DEPTH(DEPTH))
-U_logistic_regression_fifo_w16_d2_S_ram (
+U_logistic_regression_fifo_w8_d2_S_ram (
     .clk(clk),
     .data(shiftReg_data),
     .ce(shiftReg_ce),

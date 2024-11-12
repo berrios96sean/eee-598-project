@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="logistic_regression_logistic_regression,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.972000,HLS_SYN_LAT=302,HLS_SYN_TPT=172,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=18293,HLS_SYN_LUT=16528,HLS_VERSION=2022_1}" *)
+(* CORE_GENERATION_INFO="logistic_regression_logistic_regression,hls_ip_2022_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.972000,HLS_SYN_LAT=92,HLS_SYN_TPT=58,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=4897,HLS_SYN_LUT=5737,HLS_VERSION=2022_1}" *)
 
 module logistic_regression (
         in_stream_TDATA,
@@ -85,134 +85,38 @@ wire    Loop_read_input_features_proc2_U0_ap_continue;
 wire    Loop_read_input_features_proc2_U0_ap_idle;
 wire    Loop_read_input_features_proc2_U0_ap_ready;
 wire    Loop_read_input_features_proc2_U0_in_stream_TREADY;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_0;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_1;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_2;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_3;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_4;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_5;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_6;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_7;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_8;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_9;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_10;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_11;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_12;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_13;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_14;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_15;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_16;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_17;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_18;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_19;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_20;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_21;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_22;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_23;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_24;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_25;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_26;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_27;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_28;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_29;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_30;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_31;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_32;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_33;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_34;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_35;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_36;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_37;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_38;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_39;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_40;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_41;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_42;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_43;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_44;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_45;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_46;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_47;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_48;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_49;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_50;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_51;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_52;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_53;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_54;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_55;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_56;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_57;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_58;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_59;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_60;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_61;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_62;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_63;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_64;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_65;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_66;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_67;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_68;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_69;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_70;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_71;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_72;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_73;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_74;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_75;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_76;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_77;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_78;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_79;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_80;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_81;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_82;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_83;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_84;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_85;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_86;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_87;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_88;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_89;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_90;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_91;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_92;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_93;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_94;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_95;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_96;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_97;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_98;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_99;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_100;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_101;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_102;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_103;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_104;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_105;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_106;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_107;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_108;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_109;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_110;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_111;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_112;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_113;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_114;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_115;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_116;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_117;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_118;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_119;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_120;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_121;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_122;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_123;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_124;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_125;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_126;
-wire   [15:0] Loop_read_input_features_proc2_U0_ap_return_127;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_0;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_1;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_2;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_3;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_4;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_5;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_6;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_7;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_8;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_9;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_10;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_11;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_12;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_13;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_14;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_15;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_16;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_17;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_18;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_19;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_20;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_21;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_22;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_23;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_24;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_25;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_26;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_27;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_28;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_29;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_30;
+wire   [7:0] Loop_read_input_features_proc2_U0_ap_return_31;
 wire    ap_channel_done_features_V_loc_channel;
 wire    features_V_loc_channel_full_n;
 reg    ap_sync_reg_channel_write_features_V_loc_channel;
@@ -341,390 +245,6 @@ wire    ap_channel_done_features_V_31_loc_channel;
 wire    features_V_31_loc_channel_full_n;
 reg    ap_sync_reg_channel_write_features_V_31_loc_channel;
 wire    ap_sync_channel_write_features_V_31_loc_channel;
-wire    ap_channel_done_features_V_32_loc_channel;
-wire    features_V_32_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_32_loc_channel;
-wire    ap_sync_channel_write_features_V_32_loc_channel;
-wire    ap_channel_done_features_V_33_loc_channel;
-wire    features_V_33_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_33_loc_channel;
-wire    ap_sync_channel_write_features_V_33_loc_channel;
-wire    ap_channel_done_features_V_34_loc_channel;
-wire    features_V_34_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_34_loc_channel;
-wire    ap_sync_channel_write_features_V_34_loc_channel;
-wire    ap_channel_done_features_V_35_loc_channel;
-wire    features_V_35_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_35_loc_channel;
-wire    ap_sync_channel_write_features_V_35_loc_channel;
-wire    ap_channel_done_features_V_36_loc_channel;
-wire    features_V_36_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_36_loc_channel;
-wire    ap_sync_channel_write_features_V_36_loc_channel;
-wire    ap_channel_done_features_V_37_loc_channel;
-wire    features_V_37_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_37_loc_channel;
-wire    ap_sync_channel_write_features_V_37_loc_channel;
-wire    ap_channel_done_features_V_38_loc_channel;
-wire    features_V_38_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_38_loc_channel;
-wire    ap_sync_channel_write_features_V_38_loc_channel;
-wire    ap_channel_done_features_V_39_loc_channel;
-wire    features_V_39_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_39_loc_channel;
-wire    ap_sync_channel_write_features_V_39_loc_channel;
-wire    ap_channel_done_features_V_40_loc_channel;
-wire    features_V_40_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_40_loc_channel;
-wire    ap_sync_channel_write_features_V_40_loc_channel;
-wire    ap_channel_done_features_V_41_loc_channel;
-wire    features_V_41_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_41_loc_channel;
-wire    ap_sync_channel_write_features_V_41_loc_channel;
-wire    ap_channel_done_features_V_42_loc_channel;
-wire    features_V_42_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_42_loc_channel;
-wire    ap_sync_channel_write_features_V_42_loc_channel;
-wire    ap_channel_done_features_V_43_loc_channel;
-wire    features_V_43_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_43_loc_channel;
-wire    ap_sync_channel_write_features_V_43_loc_channel;
-wire    ap_channel_done_features_V_44_loc_channel;
-wire    features_V_44_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_44_loc_channel;
-wire    ap_sync_channel_write_features_V_44_loc_channel;
-wire    ap_channel_done_features_V_45_loc_channel;
-wire    features_V_45_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_45_loc_channel;
-wire    ap_sync_channel_write_features_V_45_loc_channel;
-wire    ap_channel_done_features_V_46_loc_channel;
-wire    features_V_46_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_46_loc_channel;
-wire    ap_sync_channel_write_features_V_46_loc_channel;
-wire    ap_channel_done_features_V_47_loc_channel;
-wire    features_V_47_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_47_loc_channel;
-wire    ap_sync_channel_write_features_V_47_loc_channel;
-wire    ap_channel_done_features_V_48_loc_channel;
-wire    features_V_48_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_48_loc_channel;
-wire    ap_sync_channel_write_features_V_48_loc_channel;
-wire    ap_channel_done_features_V_49_loc_channel;
-wire    features_V_49_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_49_loc_channel;
-wire    ap_sync_channel_write_features_V_49_loc_channel;
-wire    ap_channel_done_features_V_50_loc_channel;
-wire    features_V_50_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_50_loc_channel;
-wire    ap_sync_channel_write_features_V_50_loc_channel;
-wire    ap_channel_done_features_V_51_loc_channel;
-wire    features_V_51_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_51_loc_channel;
-wire    ap_sync_channel_write_features_V_51_loc_channel;
-wire    ap_channel_done_features_V_52_loc_channel;
-wire    features_V_52_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_52_loc_channel;
-wire    ap_sync_channel_write_features_V_52_loc_channel;
-wire    ap_channel_done_features_V_53_loc_channel;
-wire    features_V_53_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_53_loc_channel;
-wire    ap_sync_channel_write_features_V_53_loc_channel;
-wire    ap_channel_done_features_V_54_loc_channel;
-wire    features_V_54_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_54_loc_channel;
-wire    ap_sync_channel_write_features_V_54_loc_channel;
-wire    ap_channel_done_features_V_55_loc_channel;
-wire    features_V_55_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_55_loc_channel;
-wire    ap_sync_channel_write_features_V_55_loc_channel;
-wire    ap_channel_done_features_V_56_loc_channel;
-wire    features_V_56_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_56_loc_channel;
-wire    ap_sync_channel_write_features_V_56_loc_channel;
-wire    ap_channel_done_features_V_57_loc_channel;
-wire    features_V_57_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_57_loc_channel;
-wire    ap_sync_channel_write_features_V_57_loc_channel;
-wire    ap_channel_done_features_V_58_loc_channel;
-wire    features_V_58_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_58_loc_channel;
-wire    ap_sync_channel_write_features_V_58_loc_channel;
-wire    ap_channel_done_features_V_59_loc_channel;
-wire    features_V_59_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_59_loc_channel;
-wire    ap_sync_channel_write_features_V_59_loc_channel;
-wire    ap_channel_done_features_V_60_loc_channel;
-wire    features_V_60_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_60_loc_channel;
-wire    ap_sync_channel_write_features_V_60_loc_channel;
-wire    ap_channel_done_features_V_61_loc_channel;
-wire    features_V_61_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_61_loc_channel;
-wire    ap_sync_channel_write_features_V_61_loc_channel;
-wire    ap_channel_done_features_V_62_loc_channel;
-wire    features_V_62_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_62_loc_channel;
-wire    ap_sync_channel_write_features_V_62_loc_channel;
-wire    ap_channel_done_features_V_63_loc_channel;
-wire    features_V_63_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_63_loc_channel;
-wire    ap_sync_channel_write_features_V_63_loc_channel;
-wire    ap_channel_done_features_V_64_loc_channel;
-wire    features_V_64_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_64_loc_channel;
-wire    ap_sync_channel_write_features_V_64_loc_channel;
-wire    ap_channel_done_features_V_65_loc_channel;
-wire    features_V_65_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_65_loc_channel;
-wire    ap_sync_channel_write_features_V_65_loc_channel;
-wire    ap_channel_done_features_V_66_loc_channel;
-wire    features_V_66_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_66_loc_channel;
-wire    ap_sync_channel_write_features_V_66_loc_channel;
-wire    ap_channel_done_features_V_67_loc_channel;
-wire    features_V_67_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_67_loc_channel;
-wire    ap_sync_channel_write_features_V_67_loc_channel;
-wire    ap_channel_done_features_V_68_loc_channel;
-wire    features_V_68_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_68_loc_channel;
-wire    ap_sync_channel_write_features_V_68_loc_channel;
-wire    ap_channel_done_features_V_69_loc_channel;
-wire    features_V_69_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_69_loc_channel;
-wire    ap_sync_channel_write_features_V_69_loc_channel;
-wire    ap_channel_done_features_V_70_loc_channel;
-wire    features_V_70_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_70_loc_channel;
-wire    ap_sync_channel_write_features_V_70_loc_channel;
-wire    ap_channel_done_features_V_71_loc_channel;
-wire    features_V_71_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_71_loc_channel;
-wire    ap_sync_channel_write_features_V_71_loc_channel;
-wire    ap_channel_done_features_V_72_loc_channel;
-wire    features_V_72_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_72_loc_channel;
-wire    ap_sync_channel_write_features_V_72_loc_channel;
-wire    ap_channel_done_features_V_73_loc_channel;
-wire    features_V_73_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_73_loc_channel;
-wire    ap_sync_channel_write_features_V_73_loc_channel;
-wire    ap_channel_done_features_V_74_loc_channel;
-wire    features_V_74_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_74_loc_channel;
-wire    ap_sync_channel_write_features_V_74_loc_channel;
-wire    ap_channel_done_features_V_75_loc_channel;
-wire    features_V_75_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_75_loc_channel;
-wire    ap_sync_channel_write_features_V_75_loc_channel;
-wire    ap_channel_done_features_V_76_loc_channel;
-wire    features_V_76_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_76_loc_channel;
-wire    ap_sync_channel_write_features_V_76_loc_channel;
-wire    ap_channel_done_features_V_77_loc_channel;
-wire    features_V_77_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_77_loc_channel;
-wire    ap_sync_channel_write_features_V_77_loc_channel;
-wire    ap_channel_done_features_V_78_loc_channel;
-wire    features_V_78_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_78_loc_channel;
-wire    ap_sync_channel_write_features_V_78_loc_channel;
-wire    ap_channel_done_features_V_79_loc_channel;
-wire    features_V_79_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_79_loc_channel;
-wire    ap_sync_channel_write_features_V_79_loc_channel;
-wire    ap_channel_done_features_V_80_loc_channel;
-wire    features_V_80_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_80_loc_channel;
-wire    ap_sync_channel_write_features_V_80_loc_channel;
-wire    ap_channel_done_features_V_81_loc_channel;
-wire    features_V_81_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_81_loc_channel;
-wire    ap_sync_channel_write_features_V_81_loc_channel;
-wire    ap_channel_done_features_V_82_loc_channel;
-wire    features_V_82_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_82_loc_channel;
-wire    ap_sync_channel_write_features_V_82_loc_channel;
-wire    ap_channel_done_features_V_83_loc_channel;
-wire    features_V_83_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_83_loc_channel;
-wire    ap_sync_channel_write_features_V_83_loc_channel;
-wire    ap_channel_done_features_V_84_loc_channel;
-wire    features_V_84_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_84_loc_channel;
-wire    ap_sync_channel_write_features_V_84_loc_channel;
-wire    ap_channel_done_features_V_85_loc_channel;
-wire    features_V_85_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_85_loc_channel;
-wire    ap_sync_channel_write_features_V_85_loc_channel;
-wire    ap_channel_done_features_V_86_loc_channel;
-wire    features_V_86_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_86_loc_channel;
-wire    ap_sync_channel_write_features_V_86_loc_channel;
-wire    ap_channel_done_features_V_87_loc_channel;
-wire    features_V_87_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_87_loc_channel;
-wire    ap_sync_channel_write_features_V_87_loc_channel;
-wire    ap_channel_done_features_V_88_loc_channel;
-wire    features_V_88_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_88_loc_channel;
-wire    ap_sync_channel_write_features_V_88_loc_channel;
-wire    ap_channel_done_features_V_89_loc_channel;
-wire    features_V_89_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_89_loc_channel;
-wire    ap_sync_channel_write_features_V_89_loc_channel;
-wire    ap_channel_done_features_V_90_loc_channel;
-wire    features_V_90_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_90_loc_channel;
-wire    ap_sync_channel_write_features_V_90_loc_channel;
-wire    ap_channel_done_features_V_91_loc_channel;
-wire    features_V_91_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_91_loc_channel;
-wire    ap_sync_channel_write_features_V_91_loc_channel;
-wire    ap_channel_done_features_V_92_loc_channel;
-wire    features_V_92_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_92_loc_channel;
-wire    ap_sync_channel_write_features_V_92_loc_channel;
-wire    ap_channel_done_features_V_93_loc_channel;
-wire    features_V_93_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_93_loc_channel;
-wire    ap_sync_channel_write_features_V_93_loc_channel;
-wire    ap_channel_done_features_V_94_loc_channel;
-wire    features_V_94_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_94_loc_channel;
-wire    ap_sync_channel_write_features_V_94_loc_channel;
-wire    ap_channel_done_features_V_95_loc_channel;
-wire    features_V_95_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_95_loc_channel;
-wire    ap_sync_channel_write_features_V_95_loc_channel;
-wire    ap_channel_done_features_V_96_loc_channel;
-wire    features_V_96_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_96_loc_channel;
-wire    ap_sync_channel_write_features_V_96_loc_channel;
-wire    ap_channel_done_features_V_97_loc_channel;
-wire    features_V_97_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_97_loc_channel;
-wire    ap_sync_channel_write_features_V_97_loc_channel;
-wire    ap_channel_done_features_V_98_loc_channel;
-wire    features_V_98_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_98_loc_channel;
-wire    ap_sync_channel_write_features_V_98_loc_channel;
-wire    ap_channel_done_features_V_99_loc_channel;
-wire    features_V_99_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_99_loc_channel;
-wire    ap_sync_channel_write_features_V_99_loc_channel;
-wire    ap_channel_done_features_V_100_loc_channel;
-wire    features_V_100_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_100_loc_channel;
-wire    ap_sync_channel_write_features_V_100_loc_channel;
-wire    ap_channel_done_features_V_101_loc_channel;
-wire    features_V_101_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_101_loc_channel;
-wire    ap_sync_channel_write_features_V_101_loc_channel;
-wire    ap_channel_done_features_V_102_loc_channel;
-wire    features_V_102_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_102_loc_channel;
-wire    ap_sync_channel_write_features_V_102_loc_channel;
-wire    ap_channel_done_features_V_103_loc_channel;
-wire    features_V_103_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_103_loc_channel;
-wire    ap_sync_channel_write_features_V_103_loc_channel;
-wire    ap_channel_done_features_V_104_loc_channel;
-wire    features_V_104_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_104_loc_channel;
-wire    ap_sync_channel_write_features_V_104_loc_channel;
-wire    ap_channel_done_features_V_105_loc_channel;
-wire    features_V_105_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_105_loc_channel;
-wire    ap_sync_channel_write_features_V_105_loc_channel;
-wire    ap_channel_done_features_V_106_loc_channel;
-wire    features_V_106_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_106_loc_channel;
-wire    ap_sync_channel_write_features_V_106_loc_channel;
-wire    ap_channel_done_features_V_107_loc_channel;
-wire    features_V_107_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_107_loc_channel;
-wire    ap_sync_channel_write_features_V_107_loc_channel;
-wire    ap_channel_done_features_V_108_loc_channel;
-wire    features_V_108_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_108_loc_channel;
-wire    ap_sync_channel_write_features_V_108_loc_channel;
-wire    ap_channel_done_features_V_109_loc_channel;
-wire    features_V_109_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_109_loc_channel;
-wire    ap_sync_channel_write_features_V_109_loc_channel;
-wire    ap_channel_done_features_V_110_loc_channel;
-wire    features_V_110_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_110_loc_channel;
-wire    ap_sync_channel_write_features_V_110_loc_channel;
-wire    ap_channel_done_features_V_111_loc_channel;
-wire    features_V_111_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_111_loc_channel;
-wire    ap_sync_channel_write_features_V_111_loc_channel;
-wire    ap_channel_done_features_V_112_loc_channel;
-wire    features_V_112_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_112_loc_channel;
-wire    ap_sync_channel_write_features_V_112_loc_channel;
-wire    ap_channel_done_features_V_113_loc_channel;
-wire    features_V_113_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_113_loc_channel;
-wire    ap_sync_channel_write_features_V_113_loc_channel;
-wire    ap_channel_done_features_V_114_loc_channel;
-wire    features_V_114_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_114_loc_channel;
-wire    ap_sync_channel_write_features_V_114_loc_channel;
-wire    ap_channel_done_features_V_115_loc_channel;
-wire    features_V_115_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_115_loc_channel;
-wire    ap_sync_channel_write_features_V_115_loc_channel;
-wire    ap_channel_done_features_V_116_loc_channel;
-wire    features_V_116_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_116_loc_channel;
-wire    ap_sync_channel_write_features_V_116_loc_channel;
-wire    ap_channel_done_features_V_117_loc_channel;
-wire    features_V_117_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_117_loc_channel;
-wire    ap_sync_channel_write_features_V_117_loc_channel;
-wire    ap_channel_done_features_V_118_loc_channel;
-wire    features_V_118_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_118_loc_channel;
-wire    ap_sync_channel_write_features_V_118_loc_channel;
-wire    ap_channel_done_features_V_119_loc_channel;
-wire    features_V_119_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_119_loc_channel;
-wire    ap_sync_channel_write_features_V_119_loc_channel;
-wire    ap_channel_done_features_V_120_loc_channel;
-wire    features_V_120_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_120_loc_channel;
-wire    ap_sync_channel_write_features_V_120_loc_channel;
-wire    ap_channel_done_features_V_121_loc_channel;
-wire    features_V_121_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_121_loc_channel;
-wire    ap_sync_channel_write_features_V_121_loc_channel;
-wire    ap_channel_done_features_V_122_loc_channel;
-wire    features_V_122_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_122_loc_channel;
-wire    ap_sync_channel_write_features_V_122_loc_channel;
-wire    ap_channel_done_features_V_123_loc_channel;
-wire    features_V_123_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_123_loc_channel;
-wire    ap_sync_channel_write_features_V_123_loc_channel;
-wire    ap_channel_done_features_V_124_loc_channel;
-wire    features_V_124_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_124_loc_channel;
-wire    ap_sync_channel_write_features_V_124_loc_channel;
-wire    ap_channel_done_features_V_125_loc_channel;
-wire    features_V_125_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_125_loc_channel;
-wire    ap_sync_channel_write_features_V_125_loc_channel;
-wire    ap_channel_done_features_V_126_loc_channel;
-wire    features_V_126_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_126_loc_channel;
-wire    ap_sync_channel_write_features_V_126_loc_channel;
-wire    ap_channel_done_features_V_127_loc_channel;
-wire    features_V_127_loc_channel_full_n;
-reg    ap_sync_reg_channel_write_features_V_127_loc_channel;
-wire    ap_sync_channel_write_features_V_127_loc_channel;
 wire    Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start;
 wire    Block_logistic_regression_for_cond_i_exit_proc_U0_ap_done;
 wire    Block_logistic_regression_for_cond_i_exit_proc_U0_ap_continue;
@@ -743,515 +263,131 @@ wire    Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TVALID;
 wire   [3:0] Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TKEEP;
 wire   [3:0] Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TSTRB;
 wire   [0:0] Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TLAST;
-wire   [15:0] features_V_127_loc_channel_dout;
-wire   [1:0] features_V_127_loc_channel_num_data_valid;
-wire   [1:0] features_V_127_loc_channel_fifo_cap;
-wire    features_V_127_loc_channel_empty_n;
-wire   [15:0] features_V_126_loc_channel_dout;
-wire   [1:0] features_V_126_loc_channel_num_data_valid;
-wire   [1:0] features_V_126_loc_channel_fifo_cap;
-wire    features_V_126_loc_channel_empty_n;
-wire   [15:0] features_V_125_loc_channel_dout;
-wire   [1:0] features_V_125_loc_channel_num_data_valid;
-wire   [1:0] features_V_125_loc_channel_fifo_cap;
-wire    features_V_125_loc_channel_empty_n;
-wire   [15:0] features_V_124_loc_channel_dout;
-wire   [1:0] features_V_124_loc_channel_num_data_valid;
-wire   [1:0] features_V_124_loc_channel_fifo_cap;
-wire    features_V_124_loc_channel_empty_n;
-wire   [15:0] features_V_123_loc_channel_dout;
-wire   [1:0] features_V_123_loc_channel_num_data_valid;
-wire   [1:0] features_V_123_loc_channel_fifo_cap;
-wire    features_V_123_loc_channel_empty_n;
-wire   [15:0] features_V_122_loc_channel_dout;
-wire   [1:0] features_V_122_loc_channel_num_data_valid;
-wire   [1:0] features_V_122_loc_channel_fifo_cap;
-wire    features_V_122_loc_channel_empty_n;
-wire   [15:0] features_V_121_loc_channel_dout;
-wire   [1:0] features_V_121_loc_channel_num_data_valid;
-wire   [1:0] features_V_121_loc_channel_fifo_cap;
-wire    features_V_121_loc_channel_empty_n;
-wire   [15:0] features_V_120_loc_channel_dout;
-wire   [1:0] features_V_120_loc_channel_num_data_valid;
-wire   [1:0] features_V_120_loc_channel_fifo_cap;
-wire    features_V_120_loc_channel_empty_n;
-wire   [15:0] features_V_119_loc_channel_dout;
-wire   [1:0] features_V_119_loc_channel_num_data_valid;
-wire   [1:0] features_V_119_loc_channel_fifo_cap;
-wire    features_V_119_loc_channel_empty_n;
-wire   [15:0] features_V_118_loc_channel_dout;
-wire   [1:0] features_V_118_loc_channel_num_data_valid;
-wire   [1:0] features_V_118_loc_channel_fifo_cap;
-wire    features_V_118_loc_channel_empty_n;
-wire   [15:0] features_V_117_loc_channel_dout;
-wire   [1:0] features_V_117_loc_channel_num_data_valid;
-wire   [1:0] features_V_117_loc_channel_fifo_cap;
-wire    features_V_117_loc_channel_empty_n;
-wire   [15:0] features_V_116_loc_channel_dout;
-wire   [1:0] features_V_116_loc_channel_num_data_valid;
-wire   [1:0] features_V_116_loc_channel_fifo_cap;
-wire    features_V_116_loc_channel_empty_n;
-wire   [15:0] features_V_115_loc_channel_dout;
-wire   [1:0] features_V_115_loc_channel_num_data_valid;
-wire   [1:0] features_V_115_loc_channel_fifo_cap;
-wire    features_V_115_loc_channel_empty_n;
-wire   [15:0] features_V_114_loc_channel_dout;
-wire   [1:0] features_V_114_loc_channel_num_data_valid;
-wire   [1:0] features_V_114_loc_channel_fifo_cap;
-wire    features_V_114_loc_channel_empty_n;
-wire   [15:0] features_V_113_loc_channel_dout;
-wire   [1:0] features_V_113_loc_channel_num_data_valid;
-wire   [1:0] features_V_113_loc_channel_fifo_cap;
-wire    features_V_113_loc_channel_empty_n;
-wire   [15:0] features_V_112_loc_channel_dout;
-wire   [1:0] features_V_112_loc_channel_num_data_valid;
-wire   [1:0] features_V_112_loc_channel_fifo_cap;
-wire    features_V_112_loc_channel_empty_n;
-wire   [15:0] features_V_111_loc_channel_dout;
-wire   [1:0] features_V_111_loc_channel_num_data_valid;
-wire   [1:0] features_V_111_loc_channel_fifo_cap;
-wire    features_V_111_loc_channel_empty_n;
-wire   [15:0] features_V_110_loc_channel_dout;
-wire   [1:0] features_V_110_loc_channel_num_data_valid;
-wire   [1:0] features_V_110_loc_channel_fifo_cap;
-wire    features_V_110_loc_channel_empty_n;
-wire   [15:0] features_V_109_loc_channel_dout;
-wire   [1:0] features_V_109_loc_channel_num_data_valid;
-wire   [1:0] features_V_109_loc_channel_fifo_cap;
-wire    features_V_109_loc_channel_empty_n;
-wire   [15:0] features_V_108_loc_channel_dout;
-wire   [1:0] features_V_108_loc_channel_num_data_valid;
-wire   [1:0] features_V_108_loc_channel_fifo_cap;
-wire    features_V_108_loc_channel_empty_n;
-wire   [15:0] features_V_107_loc_channel_dout;
-wire   [1:0] features_V_107_loc_channel_num_data_valid;
-wire   [1:0] features_V_107_loc_channel_fifo_cap;
-wire    features_V_107_loc_channel_empty_n;
-wire   [15:0] features_V_106_loc_channel_dout;
-wire   [1:0] features_V_106_loc_channel_num_data_valid;
-wire   [1:0] features_V_106_loc_channel_fifo_cap;
-wire    features_V_106_loc_channel_empty_n;
-wire   [15:0] features_V_105_loc_channel_dout;
-wire   [1:0] features_V_105_loc_channel_num_data_valid;
-wire   [1:0] features_V_105_loc_channel_fifo_cap;
-wire    features_V_105_loc_channel_empty_n;
-wire   [15:0] features_V_104_loc_channel_dout;
-wire   [1:0] features_V_104_loc_channel_num_data_valid;
-wire   [1:0] features_V_104_loc_channel_fifo_cap;
-wire    features_V_104_loc_channel_empty_n;
-wire   [15:0] features_V_103_loc_channel_dout;
-wire   [1:0] features_V_103_loc_channel_num_data_valid;
-wire   [1:0] features_V_103_loc_channel_fifo_cap;
-wire    features_V_103_loc_channel_empty_n;
-wire   [15:0] features_V_102_loc_channel_dout;
-wire   [1:0] features_V_102_loc_channel_num_data_valid;
-wire   [1:0] features_V_102_loc_channel_fifo_cap;
-wire    features_V_102_loc_channel_empty_n;
-wire   [15:0] features_V_101_loc_channel_dout;
-wire   [1:0] features_V_101_loc_channel_num_data_valid;
-wire   [1:0] features_V_101_loc_channel_fifo_cap;
-wire    features_V_101_loc_channel_empty_n;
-wire   [15:0] features_V_100_loc_channel_dout;
-wire   [1:0] features_V_100_loc_channel_num_data_valid;
-wire   [1:0] features_V_100_loc_channel_fifo_cap;
-wire    features_V_100_loc_channel_empty_n;
-wire   [15:0] features_V_99_loc_channel_dout;
-wire   [1:0] features_V_99_loc_channel_num_data_valid;
-wire   [1:0] features_V_99_loc_channel_fifo_cap;
-wire    features_V_99_loc_channel_empty_n;
-wire   [15:0] features_V_98_loc_channel_dout;
-wire   [1:0] features_V_98_loc_channel_num_data_valid;
-wire   [1:0] features_V_98_loc_channel_fifo_cap;
-wire    features_V_98_loc_channel_empty_n;
-wire   [15:0] features_V_97_loc_channel_dout;
-wire   [1:0] features_V_97_loc_channel_num_data_valid;
-wire   [1:0] features_V_97_loc_channel_fifo_cap;
-wire    features_V_97_loc_channel_empty_n;
-wire   [15:0] features_V_96_loc_channel_dout;
-wire   [1:0] features_V_96_loc_channel_num_data_valid;
-wire   [1:0] features_V_96_loc_channel_fifo_cap;
-wire    features_V_96_loc_channel_empty_n;
-wire   [15:0] features_V_95_loc_channel_dout;
-wire   [1:0] features_V_95_loc_channel_num_data_valid;
-wire   [1:0] features_V_95_loc_channel_fifo_cap;
-wire    features_V_95_loc_channel_empty_n;
-wire   [15:0] features_V_94_loc_channel_dout;
-wire   [1:0] features_V_94_loc_channel_num_data_valid;
-wire   [1:0] features_V_94_loc_channel_fifo_cap;
-wire    features_V_94_loc_channel_empty_n;
-wire   [15:0] features_V_93_loc_channel_dout;
-wire   [1:0] features_V_93_loc_channel_num_data_valid;
-wire   [1:0] features_V_93_loc_channel_fifo_cap;
-wire    features_V_93_loc_channel_empty_n;
-wire   [15:0] features_V_92_loc_channel_dout;
-wire   [1:0] features_V_92_loc_channel_num_data_valid;
-wire   [1:0] features_V_92_loc_channel_fifo_cap;
-wire    features_V_92_loc_channel_empty_n;
-wire   [15:0] features_V_91_loc_channel_dout;
-wire   [1:0] features_V_91_loc_channel_num_data_valid;
-wire   [1:0] features_V_91_loc_channel_fifo_cap;
-wire    features_V_91_loc_channel_empty_n;
-wire   [15:0] features_V_90_loc_channel_dout;
-wire   [1:0] features_V_90_loc_channel_num_data_valid;
-wire   [1:0] features_V_90_loc_channel_fifo_cap;
-wire    features_V_90_loc_channel_empty_n;
-wire   [15:0] features_V_89_loc_channel_dout;
-wire   [1:0] features_V_89_loc_channel_num_data_valid;
-wire   [1:0] features_V_89_loc_channel_fifo_cap;
-wire    features_V_89_loc_channel_empty_n;
-wire   [15:0] features_V_88_loc_channel_dout;
-wire   [1:0] features_V_88_loc_channel_num_data_valid;
-wire   [1:0] features_V_88_loc_channel_fifo_cap;
-wire    features_V_88_loc_channel_empty_n;
-wire   [15:0] features_V_87_loc_channel_dout;
-wire   [1:0] features_V_87_loc_channel_num_data_valid;
-wire   [1:0] features_V_87_loc_channel_fifo_cap;
-wire    features_V_87_loc_channel_empty_n;
-wire   [15:0] features_V_86_loc_channel_dout;
-wire   [1:0] features_V_86_loc_channel_num_data_valid;
-wire   [1:0] features_V_86_loc_channel_fifo_cap;
-wire    features_V_86_loc_channel_empty_n;
-wire   [15:0] features_V_85_loc_channel_dout;
-wire   [1:0] features_V_85_loc_channel_num_data_valid;
-wire   [1:0] features_V_85_loc_channel_fifo_cap;
-wire    features_V_85_loc_channel_empty_n;
-wire   [15:0] features_V_84_loc_channel_dout;
-wire   [1:0] features_V_84_loc_channel_num_data_valid;
-wire   [1:0] features_V_84_loc_channel_fifo_cap;
-wire    features_V_84_loc_channel_empty_n;
-wire   [15:0] features_V_83_loc_channel_dout;
-wire   [1:0] features_V_83_loc_channel_num_data_valid;
-wire   [1:0] features_V_83_loc_channel_fifo_cap;
-wire    features_V_83_loc_channel_empty_n;
-wire   [15:0] features_V_82_loc_channel_dout;
-wire   [1:0] features_V_82_loc_channel_num_data_valid;
-wire   [1:0] features_V_82_loc_channel_fifo_cap;
-wire    features_V_82_loc_channel_empty_n;
-wire   [15:0] features_V_81_loc_channel_dout;
-wire   [1:0] features_V_81_loc_channel_num_data_valid;
-wire   [1:0] features_V_81_loc_channel_fifo_cap;
-wire    features_V_81_loc_channel_empty_n;
-wire   [15:0] features_V_80_loc_channel_dout;
-wire   [1:0] features_V_80_loc_channel_num_data_valid;
-wire   [1:0] features_V_80_loc_channel_fifo_cap;
-wire    features_V_80_loc_channel_empty_n;
-wire   [15:0] features_V_79_loc_channel_dout;
-wire   [1:0] features_V_79_loc_channel_num_data_valid;
-wire   [1:0] features_V_79_loc_channel_fifo_cap;
-wire    features_V_79_loc_channel_empty_n;
-wire   [15:0] features_V_78_loc_channel_dout;
-wire   [1:0] features_V_78_loc_channel_num_data_valid;
-wire   [1:0] features_V_78_loc_channel_fifo_cap;
-wire    features_V_78_loc_channel_empty_n;
-wire   [15:0] features_V_77_loc_channel_dout;
-wire   [1:0] features_V_77_loc_channel_num_data_valid;
-wire   [1:0] features_V_77_loc_channel_fifo_cap;
-wire    features_V_77_loc_channel_empty_n;
-wire   [15:0] features_V_76_loc_channel_dout;
-wire   [1:0] features_V_76_loc_channel_num_data_valid;
-wire   [1:0] features_V_76_loc_channel_fifo_cap;
-wire    features_V_76_loc_channel_empty_n;
-wire   [15:0] features_V_75_loc_channel_dout;
-wire   [1:0] features_V_75_loc_channel_num_data_valid;
-wire   [1:0] features_V_75_loc_channel_fifo_cap;
-wire    features_V_75_loc_channel_empty_n;
-wire   [15:0] features_V_74_loc_channel_dout;
-wire   [1:0] features_V_74_loc_channel_num_data_valid;
-wire   [1:0] features_V_74_loc_channel_fifo_cap;
-wire    features_V_74_loc_channel_empty_n;
-wire   [15:0] features_V_73_loc_channel_dout;
-wire   [1:0] features_V_73_loc_channel_num_data_valid;
-wire   [1:0] features_V_73_loc_channel_fifo_cap;
-wire    features_V_73_loc_channel_empty_n;
-wire   [15:0] features_V_72_loc_channel_dout;
-wire   [1:0] features_V_72_loc_channel_num_data_valid;
-wire   [1:0] features_V_72_loc_channel_fifo_cap;
-wire    features_V_72_loc_channel_empty_n;
-wire   [15:0] features_V_71_loc_channel_dout;
-wire   [1:0] features_V_71_loc_channel_num_data_valid;
-wire   [1:0] features_V_71_loc_channel_fifo_cap;
-wire    features_V_71_loc_channel_empty_n;
-wire   [15:0] features_V_70_loc_channel_dout;
-wire   [1:0] features_V_70_loc_channel_num_data_valid;
-wire   [1:0] features_V_70_loc_channel_fifo_cap;
-wire    features_V_70_loc_channel_empty_n;
-wire   [15:0] features_V_69_loc_channel_dout;
-wire   [1:0] features_V_69_loc_channel_num_data_valid;
-wire   [1:0] features_V_69_loc_channel_fifo_cap;
-wire    features_V_69_loc_channel_empty_n;
-wire   [15:0] features_V_68_loc_channel_dout;
-wire   [1:0] features_V_68_loc_channel_num_data_valid;
-wire   [1:0] features_V_68_loc_channel_fifo_cap;
-wire    features_V_68_loc_channel_empty_n;
-wire   [15:0] features_V_67_loc_channel_dout;
-wire   [1:0] features_V_67_loc_channel_num_data_valid;
-wire   [1:0] features_V_67_loc_channel_fifo_cap;
-wire    features_V_67_loc_channel_empty_n;
-wire   [15:0] features_V_66_loc_channel_dout;
-wire   [1:0] features_V_66_loc_channel_num_data_valid;
-wire   [1:0] features_V_66_loc_channel_fifo_cap;
-wire    features_V_66_loc_channel_empty_n;
-wire   [15:0] features_V_65_loc_channel_dout;
-wire   [1:0] features_V_65_loc_channel_num_data_valid;
-wire   [1:0] features_V_65_loc_channel_fifo_cap;
-wire    features_V_65_loc_channel_empty_n;
-wire   [15:0] features_V_64_loc_channel_dout;
-wire   [1:0] features_V_64_loc_channel_num_data_valid;
-wire   [1:0] features_V_64_loc_channel_fifo_cap;
-wire    features_V_64_loc_channel_empty_n;
-wire   [15:0] features_V_63_loc_channel_dout;
-wire   [1:0] features_V_63_loc_channel_num_data_valid;
-wire   [1:0] features_V_63_loc_channel_fifo_cap;
-wire    features_V_63_loc_channel_empty_n;
-wire   [15:0] features_V_62_loc_channel_dout;
-wire   [1:0] features_V_62_loc_channel_num_data_valid;
-wire   [1:0] features_V_62_loc_channel_fifo_cap;
-wire    features_V_62_loc_channel_empty_n;
-wire   [15:0] features_V_61_loc_channel_dout;
-wire   [1:0] features_V_61_loc_channel_num_data_valid;
-wire   [1:0] features_V_61_loc_channel_fifo_cap;
-wire    features_V_61_loc_channel_empty_n;
-wire   [15:0] features_V_60_loc_channel_dout;
-wire   [1:0] features_V_60_loc_channel_num_data_valid;
-wire   [1:0] features_V_60_loc_channel_fifo_cap;
-wire    features_V_60_loc_channel_empty_n;
-wire   [15:0] features_V_59_loc_channel_dout;
-wire   [1:0] features_V_59_loc_channel_num_data_valid;
-wire   [1:0] features_V_59_loc_channel_fifo_cap;
-wire    features_V_59_loc_channel_empty_n;
-wire   [15:0] features_V_58_loc_channel_dout;
-wire   [1:0] features_V_58_loc_channel_num_data_valid;
-wire   [1:0] features_V_58_loc_channel_fifo_cap;
-wire    features_V_58_loc_channel_empty_n;
-wire   [15:0] features_V_57_loc_channel_dout;
-wire   [1:0] features_V_57_loc_channel_num_data_valid;
-wire   [1:0] features_V_57_loc_channel_fifo_cap;
-wire    features_V_57_loc_channel_empty_n;
-wire   [15:0] features_V_56_loc_channel_dout;
-wire   [1:0] features_V_56_loc_channel_num_data_valid;
-wire   [1:0] features_V_56_loc_channel_fifo_cap;
-wire    features_V_56_loc_channel_empty_n;
-wire   [15:0] features_V_55_loc_channel_dout;
-wire   [1:0] features_V_55_loc_channel_num_data_valid;
-wire   [1:0] features_V_55_loc_channel_fifo_cap;
-wire    features_V_55_loc_channel_empty_n;
-wire   [15:0] features_V_54_loc_channel_dout;
-wire   [1:0] features_V_54_loc_channel_num_data_valid;
-wire   [1:0] features_V_54_loc_channel_fifo_cap;
-wire    features_V_54_loc_channel_empty_n;
-wire   [15:0] features_V_53_loc_channel_dout;
-wire   [1:0] features_V_53_loc_channel_num_data_valid;
-wire   [1:0] features_V_53_loc_channel_fifo_cap;
-wire    features_V_53_loc_channel_empty_n;
-wire   [15:0] features_V_52_loc_channel_dout;
-wire   [1:0] features_V_52_loc_channel_num_data_valid;
-wire   [1:0] features_V_52_loc_channel_fifo_cap;
-wire    features_V_52_loc_channel_empty_n;
-wire   [15:0] features_V_51_loc_channel_dout;
-wire   [1:0] features_V_51_loc_channel_num_data_valid;
-wire   [1:0] features_V_51_loc_channel_fifo_cap;
-wire    features_V_51_loc_channel_empty_n;
-wire   [15:0] features_V_50_loc_channel_dout;
-wire   [1:0] features_V_50_loc_channel_num_data_valid;
-wire   [1:0] features_V_50_loc_channel_fifo_cap;
-wire    features_V_50_loc_channel_empty_n;
-wire   [15:0] features_V_49_loc_channel_dout;
-wire   [1:0] features_V_49_loc_channel_num_data_valid;
-wire   [1:0] features_V_49_loc_channel_fifo_cap;
-wire    features_V_49_loc_channel_empty_n;
-wire   [15:0] features_V_48_loc_channel_dout;
-wire   [1:0] features_V_48_loc_channel_num_data_valid;
-wire   [1:0] features_V_48_loc_channel_fifo_cap;
-wire    features_V_48_loc_channel_empty_n;
-wire   [15:0] features_V_47_loc_channel_dout;
-wire   [1:0] features_V_47_loc_channel_num_data_valid;
-wire   [1:0] features_V_47_loc_channel_fifo_cap;
-wire    features_V_47_loc_channel_empty_n;
-wire   [15:0] features_V_46_loc_channel_dout;
-wire   [1:0] features_V_46_loc_channel_num_data_valid;
-wire   [1:0] features_V_46_loc_channel_fifo_cap;
-wire    features_V_46_loc_channel_empty_n;
-wire   [15:0] features_V_45_loc_channel_dout;
-wire   [1:0] features_V_45_loc_channel_num_data_valid;
-wire   [1:0] features_V_45_loc_channel_fifo_cap;
-wire    features_V_45_loc_channel_empty_n;
-wire   [15:0] features_V_44_loc_channel_dout;
-wire   [1:0] features_V_44_loc_channel_num_data_valid;
-wire   [1:0] features_V_44_loc_channel_fifo_cap;
-wire    features_V_44_loc_channel_empty_n;
-wire   [15:0] features_V_43_loc_channel_dout;
-wire   [1:0] features_V_43_loc_channel_num_data_valid;
-wire   [1:0] features_V_43_loc_channel_fifo_cap;
-wire    features_V_43_loc_channel_empty_n;
-wire   [15:0] features_V_42_loc_channel_dout;
-wire   [1:0] features_V_42_loc_channel_num_data_valid;
-wire   [1:0] features_V_42_loc_channel_fifo_cap;
-wire    features_V_42_loc_channel_empty_n;
-wire   [15:0] features_V_41_loc_channel_dout;
-wire   [1:0] features_V_41_loc_channel_num_data_valid;
-wire   [1:0] features_V_41_loc_channel_fifo_cap;
-wire    features_V_41_loc_channel_empty_n;
-wire   [15:0] features_V_40_loc_channel_dout;
-wire   [1:0] features_V_40_loc_channel_num_data_valid;
-wire   [1:0] features_V_40_loc_channel_fifo_cap;
-wire    features_V_40_loc_channel_empty_n;
-wire   [15:0] features_V_39_loc_channel_dout;
-wire   [1:0] features_V_39_loc_channel_num_data_valid;
-wire   [1:0] features_V_39_loc_channel_fifo_cap;
-wire    features_V_39_loc_channel_empty_n;
-wire   [15:0] features_V_38_loc_channel_dout;
-wire   [1:0] features_V_38_loc_channel_num_data_valid;
-wire   [1:0] features_V_38_loc_channel_fifo_cap;
-wire    features_V_38_loc_channel_empty_n;
-wire   [15:0] features_V_37_loc_channel_dout;
-wire   [1:0] features_V_37_loc_channel_num_data_valid;
-wire   [1:0] features_V_37_loc_channel_fifo_cap;
-wire    features_V_37_loc_channel_empty_n;
-wire   [15:0] features_V_36_loc_channel_dout;
-wire   [1:0] features_V_36_loc_channel_num_data_valid;
-wire   [1:0] features_V_36_loc_channel_fifo_cap;
-wire    features_V_36_loc_channel_empty_n;
-wire   [15:0] features_V_35_loc_channel_dout;
-wire   [1:0] features_V_35_loc_channel_num_data_valid;
-wire   [1:0] features_V_35_loc_channel_fifo_cap;
-wire    features_V_35_loc_channel_empty_n;
-wire   [15:0] features_V_34_loc_channel_dout;
-wire   [1:0] features_V_34_loc_channel_num_data_valid;
-wire   [1:0] features_V_34_loc_channel_fifo_cap;
-wire    features_V_34_loc_channel_empty_n;
-wire   [15:0] features_V_33_loc_channel_dout;
-wire   [1:0] features_V_33_loc_channel_num_data_valid;
-wire   [1:0] features_V_33_loc_channel_fifo_cap;
-wire    features_V_33_loc_channel_empty_n;
-wire   [15:0] features_V_32_loc_channel_dout;
-wire   [1:0] features_V_32_loc_channel_num_data_valid;
-wire   [1:0] features_V_32_loc_channel_fifo_cap;
-wire    features_V_32_loc_channel_empty_n;
-wire   [15:0] features_V_31_loc_channel_dout;
+wire   [7:0] features_V_31_loc_channel_dout;
 wire   [1:0] features_V_31_loc_channel_num_data_valid;
 wire   [1:0] features_V_31_loc_channel_fifo_cap;
 wire    features_V_31_loc_channel_empty_n;
-wire   [15:0] features_V_30_loc_channel_dout;
+wire   [7:0] features_V_30_loc_channel_dout;
 wire   [1:0] features_V_30_loc_channel_num_data_valid;
 wire   [1:0] features_V_30_loc_channel_fifo_cap;
 wire    features_V_30_loc_channel_empty_n;
-wire   [15:0] features_V_29_loc_channel_dout;
+wire   [7:0] features_V_29_loc_channel_dout;
 wire   [1:0] features_V_29_loc_channel_num_data_valid;
 wire   [1:0] features_V_29_loc_channel_fifo_cap;
 wire    features_V_29_loc_channel_empty_n;
-wire   [15:0] features_V_28_loc_channel_dout;
+wire   [7:0] features_V_28_loc_channel_dout;
 wire   [1:0] features_V_28_loc_channel_num_data_valid;
 wire   [1:0] features_V_28_loc_channel_fifo_cap;
 wire    features_V_28_loc_channel_empty_n;
-wire   [15:0] features_V_27_loc_channel_dout;
+wire   [7:0] features_V_27_loc_channel_dout;
 wire   [1:0] features_V_27_loc_channel_num_data_valid;
 wire   [1:0] features_V_27_loc_channel_fifo_cap;
 wire    features_V_27_loc_channel_empty_n;
-wire   [15:0] features_V_26_loc_channel_dout;
+wire   [7:0] features_V_26_loc_channel_dout;
 wire   [1:0] features_V_26_loc_channel_num_data_valid;
 wire   [1:0] features_V_26_loc_channel_fifo_cap;
 wire    features_V_26_loc_channel_empty_n;
-wire   [15:0] features_V_25_loc_channel_dout;
+wire   [7:0] features_V_25_loc_channel_dout;
 wire   [1:0] features_V_25_loc_channel_num_data_valid;
 wire   [1:0] features_V_25_loc_channel_fifo_cap;
 wire    features_V_25_loc_channel_empty_n;
-wire   [15:0] features_V_24_loc_channel_dout;
+wire   [7:0] features_V_24_loc_channel_dout;
 wire   [1:0] features_V_24_loc_channel_num_data_valid;
 wire   [1:0] features_V_24_loc_channel_fifo_cap;
 wire    features_V_24_loc_channel_empty_n;
-wire   [15:0] features_V_23_loc_channel_dout;
+wire   [7:0] features_V_23_loc_channel_dout;
 wire   [1:0] features_V_23_loc_channel_num_data_valid;
 wire   [1:0] features_V_23_loc_channel_fifo_cap;
 wire    features_V_23_loc_channel_empty_n;
-wire   [15:0] features_V_22_loc_channel_dout;
+wire   [7:0] features_V_22_loc_channel_dout;
 wire   [1:0] features_V_22_loc_channel_num_data_valid;
 wire   [1:0] features_V_22_loc_channel_fifo_cap;
 wire    features_V_22_loc_channel_empty_n;
-wire   [15:0] features_V_21_loc_channel_dout;
+wire   [7:0] features_V_21_loc_channel_dout;
 wire   [1:0] features_V_21_loc_channel_num_data_valid;
 wire   [1:0] features_V_21_loc_channel_fifo_cap;
 wire    features_V_21_loc_channel_empty_n;
-wire   [15:0] features_V_20_loc_channel_dout;
+wire   [7:0] features_V_20_loc_channel_dout;
 wire   [1:0] features_V_20_loc_channel_num_data_valid;
 wire   [1:0] features_V_20_loc_channel_fifo_cap;
 wire    features_V_20_loc_channel_empty_n;
-wire   [15:0] features_V_19_loc_channel_dout;
+wire   [7:0] features_V_19_loc_channel_dout;
 wire   [1:0] features_V_19_loc_channel_num_data_valid;
 wire   [1:0] features_V_19_loc_channel_fifo_cap;
 wire    features_V_19_loc_channel_empty_n;
-wire   [15:0] features_V_18_loc_channel_dout;
+wire   [7:0] features_V_18_loc_channel_dout;
 wire   [1:0] features_V_18_loc_channel_num_data_valid;
 wire   [1:0] features_V_18_loc_channel_fifo_cap;
 wire    features_V_18_loc_channel_empty_n;
-wire   [15:0] features_V_17_loc_channel_dout;
+wire   [7:0] features_V_17_loc_channel_dout;
 wire   [1:0] features_V_17_loc_channel_num_data_valid;
 wire   [1:0] features_V_17_loc_channel_fifo_cap;
 wire    features_V_17_loc_channel_empty_n;
-wire   [15:0] features_V_16_loc_channel_dout;
+wire   [7:0] features_V_16_loc_channel_dout;
 wire   [1:0] features_V_16_loc_channel_num_data_valid;
 wire   [1:0] features_V_16_loc_channel_fifo_cap;
 wire    features_V_16_loc_channel_empty_n;
-wire   [15:0] features_V_15_loc_channel_dout;
+wire   [7:0] features_V_15_loc_channel_dout;
 wire   [1:0] features_V_15_loc_channel_num_data_valid;
 wire   [1:0] features_V_15_loc_channel_fifo_cap;
 wire    features_V_15_loc_channel_empty_n;
-wire   [15:0] features_V_14_loc_channel_dout;
+wire   [7:0] features_V_14_loc_channel_dout;
 wire   [1:0] features_V_14_loc_channel_num_data_valid;
 wire   [1:0] features_V_14_loc_channel_fifo_cap;
 wire    features_V_14_loc_channel_empty_n;
-wire   [15:0] features_V_13_loc_channel_dout;
+wire   [7:0] features_V_13_loc_channel_dout;
 wire   [1:0] features_V_13_loc_channel_num_data_valid;
 wire   [1:0] features_V_13_loc_channel_fifo_cap;
 wire    features_V_13_loc_channel_empty_n;
-wire   [15:0] features_V_12_loc_channel_dout;
+wire   [7:0] features_V_12_loc_channel_dout;
 wire   [1:0] features_V_12_loc_channel_num_data_valid;
 wire   [1:0] features_V_12_loc_channel_fifo_cap;
 wire    features_V_12_loc_channel_empty_n;
-wire   [15:0] features_V_11_loc_channel_dout;
+wire   [7:0] features_V_11_loc_channel_dout;
 wire   [1:0] features_V_11_loc_channel_num_data_valid;
 wire   [1:0] features_V_11_loc_channel_fifo_cap;
 wire    features_V_11_loc_channel_empty_n;
-wire   [15:0] features_V_10_loc_channel_dout;
+wire   [7:0] features_V_10_loc_channel_dout;
 wire   [1:0] features_V_10_loc_channel_num_data_valid;
 wire   [1:0] features_V_10_loc_channel_fifo_cap;
 wire    features_V_10_loc_channel_empty_n;
-wire   [15:0] features_V_9_loc_channel_dout;
+wire   [7:0] features_V_9_loc_channel_dout;
 wire   [1:0] features_V_9_loc_channel_num_data_valid;
 wire   [1:0] features_V_9_loc_channel_fifo_cap;
 wire    features_V_9_loc_channel_empty_n;
-wire   [15:0] features_V_8_loc_channel_dout;
+wire   [7:0] features_V_8_loc_channel_dout;
 wire   [1:0] features_V_8_loc_channel_num_data_valid;
 wire   [1:0] features_V_8_loc_channel_fifo_cap;
 wire    features_V_8_loc_channel_empty_n;
-wire   [15:0] features_V_7_loc_channel_dout;
+wire   [7:0] features_V_7_loc_channel_dout;
 wire   [1:0] features_V_7_loc_channel_num_data_valid;
 wire   [1:0] features_V_7_loc_channel_fifo_cap;
 wire    features_V_7_loc_channel_empty_n;
-wire   [15:0] features_V_6_loc_channel_dout;
+wire   [7:0] features_V_6_loc_channel_dout;
 wire   [1:0] features_V_6_loc_channel_num_data_valid;
 wire   [1:0] features_V_6_loc_channel_fifo_cap;
 wire    features_V_6_loc_channel_empty_n;
-wire   [15:0] features_V_5_loc_channel_dout;
+wire   [7:0] features_V_5_loc_channel_dout;
 wire   [1:0] features_V_5_loc_channel_num_data_valid;
 wire   [1:0] features_V_5_loc_channel_fifo_cap;
 wire    features_V_5_loc_channel_empty_n;
-wire   [15:0] features_V_4_loc_channel_dout;
+wire   [7:0] features_V_4_loc_channel_dout;
 wire   [1:0] features_V_4_loc_channel_num_data_valid;
 wire   [1:0] features_V_4_loc_channel_fifo_cap;
 wire    features_V_4_loc_channel_empty_n;
-wire   [15:0] features_V_3_loc_channel_dout;
+wire   [7:0] features_V_3_loc_channel_dout;
 wire   [1:0] features_V_3_loc_channel_num_data_valid;
 wire   [1:0] features_V_3_loc_channel_fifo_cap;
 wire    features_V_3_loc_channel_empty_n;
-wire   [15:0] features_V_2_loc_channel_dout;
+wire   [7:0] features_V_2_loc_channel_dout;
 wire   [1:0] features_V_2_loc_channel_num_data_valid;
 wire   [1:0] features_V_2_loc_channel_fifo_cap;
 wire    features_V_2_loc_channel_empty_n;
-wire   [15:0] features_V_1_loc_channel_dout;
+wire   [7:0] features_V_1_loc_channel_dout;
 wire   [1:0] features_V_1_loc_channel_num_data_valid;
 wire   [1:0] features_V_1_loc_channel_fifo_cap;
 wire    features_V_1_loc_channel_empty_n;
-wire   [15:0] features_V_loc_channel_dout;
+wire   [7:0] features_V_loc_channel_dout;
 wire   [1:0] features_V_loc_channel_num_data_valid;
 wire   [1:0] features_V_loc_channel_fifo_cap;
 wire    features_V_loc_channel_empty_n;
@@ -1296,102 +432,6 @@ initial begin
 #0 ap_sync_reg_channel_write_features_V_29_loc_channel = 1'b0;
 #0 ap_sync_reg_channel_write_features_V_30_loc_channel = 1'b0;
 #0 ap_sync_reg_channel_write_features_V_31_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_32_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_33_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_34_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_35_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_36_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_37_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_38_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_39_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_40_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_41_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_42_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_43_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_44_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_45_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_46_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_47_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_48_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_49_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_50_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_51_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_52_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_53_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_54_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_55_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_56_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_57_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_58_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_59_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_60_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_61_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_62_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_63_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_64_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_65_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_66_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_67_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_68_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_69_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_70_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_71_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_72_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_73_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_74_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_75_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_76_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_77_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_78_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_79_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_80_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_81_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_82_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_83_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_84_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_85_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_86_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_87_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_88_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_89_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_90_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_91_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_92_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_93_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_94_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_95_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_96_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_97_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_98_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_99_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_100_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_101_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_102_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_103_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_104_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_105_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_106_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_107_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_108_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_109_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_110_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_111_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_112_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_113_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_114_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_115_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_116_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_117_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_118_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_119_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_120_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_121_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_122_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_123_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_124_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_125_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_126_loc_channel = 1'b0;
-#0 ap_sync_reg_channel_write_features_V_127_loc_channel = 1'b0;
 #0 ap_sync_reg_Loop_read_input_features_proc2_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready = 1'b0;
 end
@@ -1441,103 +481,7 @@ logistic_regression_Loop_read_input_features_proc2 Loop_read_input_features_proc
     .ap_return_28(Loop_read_input_features_proc2_U0_ap_return_28),
     .ap_return_29(Loop_read_input_features_proc2_U0_ap_return_29),
     .ap_return_30(Loop_read_input_features_proc2_U0_ap_return_30),
-    .ap_return_31(Loop_read_input_features_proc2_U0_ap_return_31),
-    .ap_return_32(Loop_read_input_features_proc2_U0_ap_return_32),
-    .ap_return_33(Loop_read_input_features_proc2_U0_ap_return_33),
-    .ap_return_34(Loop_read_input_features_proc2_U0_ap_return_34),
-    .ap_return_35(Loop_read_input_features_proc2_U0_ap_return_35),
-    .ap_return_36(Loop_read_input_features_proc2_U0_ap_return_36),
-    .ap_return_37(Loop_read_input_features_proc2_U0_ap_return_37),
-    .ap_return_38(Loop_read_input_features_proc2_U0_ap_return_38),
-    .ap_return_39(Loop_read_input_features_proc2_U0_ap_return_39),
-    .ap_return_40(Loop_read_input_features_proc2_U0_ap_return_40),
-    .ap_return_41(Loop_read_input_features_proc2_U0_ap_return_41),
-    .ap_return_42(Loop_read_input_features_proc2_U0_ap_return_42),
-    .ap_return_43(Loop_read_input_features_proc2_U0_ap_return_43),
-    .ap_return_44(Loop_read_input_features_proc2_U0_ap_return_44),
-    .ap_return_45(Loop_read_input_features_proc2_U0_ap_return_45),
-    .ap_return_46(Loop_read_input_features_proc2_U0_ap_return_46),
-    .ap_return_47(Loop_read_input_features_proc2_U0_ap_return_47),
-    .ap_return_48(Loop_read_input_features_proc2_U0_ap_return_48),
-    .ap_return_49(Loop_read_input_features_proc2_U0_ap_return_49),
-    .ap_return_50(Loop_read_input_features_proc2_U0_ap_return_50),
-    .ap_return_51(Loop_read_input_features_proc2_U0_ap_return_51),
-    .ap_return_52(Loop_read_input_features_proc2_U0_ap_return_52),
-    .ap_return_53(Loop_read_input_features_proc2_U0_ap_return_53),
-    .ap_return_54(Loop_read_input_features_proc2_U0_ap_return_54),
-    .ap_return_55(Loop_read_input_features_proc2_U0_ap_return_55),
-    .ap_return_56(Loop_read_input_features_proc2_U0_ap_return_56),
-    .ap_return_57(Loop_read_input_features_proc2_U0_ap_return_57),
-    .ap_return_58(Loop_read_input_features_proc2_U0_ap_return_58),
-    .ap_return_59(Loop_read_input_features_proc2_U0_ap_return_59),
-    .ap_return_60(Loop_read_input_features_proc2_U0_ap_return_60),
-    .ap_return_61(Loop_read_input_features_proc2_U0_ap_return_61),
-    .ap_return_62(Loop_read_input_features_proc2_U0_ap_return_62),
-    .ap_return_63(Loop_read_input_features_proc2_U0_ap_return_63),
-    .ap_return_64(Loop_read_input_features_proc2_U0_ap_return_64),
-    .ap_return_65(Loop_read_input_features_proc2_U0_ap_return_65),
-    .ap_return_66(Loop_read_input_features_proc2_U0_ap_return_66),
-    .ap_return_67(Loop_read_input_features_proc2_U0_ap_return_67),
-    .ap_return_68(Loop_read_input_features_proc2_U0_ap_return_68),
-    .ap_return_69(Loop_read_input_features_proc2_U0_ap_return_69),
-    .ap_return_70(Loop_read_input_features_proc2_U0_ap_return_70),
-    .ap_return_71(Loop_read_input_features_proc2_U0_ap_return_71),
-    .ap_return_72(Loop_read_input_features_proc2_U0_ap_return_72),
-    .ap_return_73(Loop_read_input_features_proc2_U0_ap_return_73),
-    .ap_return_74(Loop_read_input_features_proc2_U0_ap_return_74),
-    .ap_return_75(Loop_read_input_features_proc2_U0_ap_return_75),
-    .ap_return_76(Loop_read_input_features_proc2_U0_ap_return_76),
-    .ap_return_77(Loop_read_input_features_proc2_U0_ap_return_77),
-    .ap_return_78(Loop_read_input_features_proc2_U0_ap_return_78),
-    .ap_return_79(Loop_read_input_features_proc2_U0_ap_return_79),
-    .ap_return_80(Loop_read_input_features_proc2_U0_ap_return_80),
-    .ap_return_81(Loop_read_input_features_proc2_U0_ap_return_81),
-    .ap_return_82(Loop_read_input_features_proc2_U0_ap_return_82),
-    .ap_return_83(Loop_read_input_features_proc2_U0_ap_return_83),
-    .ap_return_84(Loop_read_input_features_proc2_U0_ap_return_84),
-    .ap_return_85(Loop_read_input_features_proc2_U0_ap_return_85),
-    .ap_return_86(Loop_read_input_features_proc2_U0_ap_return_86),
-    .ap_return_87(Loop_read_input_features_proc2_U0_ap_return_87),
-    .ap_return_88(Loop_read_input_features_proc2_U0_ap_return_88),
-    .ap_return_89(Loop_read_input_features_proc2_U0_ap_return_89),
-    .ap_return_90(Loop_read_input_features_proc2_U0_ap_return_90),
-    .ap_return_91(Loop_read_input_features_proc2_U0_ap_return_91),
-    .ap_return_92(Loop_read_input_features_proc2_U0_ap_return_92),
-    .ap_return_93(Loop_read_input_features_proc2_U0_ap_return_93),
-    .ap_return_94(Loop_read_input_features_proc2_U0_ap_return_94),
-    .ap_return_95(Loop_read_input_features_proc2_U0_ap_return_95),
-    .ap_return_96(Loop_read_input_features_proc2_U0_ap_return_96),
-    .ap_return_97(Loop_read_input_features_proc2_U0_ap_return_97),
-    .ap_return_98(Loop_read_input_features_proc2_U0_ap_return_98),
-    .ap_return_99(Loop_read_input_features_proc2_U0_ap_return_99),
-    .ap_return_100(Loop_read_input_features_proc2_U0_ap_return_100),
-    .ap_return_101(Loop_read_input_features_proc2_U0_ap_return_101),
-    .ap_return_102(Loop_read_input_features_proc2_U0_ap_return_102),
-    .ap_return_103(Loop_read_input_features_proc2_U0_ap_return_103),
-    .ap_return_104(Loop_read_input_features_proc2_U0_ap_return_104),
-    .ap_return_105(Loop_read_input_features_proc2_U0_ap_return_105),
-    .ap_return_106(Loop_read_input_features_proc2_U0_ap_return_106),
-    .ap_return_107(Loop_read_input_features_proc2_U0_ap_return_107),
-    .ap_return_108(Loop_read_input_features_proc2_U0_ap_return_108),
-    .ap_return_109(Loop_read_input_features_proc2_U0_ap_return_109),
-    .ap_return_110(Loop_read_input_features_proc2_U0_ap_return_110),
-    .ap_return_111(Loop_read_input_features_proc2_U0_ap_return_111),
-    .ap_return_112(Loop_read_input_features_proc2_U0_ap_return_112),
-    .ap_return_113(Loop_read_input_features_proc2_U0_ap_return_113),
-    .ap_return_114(Loop_read_input_features_proc2_U0_ap_return_114),
-    .ap_return_115(Loop_read_input_features_proc2_U0_ap_return_115),
-    .ap_return_116(Loop_read_input_features_proc2_U0_ap_return_116),
-    .ap_return_117(Loop_read_input_features_proc2_U0_ap_return_117),
-    .ap_return_118(Loop_read_input_features_proc2_U0_ap_return_118),
-    .ap_return_119(Loop_read_input_features_proc2_U0_ap_return_119),
-    .ap_return_120(Loop_read_input_features_proc2_U0_ap_return_120),
-    .ap_return_121(Loop_read_input_features_proc2_U0_ap_return_121),
-    .ap_return_122(Loop_read_input_features_proc2_U0_ap_return_122),
-    .ap_return_123(Loop_read_input_features_proc2_U0_ap_return_123),
-    .ap_return_124(Loop_read_input_features_proc2_U0_ap_return_124),
-    .ap_return_125(Loop_read_input_features_proc2_U0_ap_return_125),
-    .ap_return_126(Loop_read_input_features_proc2_U0_ap_return_126),
-    .ap_return_127(Loop_read_input_features_proc2_U0_ap_return_127)
+    .ap_return_31(Loop_read_input_features_proc2_U0_ap_return_31)
 );
 
 logistic_regression_Block_logistic_regression_for_cond_i_exit_proc Block_logistic_regression_for_cond_i_exit_proc_U0(
@@ -1590,102 +534,6 @@ logistic_regression_Block_logistic_regression_for_cond_i_exit_proc Block_logisti
     .p_read29(features_V_29_loc_channel_dout),
     .p_read30(features_V_30_loc_channel_dout),
     .p_read31(features_V_31_loc_channel_dout),
-    .p_read32(features_V_32_loc_channel_dout),
-    .p_read33(features_V_33_loc_channel_dout),
-    .p_read34(features_V_34_loc_channel_dout),
-    .p_read35(features_V_35_loc_channel_dout),
-    .p_read36(features_V_36_loc_channel_dout),
-    .p_read37(features_V_37_loc_channel_dout),
-    .p_read38(features_V_38_loc_channel_dout),
-    .p_read39(features_V_39_loc_channel_dout),
-    .p_read40(features_V_40_loc_channel_dout),
-    .p_read41(features_V_41_loc_channel_dout),
-    .p_read42(features_V_42_loc_channel_dout),
-    .p_read43(features_V_43_loc_channel_dout),
-    .p_read44(features_V_44_loc_channel_dout),
-    .p_read45(features_V_45_loc_channel_dout),
-    .p_read46(features_V_46_loc_channel_dout),
-    .p_read47(features_V_47_loc_channel_dout),
-    .p_read48(features_V_48_loc_channel_dout),
-    .p_read49(features_V_49_loc_channel_dout),
-    .p_read50(features_V_50_loc_channel_dout),
-    .p_read51(features_V_51_loc_channel_dout),
-    .p_read52(features_V_52_loc_channel_dout),
-    .p_read53(features_V_53_loc_channel_dout),
-    .p_read54(features_V_54_loc_channel_dout),
-    .p_read55(features_V_55_loc_channel_dout),
-    .p_read56(features_V_56_loc_channel_dout),
-    .p_read57(features_V_57_loc_channel_dout),
-    .p_read58(features_V_58_loc_channel_dout),
-    .p_read59(features_V_59_loc_channel_dout),
-    .p_read60(features_V_60_loc_channel_dout),
-    .p_read61(features_V_61_loc_channel_dout),
-    .p_read62(features_V_62_loc_channel_dout),
-    .p_read63(features_V_63_loc_channel_dout),
-    .p_read64(features_V_64_loc_channel_dout),
-    .p_read65(features_V_65_loc_channel_dout),
-    .p_read66(features_V_66_loc_channel_dout),
-    .p_read67(features_V_67_loc_channel_dout),
-    .p_read68(features_V_68_loc_channel_dout),
-    .p_read69(features_V_69_loc_channel_dout),
-    .p_read70(features_V_70_loc_channel_dout),
-    .p_read71(features_V_71_loc_channel_dout),
-    .p_read72(features_V_72_loc_channel_dout),
-    .p_read73(features_V_73_loc_channel_dout),
-    .p_read74(features_V_74_loc_channel_dout),
-    .p_read75(features_V_75_loc_channel_dout),
-    .p_read76(features_V_76_loc_channel_dout),
-    .p_read77(features_V_77_loc_channel_dout),
-    .p_read78(features_V_78_loc_channel_dout),
-    .p_read79(features_V_79_loc_channel_dout),
-    .p_read80(features_V_80_loc_channel_dout),
-    .p_read81(features_V_81_loc_channel_dout),
-    .p_read82(features_V_82_loc_channel_dout),
-    .p_read83(features_V_83_loc_channel_dout),
-    .p_read84(features_V_84_loc_channel_dout),
-    .p_read85(features_V_85_loc_channel_dout),
-    .p_read86(features_V_86_loc_channel_dout),
-    .p_read87(features_V_87_loc_channel_dout),
-    .p_read88(features_V_88_loc_channel_dout),
-    .p_read89(features_V_89_loc_channel_dout),
-    .p_read90(features_V_90_loc_channel_dout),
-    .p_read91(features_V_91_loc_channel_dout),
-    .p_read92(features_V_92_loc_channel_dout),
-    .p_read93(features_V_93_loc_channel_dout),
-    .p_read94(features_V_94_loc_channel_dout),
-    .p_read95(features_V_95_loc_channel_dout),
-    .p_read96(features_V_96_loc_channel_dout),
-    .p_read97(features_V_97_loc_channel_dout),
-    .p_read98(features_V_98_loc_channel_dout),
-    .p_read99(features_V_99_loc_channel_dout),
-    .p_read100(features_V_100_loc_channel_dout),
-    .p_read101(features_V_101_loc_channel_dout),
-    .p_read102(features_V_102_loc_channel_dout),
-    .p_read103(features_V_103_loc_channel_dout),
-    .p_read104(features_V_104_loc_channel_dout),
-    .p_read105(features_V_105_loc_channel_dout),
-    .p_read106(features_V_106_loc_channel_dout),
-    .p_read107(features_V_107_loc_channel_dout),
-    .p_read108(features_V_108_loc_channel_dout),
-    .p_read109(features_V_109_loc_channel_dout),
-    .p_read110(features_V_110_loc_channel_dout),
-    .p_read111(features_V_111_loc_channel_dout),
-    .p_read112(features_V_112_loc_channel_dout),
-    .p_read113(features_V_113_loc_channel_dout),
-    .p_read114(features_V_114_loc_channel_dout),
-    .p_read115(features_V_115_loc_channel_dout),
-    .p_read116(features_V_116_loc_channel_dout),
-    .p_read117(features_V_117_loc_channel_dout),
-    .p_read118(features_V_118_loc_channel_dout),
-    .p_read119(features_V_119_loc_channel_dout),
-    .p_read120(features_V_120_loc_channel_dout),
-    .p_read121(features_V_121_loc_channel_dout),
-    .p_read122(features_V_122_loc_channel_dout),
-    .p_read123(features_V_123_loc_channel_dout),
-    .p_read124(features_V_124_loc_channel_dout),
-    .p_read125(features_V_125_loc_channel_dout),
-    .p_read126(features_V_126_loc_channel_dout),
-    .p_read127(features_V_127_loc_channel_dout),
     .out_stream_TDATA(Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TDATA),
     .out_stream_TVALID(Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TVALID),
     .out_stream_TREADY(out_stream_TREADY),
@@ -1694,1452 +542,12 @@ logistic_regression_Block_logistic_regression_for_cond_i_exit_proc Block_logisti
     .out_stream_TLAST(Block_logistic_regression_for_cond_i_exit_proc_U0_out_stream_TLAST)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_127_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_31_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(Loop_read_input_features_proc2_U0_ap_return_0),
-    .if_full_n(features_V_127_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_127_loc_channel),
-    .if_dout(features_V_127_loc_channel_dout),
-    .if_num_data_valid(features_V_127_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_127_loc_channel_fifo_cap),
-    .if_empty_n(features_V_127_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_126_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_1),
-    .if_full_n(features_V_126_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_126_loc_channel),
-    .if_dout(features_V_126_loc_channel_dout),
-    .if_num_data_valid(features_V_126_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_126_loc_channel_fifo_cap),
-    .if_empty_n(features_V_126_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_125_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_2),
-    .if_full_n(features_V_125_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_125_loc_channel),
-    .if_dout(features_V_125_loc_channel_dout),
-    .if_num_data_valid(features_V_125_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_125_loc_channel_fifo_cap),
-    .if_empty_n(features_V_125_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_124_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_3),
-    .if_full_n(features_V_124_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_124_loc_channel),
-    .if_dout(features_V_124_loc_channel_dout),
-    .if_num_data_valid(features_V_124_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_124_loc_channel_fifo_cap),
-    .if_empty_n(features_V_124_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_123_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_4),
-    .if_full_n(features_V_123_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_123_loc_channel),
-    .if_dout(features_V_123_loc_channel_dout),
-    .if_num_data_valid(features_V_123_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_123_loc_channel_fifo_cap),
-    .if_empty_n(features_V_123_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_122_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_5),
-    .if_full_n(features_V_122_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_122_loc_channel),
-    .if_dout(features_V_122_loc_channel_dout),
-    .if_num_data_valid(features_V_122_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_122_loc_channel_fifo_cap),
-    .if_empty_n(features_V_122_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_121_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_6),
-    .if_full_n(features_V_121_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_121_loc_channel),
-    .if_dout(features_V_121_loc_channel_dout),
-    .if_num_data_valid(features_V_121_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_121_loc_channel_fifo_cap),
-    .if_empty_n(features_V_121_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_120_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_7),
-    .if_full_n(features_V_120_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_120_loc_channel),
-    .if_dout(features_V_120_loc_channel_dout),
-    .if_num_data_valid(features_V_120_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_120_loc_channel_fifo_cap),
-    .if_empty_n(features_V_120_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_119_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_8),
-    .if_full_n(features_V_119_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_119_loc_channel),
-    .if_dout(features_V_119_loc_channel_dout),
-    .if_num_data_valid(features_V_119_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_119_loc_channel_fifo_cap),
-    .if_empty_n(features_V_119_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_118_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_9),
-    .if_full_n(features_V_118_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_118_loc_channel),
-    .if_dout(features_V_118_loc_channel_dout),
-    .if_num_data_valid(features_V_118_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_118_loc_channel_fifo_cap),
-    .if_empty_n(features_V_118_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_117_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_10),
-    .if_full_n(features_V_117_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_117_loc_channel),
-    .if_dout(features_V_117_loc_channel_dout),
-    .if_num_data_valid(features_V_117_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_117_loc_channel_fifo_cap),
-    .if_empty_n(features_V_117_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_116_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_11),
-    .if_full_n(features_V_116_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_116_loc_channel),
-    .if_dout(features_V_116_loc_channel_dout),
-    .if_num_data_valid(features_V_116_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_116_loc_channel_fifo_cap),
-    .if_empty_n(features_V_116_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_115_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_12),
-    .if_full_n(features_V_115_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_115_loc_channel),
-    .if_dout(features_V_115_loc_channel_dout),
-    .if_num_data_valid(features_V_115_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_115_loc_channel_fifo_cap),
-    .if_empty_n(features_V_115_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_114_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_13),
-    .if_full_n(features_V_114_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_114_loc_channel),
-    .if_dout(features_V_114_loc_channel_dout),
-    .if_num_data_valid(features_V_114_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_114_loc_channel_fifo_cap),
-    .if_empty_n(features_V_114_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_113_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_14),
-    .if_full_n(features_V_113_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_113_loc_channel),
-    .if_dout(features_V_113_loc_channel_dout),
-    .if_num_data_valid(features_V_113_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_113_loc_channel_fifo_cap),
-    .if_empty_n(features_V_113_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_112_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_15),
-    .if_full_n(features_V_112_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_112_loc_channel),
-    .if_dout(features_V_112_loc_channel_dout),
-    .if_num_data_valid(features_V_112_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_112_loc_channel_fifo_cap),
-    .if_empty_n(features_V_112_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_111_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_16),
-    .if_full_n(features_V_111_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_111_loc_channel),
-    .if_dout(features_V_111_loc_channel_dout),
-    .if_num_data_valid(features_V_111_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_111_loc_channel_fifo_cap),
-    .if_empty_n(features_V_111_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_110_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_17),
-    .if_full_n(features_V_110_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_110_loc_channel),
-    .if_dout(features_V_110_loc_channel_dout),
-    .if_num_data_valid(features_V_110_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_110_loc_channel_fifo_cap),
-    .if_empty_n(features_V_110_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_109_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_18),
-    .if_full_n(features_V_109_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_109_loc_channel),
-    .if_dout(features_V_109_loc_channel_dout),
-    .if_num_data_valid(features_V_109_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_109_loc_channel_fifo_cap),
-    .if_empty_n(features_V_109_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_108_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_19),
-    .if_full_n(features_V_108_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_108_loc_channel),
-    .if_dout(features_V_108_loc_channel_dout),
-    .if_num_data_valid(features_V_108_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_108_loc_channel_fifo_cap),
-    .if_empty_n(features_V_108_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_107_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_20),
-    .if_full_n(features_V_107_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_107_loc_channel),
-    .if_dout(features_V_107_loc_channel_dout),
-    .if_num_data_valid(features_V_107_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_107_loc_channel_fifo_cap),
-    .if_empty_n(features_V_107_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_106_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_21),
-    .if_full_n(features_V_106_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_106_loc_channel),
-    .if_dout(features_V_106_loc_channel_dout),
-    .if_num_data_valid(features_V_106_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_106_loc_channel_fifo_cap),
-    .if_empty_n(features_V_106_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_105_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_22),
-    .if_full_n(features_V_105_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_105_loc_channel),
-    .if_dout(features_V_105_loc_channel_dout),
-    .if_num_data_valid(features_V_105_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_105_loc_channel_fifo_cap),
-    .if_empty_n(features_V_105_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_104_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_23),
-    .if_full_n(features_V_104_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_104_loc_channel),
-    .if_dout(features_V_104_loc_channel_dout),
-    .if_num_data_valid(features_V_104_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_104_loc_channel_fifo_cap),
-    .if_empty_n(features_V_104_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_103_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_24),
-    .if_full_n(features_V_103_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_103_loc_channel),
-    .if_dout(features_V_103_loc_channel_dout),
-    .if_num_data_valid(features_V_103_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_103_loc_channel_fifo_cap),
-    .if_empty_n(features_V_103_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_102_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_25),
-    .if_full_n(features_V_102_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_102_loc_channel),
-    .if_dout(features_V_102_loc_channel_dout),
-    .if_num_data_valid(features_V_102_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_102_loc_channel_fifo_cap),
-    .if_empty_n(features_V_102_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_101_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_26),
-    .if_full_n(features_V_101_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_101_loc_channel),
-    .if_dout(features_V_101_loc_channel_dout),
-    .if_num_data_valid(features_V_101_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_101_loc_channel_fifo_cap),
-    .if_empty_n(features_V_101_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_100_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_27),
-    .if_full_n(features_V_100_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_100_loc_channel),
-    .if_dout(features_V_100_loc_channel_dout),
-    .if_num_data_valid(features_V_100_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_100_loc_channel_fifo_cap),
-    .if_empty_n(features_V_100_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_99_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_28),
-    .if_full_n(features_V_99_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_99_loc_channel),
-    .if_dout(features_V_99_loc_channel_dout),
-    .if_num_data_valid(features_V_99_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_99_loc_channel_fifo_cap),
-    .if_empty_n(features_V_99_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_98_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_29),
-    .if_full_n(features_V_98_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_98_loc_channel),
-    .if_dout(features_V_98_loc_channel_dout),
-    .if_num_data_valid(features_V_98_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_98_loc_channel_fifo_cap),
-    .if_empty_n(features_V_98_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_97_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_30),
-    .if_full_n(features_V_97_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_97_loc_channel),
-    .if_dout(features_V_97_loc_channel_dout),
-    .if_num_data_valid(features_V_97_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_97_loc_channel_fifo_cap),
-    .if_empty_n(features_V_97_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_96_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_31),
-    .if_full_n(features_V_96_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_96_loc_channel),
-    .if_dout(features_V_96_loc_channel_dout),
-    .if_num_data_valid(features_V_96_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_96_loc_channel_fifo_cap),
-    .if_empty_n(features_V_96_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_95_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_32),
-    .if_full_n(features_V_95_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_95_loc_channel),
-    .if_dout(features_V_95_loc_channel_dout),
-    .if_num_data_valid(features_V_95_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_95_loc_channel_fifo_cap),
-    .if_empty_n(features_V_95_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_94_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_33),
-    .if_full_n(features_V_94_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_94_loc_channel),
-    .if_dout(features_V_94_loc_channel_dout),
-    .if_num_data_valid(features_V_94_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_94_loc_channel_fifo_cap),
-    .if_empty_n(features_V_94_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_93_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_34),
-    .if_full_n(features_V_93_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_93_loc_channel),
-    .if_dout(features_V_93_loc_channel_dout),
-    .if_num_data_valid(features_V_93_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_93_loc_channel_fifo_cap),
-    .if_empty_n(features_V_93_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_92_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_35),
-    .if_full_n(features_V_92_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_92_loc_channel),
-    .if_dout(features_V_92_loc_channel_dout),
-    .if_num_data_valid(features_V_92_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_92_loc_channel_fifo_cap),
-    .if_empty_n(features_V_92_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_91_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_36),
-    .if_full_n(features_V_91_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_91_loc_channel),
-    .if_dout(features_V_91_loc_channel_dout),
-    .if_num_data_valid(features_V_91_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_91_loc_channel_fifo_cap),
-    .if_empty_n(features_V_91_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_90_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_37),
-    .if_full_n(features_V_90_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_90_loc_channel),
-    .if_dout(features_V_90_loc_channel_dout),
-    .if_num_data_valid(features_V_90_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_90_loc_channel_fifo_cap),
-    .if_empty_n(features_V_90_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_89_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_38),
-    .if_full_n(features_V_89_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_89_loc_channel),
-    .if_dout(features_V_89_loc_channel_dout),
-    .if_num_data_valid(features_V_89_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_89_loc_channel_fifo_cap),
-    .if_empty_n(features_V_89_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_88_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_39),
-    .if_full_n(features_V_88_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_88_loc_channel),
-    .if_dout(features_V_88_loc_channel_dout),
-    .if_num_data_valid(features_V_88_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_88_loc_channel_fifo_cap),
-    .if_empty_n(features_V_88_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_87_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_40),
-    .if_full_n(features_V_87_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_87_loc_channel),
-    .if_dout(features_V_87_loc_channel_dout),
-    .if_num_data_valid(features_V_87_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_87_loc_channel_fifo_cap),
-    .if_empty_n(features_V_87_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_86_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_41),
-    .if_full_n(features_V_86_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_86_loc_channel),
-    .if_dout(features_V_86_loc_channel_dout),
-    .if_num_data_valid(features_V_86_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_86_loc_channel_fifo_cap),
-    .if_empty_n(features_V_86_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_85_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_42),
-    .if_full_n(features_V_85_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_85_loc_channel),
-    .if_dout(features_V_85_loc_channel_dout),
-    .if_num_data_valid(features_V_85_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_85_loc_channel_fifo_cap),
-    .if_empty_n(features_V_85_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_84_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_43),
-    .if_full_n(features_V_84_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_84_loc_channel),
-    .if_dout(features_V_84_loc_channel_dout),
-    .if_num_data_valid(features_V_84_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_84_loc_channel_fifo_cap),
-    .if_empty_n(features_V_84_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_83_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_44),
-    .if_full_n(features_V_83_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_83_loc_channel),
-    .if_dout(features_V_83_loc_channel_dout),
-    .if_num_data_valid(features_V_83_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_83_loc_channel_fifo_cap),
-    .if_empty_n(features_V_83_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_82_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_45),
-    .if_full_n(features_V_82_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_82_loc_channel),
-    .if_dout(features_V_82_loc_channel_dout),
-    .if_num_data_valid(features_V_82_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_82_loc_channel_fifo_cap),
-    .if_empty_n(features_V_82_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_81_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_46),
-    .if_full_n(features_V_81_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_81_loc_channel),
-    .if_dout(features_V_81_loc_channel_dout),
-    .if_num_data_valid(features_V_81_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_81_loc_channel_fifo_cap),
-    .if_empty_n(features_V_81_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_80_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_47),
-    .if_full_n(features_V_80_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_80_loc_channel),
-    .if_dout(features_V_80_loc_channel_dout),
-    .if_num_data_valid(features_V_80_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_80_loc_channel_fifo_cap),
-    .if_empty_n(features_V_80_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_79_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_48),
-    .if_full_n(features_V_79_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_79_loc_channel),
-    .if_dout(features_V_79_loc_channel_dout),
-    .if_num_data_valid(features_V_79_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_79_loc_channel_fifo_cap),
-    .if_empty_n(features_V_79_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_78_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_49),
-    .if_full_n(features_V_78_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_78_loc_channel),
-    .if_dout(features_V_78_loc_channel_dout),
-    .if_num_data_valid(features_V_78_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_78_loc_channel_fifo_cap),
-    .if_empty_n(features_V_78_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_77_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_50),
-    .if_full_n(features_V_77_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_77_loc_channel),
-    .if_dout(features_V_77_loc_channel_dout),
-    .if_num_data_valid(features_V_77_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_77_loc_channel_fifo_cap),
-    .if_empty_n(features_V_77_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_76_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_51),
-    .if_full_n(features_V_76_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_76_loc_channel),
-    .if_dout(features_V_76_loc_channel_dout),
-    .if_num_data_valid(features_V_76_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_76_loc_channel_fifo_cap),
-    .if_empty_n(features_V_76_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_75_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_52),
-    .if_full_n(features_V_75_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_75_loc_channel),
-    .if_dout(features_V_75_loc_channel_dout),
-    .if_num_data_valid(features_V_75_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_75_loc_channel_fifo_cap),
-    .if_empty_n(features_V_75_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_74_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_53),
-    .if_full_n(features_V_74_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_74_loc_channel),
-    .if_dout(features_V_74_loc_channel_dout),
-    .if_num_data_valid(features_V_74_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_74_loc_channel_fifo_cap),
-    .if_empty_n(features_V_74_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_73_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_54),
-    .if_full_n(features_V_73_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_73_loc_channel),
-    .if_dout(features_V_73_loc_channel_dout),
-    .if_num_data_valid(features_V_73_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_73_loc_channel_fifo_cap),
-    .if_empty_n(features_V_73_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_72_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_55),
-    .if_full_n(features_V_72_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_72_loc_channel),
-    .if_dout(features_V_72_loc_channel_dout),
-    .if_num_data_valid(features_V_72_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_72_loc_channel_fifo_cap),
-    .if_empty_n(features_V_72_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_71_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_56),
-    .if_full_n(features_V_71_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_71_loc_channel),
-    .if_dout(features_V_71_loc_channel_dout),
-    .if_num_data_valid(features_V_71_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_71_loc_channel_fifo_cap),
-    .if_empty_n(features_V_71_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_70_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_57),
-    .if_full_n(features_V_70_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_70_loc_channel),
-    .if_dout(features_V_70_loc_channel_dout),
-    .if_num_data_valid(features_V_70_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_70_loc_channel_fifo_cap),
-    .if_empty_n(features_V_70_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_69_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_58),
-    .if_full_n(features_V_69_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_69_loc_channel),
-    .if_dout(features_V_69_loc_channel_dout),
-    .if_num_data_valid(features_V_69_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_69_loc_channel_fifo_cap),
-    .if_empty_n(features_V_69_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_68_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_59),
-    .if_full_n(features_V_68_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_68_loc_channel),
-    .if_dout(features_V_68_loc_channel_dout),
-    .if_num_data_valid(features_V_68_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_68_loc_channel_fifo_cap),
-    .if_empty_n(features_V_68_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_67_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_60),
-    .if_full_n(features_V_67_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_67_loc_channel),
-    .if_dout(features_V_67_loc_channel_dout),
-    .if_num_data_valid(features_V_67_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_67_loc_channel_fifo_cap),
-    .if_empty_n(features_V_67_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_66_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_61),
-    .if_full_n(features_V_66_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_66_loc_channel),
-    .if_dout(features_V_66_loc_channel_dout),
-    .if_num_data_valid(features_V_66_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_66_loc_channel_fifo_cap),
-    .if_empty_n(features_V_66_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_65_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_62),
-    .if_full_n(features_V_65_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_65_loc_channel),
-    .if_dout(features_V_65_loc_channel_dout),
-    .if_num_data_valid(features_V_65_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_65_loc_channel_fifo_cap),
-    .if_empty_n(features_V_65_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_64_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_63),
-    .if_full_n(features_V_64_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_64_loc_channel),
-    .if_dout(features_V_64_loc_channel_dout),
-    .if_num_data_valid(features_V_64_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_64_loc_channel_fifo_cap),
-    .if_empty_n(features_V_64_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_63_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_64),
-    .if_full_n(features_V_63_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_63_loc_channel),
-    .if_dout(features_V_63_loc_channel_dout),
-    .if_num_data_valid(features_V_63_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_63_loc_channel_fifo_cap),
-    .if_empty_n(features_V_63_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_62_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_65),
-    .if_full_n(features_V_62_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_62_loc_channel),
-    .if_dout(features_V_62_loc_channel_dout),
-    .if_num_data_valid(features_V_62_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_62_loc_channel_fifo_cap),
-    .if_empty_n(features_V_62_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_61_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_66),
-    .if_full_n(features_V_61_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_61_loc_channel),
-    .if_dout(features_V_61_loc_channel_dout),
-    .if_num_data_valid(features_V_61_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_61_loc_channel_fifo_cap),
-    .if_empty_n(features_V_61_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_60_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_67),
-    .if_full_n(features_V_60_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_60_loc_channel),
-    .if_dout(features_V_60_loc_channel_dout),
-    .if_num_data_valid(features_V_60_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_60_loc_channel_fifo_cap),
-    .if_empty_n(features_V_60_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_59_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_68),
-    .if_full_n(features_V_59_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_59_loc_channel),
-    .if_dout(features_V_59_loc_channel_dout),
-    .if_num_data_valid(features_V_59_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_59_loc_channel_fifo_cap),
-    .if_empty_n(features_V_59_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_58_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_69),
-    .if_full_n(features_V_58_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_58_loc_channel),
-    .if_dout(features_V_58_loc_channel_dout),
-    .if_num_data_valid(features_V_58_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_58_loc_channel_fifo_cap),
-    .if_empty_n(features_V_58_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_57_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_70),
-    .if_full_n(features_V_57_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_57_loc_channel),
-    .if_dout(features_V_57_loc_channel_dout),
-    .if_num_data_valid(features_V_57_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_57_loc_channel_fifo_cap),
-    .if_empty_n(features_V_57_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_56_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_71),
-    .if_full_n(features_V_56_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_56_loc_channel),
-    .if_dout(features_V_56_loc_channel_dout),
-    .if_num_data_valid(features_V_56_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_56_loc_channel_fifo_cap),
-    .if_empty_n(features_V_56_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_55_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_72),
-    .if_full_n(features_V_55_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_55_loc_channel),
-    .if_dout(features_V_55_loc_channel_dout),
-    .if_num_data_valid(features_V_55_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_55_loc_channel_fifo_cap),
-    .if_empty_n(features_V_55_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_54_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_73),
-    .if_full_n(features_V_54_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_54_loc_channel),
-    .if_dout(features_V_54_loc_channel_dout),
-    .if_num_data_valid(features_V_54_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_54_loc_channel_fifo_cap),
-    .if_empty_n(features_V_54_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_53_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_74),
-    .if_full_n(features_V_53_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_53_loc_channel),
-    .if_dout(features_V_53_loc_channel_dout),
-    .if_num_data_valid(features_V_53_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_53_loc_channel_fifo_cap),
-    .if_empty_n(features_V_53_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_52_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_75),
-    .if_full_n(features_V_52_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_52_loc_channel),
-    .if_dout(features_V_52_loc_channel_dout),
-    .if_num_data_valid(features_V_52_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_52_loc_channel_fifo_cap),
-    .if_empty_n(features_V_52_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_51_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_76),
-    .if_full_n(features_V_51_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_51_loc_channel),
-    .if_dout(features_V_51_loc_channel_dout),
-    .if_num_data_valid(features_V_51_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_51_loc_channel_fifo_cap),
-    .if_empty_n(features_V_51_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_50_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_77),
-    .if_full_n(features_V_50_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_50_loc_channel),
-    .if_dout(features_V_50_loc_channel_dout),
-    .if_num_data_valid(features_V_50_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_50_loc_channel_fifo_cap),
-    .if_empty_n(features_V_50_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_49_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_78),
-    .if_full_n(features_V_49_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_49_loc_channel),
-    .if_dout(features_V_49_loc_channel_dout),
-    .if_num_data_valid(features_V_49_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_49_loc_channel_fifo_cap),
-    .if_empty_n(features_V_49_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_48_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_79),
-    .if_full_n(features_V_48_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_48_loc_channel),
-    .if_dout(features_V_48_loc_channel_dout),
-    .if_num_data_valid(features_V_48_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_48_loc_channel_fifo_cap),
-    .if_empty_n(features_V_48_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_47_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_80),
-    .if_full_n(features_V_47_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_47_loc_channel),
-    .if_dout(features_V_47_loc_channel_dout),
-    .if_num_data_valid(features_V_47_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_47_loc_channel_fifo_cap),
-    .if_empty_n(features_V_47_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_46_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_81),
-    .if_full_n(features_V_46_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_46_loc_channel),
-    .if_dout(features_V_46_loc_channel_dout),
-    .if_num_data_valid(features_V_46_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_46_loc_channel_fifo_cap),
-    .if_empty_n(features_V_46_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_45_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_82),
-    .if_full_n(features_V_45_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_45_loc_channel),
-    .if_dout(features_V_45_loc_channel_dout),
-    .if_num_data_valid(features_V_45_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_45_loc_channel_fifo_cap),
-    .if_empty_n(features_V_45_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_44_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_83),
-    .if_full_n(features_V_44_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_44_loc_channel),
-    .if_dout(features_V_44_loc_channel_dout),
-    .if_num_data_valid(features_V_44_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_44_loc_channel_fifo_cap),
-    .if_empty_n(features_V_44_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_43_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_84),
-    .if_full_n(features_V_43_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_43_loc_channel),
-    .if_dout(features_V_43_loc_channel_dout),
-    .if_num_data_valid(features_V_43_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_43_loc_channel_fifo_cap),
-    .if_empty_n(features_V_43_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_42_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_85),
-    .if_full_n(features_V_42_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_42_loc_channel),
-    .if_dout(features_V_42_loc_channel_dout),
-    .if_num_data_valid(features_V_42_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_42_loc_channel_fifo_cap),
-    .if_empty_n(features_V_42_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_41_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_86),
-    .if_full_n(features_V_41_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_41_loc_channel),
-    .if_dout(features_V_41_loc_channel_dout),
-    .if_num_data_valid(features_V_41_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_41_loc_channel_fifo_cap),
-    .if_empty_n(features_V_41_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_40_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_87),
-    .if_full_n(features_V_40_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_40_loc_channel),
-    .if_dout(features_V_40_loc_channel_dout),
-    .if_num_data_valid(features_V_40_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_40_loc_channel_fifo_cap),
-    .if_empty_n(features_V_40_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_39_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_88),
-    .if_full_n(features_V_39_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_39_loc_channel),
-    .if_dout(features_V_39_loc_channel_dout),
-    .if_num_data_valid(features_V_39_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_39_loc_channel_fifo_cap),
-    .if_empty_n(features_V_39_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_38_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_89),
-    .if_full_n(features_V_38_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_38_loc_channel),
-    .if_dout(features_V_38_loc_channel_dout),
-    .if_num_data_valid(features_V_38_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_38_loc_channel_fifo_cap),
-    .if_empty_n(features_V_38_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_37_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_90),
-    .if_full_n(features_V_37_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_37_loc_channel),
-    .if_dout(features_V_37_loc_channel_dout),
-    .if_num_data_valid(features_V_37_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_37_loc_channel_fifo_cap),
-    .if_empty_n(features_V_37_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_36_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_91),
-    .if_full_n(features_V_36_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_36_loc_channel),
-    .if_dout(features_V_36_loc_channel_dout),
-    .if_num_data_valid(features_V_36_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_36_loc_channel_fifo_cap),
-    .if_empty_n(features_V_36_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_35_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_92),
-    .if_full_n(features_V_35_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_35_loc_channel),
-    .if_dout(features_V_35_loc_channel_dout),
-    .if_num_data_valid(features_V_35_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_35_loc_channel_fifo_cap),
-    .if_empty_n(features_V_35_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_34_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_93),
-    .if_full_n(features_V_34_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_34_loc_channel),
-    .if_dout(features_V_34_loc_channel_dout),
-    .if_num_data_valid(features_V_34_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_34_loc_channel_fifo_cap),
-    .if_empty_n(features_V_34_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_33_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_94),
-    .if_full_n(features_V_33_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_33_loc_channel),
-    .if_dout(features_V_33_loc_channel_dout),
-    .if_num_data_valid(features_V_33_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_33_loc_channel_fifo_cap),
-    .if_empty_n(features_V_33_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_32_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_95),
-    .if_full_n(features_V_32_loc_channel_full_n),
-    .if_write(ap_channel_done_features_V_32_loc_channel),
-    .if_dout(features_V_32_loc_channel_dout),
-    .if_num_data_valid(features_V_32_loc_channel_num_data_valid),
-    .if_fifo_cap(features_V_32_loc_channel_fifo_cap),
-    .if_empty_n(features_V_32_loc_channel_empty_n),
-    .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
-);
-
-logistic_regression_fifo_w16_d2_S features_V_31_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_96),
     .if_full_n(features_V_31_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_31_loc_channel),
     .if_dout(features_V_31_loc_channel_dout),
@@ -3149,12 +557,12 @@ logistic_regression_fifo_w16_d2_S features_V_31_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_30_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_30_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_97),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_1),
     .if_full_n(features_V_30_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_30_loc_channel),
     .if_dout(features_V_30_loc_channel_dout),
@@ -3164,12 +572,12 @@ logistic_regression_fifo_w16_d2_S features_V_30_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_29_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_29_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_98),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_2),
     .if_full_n(features_V_29_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_29_loc_channel),
     .if_dout(features_V_29_loc_channel_dout),
@@ -3179,12 +587,12 @@ logistic_regression_fifo_w16_d2_S features_V_29_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_28_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_28_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_99),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_3),
     .if_full_n(features_V_28_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_28_loc_channel),
     .if_dout(features_V_28_loc_channel_dout),
@@ -3194,12 +602,12 @@ logistic_regression_fifo_w16_d2_S features_V_28_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_27_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_27_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_100),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_4),
     .if_full_n(features_V_27_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_27_loc_channel),
     .if_dout(features_V_27_loc_channel_dout),
@@ -3209,12 +617,12 @@ logistic_regression_fifo_w16_d2_S features_V_27_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_26_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_26_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_101),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_5),
     .if_full_n(features_V_26_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_26_loc_channel),
     .if_dout(features_V_26_loc_channel_dout),
@@ -3224,12 +632,12 @@ logistic_regression_fifo_w16_d2_S features_V_26_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_25_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_25_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_102),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_6),
     .if_full_n(features_V_25_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_25_loc_channel),
     .if_dout(features_V_25_loc_channel_dout),
@@ -3239,12 +647,12 @@ logistic_regression_fifo_w16_d2_S features_V_25_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_24_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_24_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_103),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_7),
     .if_full_n(features_V_24_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_24_loc_channel),
     .if_dout(features_V_24_loc_channel_dout),
@@ -3254,12 +662,12 @@ logistic_regression_fifo_w16_d2_S features_V_24_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_23_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_23_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_104),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_8),
     .if_full_n(features_V_23_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_23_loc_channel),
     .if_dout(features_V_23_loc_channel_dout),
@@ -3269,12 +677,12 @@ logistic_regression_fifo_w16_d2_S features_V_23_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_22_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_22_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_105),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_9),
     .if_full_n(features_V_22_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_22_loc_channel),
     .if_dout(features_V_22_loc_channel_dout),
@@ -3284,12 +692,12 @@ logistic_regression_fifo_w16_d2_S features_V_22_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_21_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_21_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_106),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_10),
     .if_full_n(features_V_21_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_21_loc_channel),
     .if_dout(features_V_21_loc_channel_dout),
@@ -3299,12 +707,12 @@ logistic_regression_fifo_w16_d2_S features_V_21_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_20_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_20_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_107),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_11),
     .if_full_n(features_V_20_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_20_loc_channel),
     .if_dout(features_V_20_loc_channel_dout),
@@ -3314,12 +722,12 @@ logistic_regression_fifo_w16_d2_S features_V_20_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_19_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_19_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_108),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_12),
     .if_full_n(features_V_19_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_19_loc_channel),
     .if_dout(features_V_19_loc_channel_dout),
@@ -3329,12 +737,12 @@ logistic_regression_fifo_w16_d2_S features_V_19_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_18_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_18_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_109),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_13),
     .if_full_n(features_V_18_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_18_loc_channel),
     .if_dout(features_V_18_loc_channel_dout),
@@ -3344,12 +752,12 @@ logistic_regression_fifo_w16_d2_S features_V_18_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_17_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_17_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_110),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_14),
     .if_full_n(features_V_17_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_17_loc_channel),
     .if_dout(features_V_17_loc_channel_dout),
@@ -3359,12 +767,12 @@ logistic_regression_fifo_w16_d2_S features_V_17_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_16_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_16_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_111),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_15),
     .if_full_n(features_V_16_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_16_loc_channel),
     .if_dout(features_V_16_loc_channel_dout),
@@ -3374,12 +782,12 @@ logistic_regression_fifo_w16_d2_S features_V_16_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_15_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_15_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_112),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_16),
     .if_full_n(features_V_15_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_15_loc_channel),
     .if_dout(features_V_15_loc_channel_dout),
@@ -3389,12 +797,12 @@ logistic_regression_fifo_w16_d2_S features_V_15_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_14_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_14_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_113),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_17),
     .if_full_n(features_V_14_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_14_loc_channel),
     .if_dout(features_V_14_loc_channel_dout),
@@ -3404,12 +812,12 @@ logistic_regression_fifo_w16_d2_S features_V_14_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_13_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_13_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_114),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_18),
     .if_full_n(features_V_13_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_13_loc_channel),
     .if_dout(features_V_13_loc_channel_dout),
@@ -3419,12 +827,12 @@ logistic_regression_fifo_w16_d2_S features_V_13_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_12_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_12_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_115),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_19),
     .if_full_n(features_V_12_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_12_loc_channel),
     .if_dout(features_V_12_loc_channel_dout),
@@ -3434,12 +842,12 @@ logistic_regression_fifo_w16_d2_S features_V_12_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_11_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_11_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_116),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_20),
     .if_full_n(features_V_11_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_11_loc_channel),
     .if_dout(features_V_11_loc_channel_dout),
@@ -3449,12 +857,12 @@ logistic_regression_fifo_w16_d2_S features_V_11_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_10_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_10_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_117),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_21),
     .if_full_n(features_V_10_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_10_loc_channel),
     .if_dout(features_V_10_loc_channel_dout),
@@ -3464,12 +872,12 @@ logistic_regression_fifo_w16_d2_S features_V_10_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_9_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_9_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_118),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_22),
     .if_full_n(features_V_9_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_9_loc_channel),
     .if_dout(features_V_9_loc_channel_dout),
@@ -3479,12 +887,12 @@ logistic_regression_fifo_w16_d2_S features_V_9_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_8_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_8_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_119),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_23),
     .if_full_n(features_V_8_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_8_loc_channel),
     .if_dout(features_V_8_loc_channel_dout),
@@ -3494,12 +902,12 @@ logistic_regression_fifo_w16_d2_S features_V_8_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_7_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_7_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_120),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_24),
     .if_full_n(features_V_7_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_7_loc_channel),
     .if_dout(features_V_7_loc_channel_dout),
@@ -3509,12 +917,12 @@ logistic_regression_fifo_w16_d2_S features_V_7_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_6_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_6_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_121),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_25),
     .if_full_n(features_V_6_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_6_loc_channel),
     .if_dout(features_V_6_loc_channel_dout),
@@ -3524,12 +932,12 @@ logistic_regression_fifo_w16_d2_S features_V_6_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_5_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_5_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_122),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_26),
     .if_full_n(features_V_5_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_5_loc_channel),
     .if_dout(features_V_5_loc_channel_dout),
@@ -3539,12 +947,12 @@ logistic_regression_fifo_w16_d2_S features_V_5_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_4_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_4_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_123),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_27),
     .if_full_n(features_V_4_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_4_loc_channel),
     .if_dout(features_V_4_loc_channel_dout),
@@ -3554,12 +962,12 @@ logistic_regression_fifo_w16_d2_S features_V_4_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_3_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_3_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_124),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_28),
     .if_full_n(features_V_3_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_3_loc_channel),
     .if_dout(features_V_3_loc_channel_dout),
@@ -3569,12 +977,12 @@ logistic_regression_fifo_w16_d2_S features_V_3_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_2_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_2_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_125),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_29),
     .if_full_n(features_V_2_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_2_loc_channel),
     .if_dout(features_V_2_loc_channel_dout),
@@ -3584,12 +992,12 @@ logistic_regression_fifo_w16_d2_S features_V_2_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_1_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_1_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_126),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_30),
     .if_full_n(features_V_1_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_1_loc_channel),
     .if_dout(features_V_1_loc_channel_dout),
@@ -3599,12 +1007,12 @@ logistic_regression_fifo_w16_d2_S features_V_1_loc_channel_U(
     .if_read(Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready)
 );
 
-logistic_regression_fifo_w16_d2_S features_V_loc_channel_U(
+logistic_regression_fifo_w8_d2_S features_V_loc_channel_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_read_input_features_proc2_U0_ap_return_127),
+    .if_din(Loop_read_input_features_proc2_U0_ap_return_31),
     .if_full_n(features_V_loc_channel_full_n),
     .if_write(ap_channel_done_features_V_loc_channel),
     .if_dout(features_V_loc_channel_dout),
@@ -3640,126 +1048,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_100_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_100_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_100_loc_channel <= ap_sync_channel_write_features_V_100_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_101_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_101_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_101_loc_channel <= ap_sync_channel_write_features_V_101_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_102_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_102_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_102_loc_channel <= ap_sync_channel_write_features_V_102_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_103_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_103_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_103_loc_channel <= ap_sync_channel_write_features_V_103_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_104_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_104_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_104_loc_channel <= ap_sync_channel_write_features_V_104_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_105_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_105_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_105_loc_channel <= ap_sync_channel_write_features_V_105_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_106_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_106_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_106_loc_channel <= ap_sync_channel_write_features_V_106_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_107_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_107_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_107_loc_channel <= ap_sync_channel_write_features_V_107_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_108_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_108_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_108_loc_channel <= ap_sync_channel_write_features_V_108_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_109_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_109_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_109_loc_channel <= ap_sync_channel_write_features_V_109_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_10_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
@@ -3772,228 +1060,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_110_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_110_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_110_loc_channel <= ap_sync_channel_write_features_V_110_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_111_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_111_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_111_loc_channel <= ap_sync_channel_write_features_V_111_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_112_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_112_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_112_loc_channel <= ap_sync_channel_write_features_V_112_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_113_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_113_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_113_loc_channel <= ap_sync_channel_write_features_V_113_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_114_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_114_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_114_loc_channel <= ap_sync_channel_write_features_V_114_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_115_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_115_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_115_loc_channel <= ap_sync_channel_write_features_V_115_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_116_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_116_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_116_loc_channel <= ap_sync_channel_write_features_V_116_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_117_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_117_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_117_loc_channel <= ap_sync_channel_write_features_V_117_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_118_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_118_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_118_loc_channel <= ap_sync_channel_write_features_V_118_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_119_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_119_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_119_loc_channel <= ap_sync_channel_write_features_V_119_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_11_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_features_V_11_loc_channel <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_features_V_11_loc_channel <= ap_sync_channel_write_features_V_11_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_120_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_120_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_120_loc_channel <= ap_sync_channel_write_features_V_120_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_121_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_121_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_121_loc_channel <= ap_sync_channel_write_features_V_121_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_122_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_122_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_122_loc_channel <= ap_sync_channel_write_features_V_122_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_123_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_123_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_123_loc_channel <= ap_sync_channel_write_features_V_123_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_124_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_124_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_124_loc_channel <= ap_sync_channel_write_features_V_124_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_125_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_125_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_125_loc_channel <= ap_sync_channel_write_features_V_125_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_126_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_126_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_126_loc_channel <= ap_sync_channel_write_features_V_126_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_127_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_127_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_127_loc_channel <= ap_sync_channel_write_features_V_127_loc_channel;
         end
     end
 end
@@ -4264,228 +1336,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_32_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_32_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_32_loc_channel <= ap_sync_channel_write_features_V_32_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_33_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_33_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_33_loc_channel <= ap_sync_channel_write_features_V_33_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_34_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_34_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_34_loc_channel <= ap_sync_channel_write_features_V_34_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_35_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_35_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_35_loc_channel <= ap_sync_channel_write_features_V_35_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_36_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_36_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_36_loc_channel <= ap_sync_channel_write_features_V_36_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_37_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_37_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_37_loc_channel <= ap_sync_channel_write_features_V_37_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_38_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_38_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_38_loc_channel <= ap_sync_channel_write_features_V_38_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_39_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_39_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_39_loc_channel <= ap_sync_channel_write_features_V_39_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_3_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_features_V_3_loc_channel <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_features_V_3_loc_channel <= ap_sync_channel_write_features_V_3_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_40_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_40_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_40_loc_channel <= ap_sync_channel_write_features_V_40_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_41_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_41_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_41_loc_channel <= ap_sync_channel_write_features_V_41_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_42_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_42_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_42_loc_channel <= ap_sync_channel_write_features_V_42_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_43_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_43_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_43_loc_channel <= ap_sync_channel_write_features_V_43_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_44_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_44_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_44_loc_channel <= ap_sync_channel_write_features_V_44_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_45_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_45_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_45_loc_channel <= ap_sync_channel_write_features_V_45_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_46_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_46_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_46_loc_channel <= ap_sync_channel_write_features_V_46_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_47_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_47_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_47_loc_channel <= ap_sync_channel_write_features_V_47_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_48_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_48_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_48_loc_channel <= ap_sync_channel_write_features_V_48_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_49_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_49_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_49_loc_channel <= ap_sync_channel_write_features_V_49_loc_channel;
         end
     end
 end
@@ -4504,252 +1360,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_50_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_50_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_50_loc_channel <= ap_sync_channel_write_features_V_50_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_51_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_51_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_51_loc_channel <= ap_sync_channel_write_features_V_51_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_52_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_52_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_52_loc_channel <= ap_sync_channel_write_features_V_52_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_53_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_53_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_53_loc_channel <= ap_sync_channel_write_features_V_53_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_54_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_54_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_54_loc_channel <= ap_sync_channel_write_features_V_54_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_55_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_55_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_55_loc_channel <= ap_sync_channel_write_features_V_55_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_56_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_56_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_56_loc_channel <= ap_sync_channel_write_features_V_56_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_57_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_57_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_57_loc_channel <= ap_sync_channel_write_features_V_57_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_58_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_58_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_58_loc_channel <= ap_sync_channel_write_features_V_58_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_59_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_59_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_59_loc_channel <= ap_sync_channel_write_features_V_59_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_5_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_features_V_5_loc_channel <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_features_V_5_loc_channel <= ap_sync_channel_write_features_V_5_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_60_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_60_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_60_loc_channel <= ap_sync_channel_write_features_V_60_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_61_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_61_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_61_loc_channel <= ap_sync_channel_write_features_V_61_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_62_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_62_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_62_loc_channel <= ap_sync_channel_write_features_V_62_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_63_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_63_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_63_loc_channel <= ap_sync_channel_write_features_V_63_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_64_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_64_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_64_loc_channel <= ap_sync_channel_write_features_V_64_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_65_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_65_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_65_loc_channel <= ap_sync_channel_write_features_V_65_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_66_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_66_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_66_loc_channel <= ap_sync_channel_write_features_V_66_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_67_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_67_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_67_loc_channel <= ap_sync_channel_write_features_V_67_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_68_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_68_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_68_loc_channel <= ap_sync_channel_write_features_V_68_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_69_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_69_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_69_loc_channel <= ap_sync_channel_write_features_V_69_loc_channel;
         end
     end
 end
@@ -4768,126 +1384,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_70_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_70_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_70_loc_channel <= ap_sync_channel_write_features_V_70_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_71_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_71_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_71_loc_channel <= ap_sync_channel_write_features_V_71_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_72_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_72_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_72_loc_channel <= ap_sync_channel_write_features_V_72_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_73_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_73_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_73_loc_channel <= ap_sync_channel_write_features_V_73_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_74_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_74_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_74_loc_channel <= ap_sync_channel_write_features_V_74_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_75_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_75_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_75_loc_channel <= ap_sync_channel_write_features_V_75_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_76_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_76_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_76_loc_channel <= ap_sync_channel_write_features_V_76_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_77_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_77_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_77_loc_channel <= ap_sync_channel_write_features_V_77_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_78_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_78_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_78_loc_channel <= ap_sync_channel_write_features_V_78_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_79_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_79_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_79_loc_channel <= ap_sync_channel_write_features_V_79_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_7_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
@@ -4900,252 +1396,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_80_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_80_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_80_loc_channel <= ap_sync_channel_write_features_V_80_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_81_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_81_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_81_loc_channel <= ap_sync_channel_write_features_V_81_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_82_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_82_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_82_loc_channel <= ap_sync_channel_write_features_V_82_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_83_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_83_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_83_loc_channel <= ap_sync_channel_write_features_V_83_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_84_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_84_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_84_loc_channel <= ap_sync_channel_write_features_V_84_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_85_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_85_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_85_loc_channel <= ap_sync_channel_write_features_V_85_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_86_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_86_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_86_loc_channel <= ap_sync_channel_write_features_V_86_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_87_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_87_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_87_loc_channel <= ap_sync_channel_write_features_V_87_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_88_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_88_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_88_loc_channel <= ap_sync_channel_write_features_V_88_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_89_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_89_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_89_loc_channel <= ap_sync_channel_write_features_V_89_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_features_V_8_loc_channel <= 1'b0;
     end else begin
         if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_features_V_8_loc_channel <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_features_V_8_loc_channel <= ap_sync_channel_write_features_V_8_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_90_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_90_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_90_loc_channel <= ap_sync_channel_write_features_V_90_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_91_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_91_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_91_loc_channel <= ap_sync_channel_write_features_V_91_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_92_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_92_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_92_loc_channel <= ap_sync_channel_write_features_V_92_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_93_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_93_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_93_loc_channel <= ap_sync_channel_write_features_V_93_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_94_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_94_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_94_loc_channel <= ap_sync_channel_write_features_V_94_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_95_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_95_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_95_loc_channel <= ap_sync_channel_write_features_V_95_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_96_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_96_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_96_loc_channel <= ap_sync_channel_write_features_V_96_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_97_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_97_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_97_loc_channel <= ap_sync_channel_write_features_V_97_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_98_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_98_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_98_loc_channel <= ap_sync_channel_write_features_V_98_loc_channel;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_features_V_99_loc_channel <= 1'b0;
-    end else begin
-        if (((Loop_read_input_features_proc2_U0_ap_done & Loop_read_input_features_proc2_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_features_V_99_loc_channel <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_features_V_99_loc_channel <= ap_sync_channel_write_features_V_99_loc_channel;
         end
     end
 end
@@ -5176,71 +1432,15 @@ end
 
 assign Block_logistic_regression_for_cond_i_exit_proc_U0_ap_continue = 1'b1;
 
-assign Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start = (features_V_loc_channel_empty_n & features_V_9_loc_channel_empty_n & features_V_99_loc_channel_empty_n & features_V_98_loc_channel_empty_n & features_V_97_loc_channel_empty_n & features_V_96_loc_channel_empty_n & features_V_95_loc_channel_empty_n & features_V_94_loc_channel_empty_n & features_V_93_loc_channel_empty_n & features_V_92_loc_channel_empty_n & features_V_91_loc_channel_empty_n & features_V_90_loc_channel_empty_n & features_V_8_loc_channel_empty_n & features_V_89_loc_channel_empty_n & features_V_88_loc_channel_empty_n & features_V_87_loc_channel_empty_n & features_V_86_loc_channel_empty_n & features_V_85_loc_channel_empty_n & features_V_84_loc_channel_empty_n & features_V_83_loc_channel_empty_n & features_V_82_loc_channel_empty_n & features_V_81_loc_channel_empty_n & features_V_80_loc_channel_empty_n & features_V_7_loc_channel_empty_n & features_V_79_loc_channel_empty_n & features_V_78_loc_channel_empty_n & features_V_77_loc_channel_empty_n & features_V_76_loc_channel_empty_n & features_V_75_loc_channel_empty_n & features_V_74_loc_channel_empty_n & features_V_73_loc_channel_empty_n & features_V_72_loc_channel_empty_n & features_V_71_loc_channel_empty_n & features_V_70_loc_channel_empty_n & features_V_6_loc_channel_empty_n & features_V_69_loc_channel_empty_n & features_V_68_loc_channel_empty_n & features_V_67_loc_channel_empty_n & features_V_66_loc_channel_empty_n & features_V_65_loc_channel_empty_n & features_V_64_loc_channel_empty_n & features_V_63_loc_channel_empty_n & features_V_62_loc_channel_empty_n & features_V_61_loc_channel_empty_n & features_V_60_loc_channel_empty_n & features_V_5_loc_channel_empty_n & features_V_59_loc_channel_empty_n & features_V_58_loc_channel_empty_n & features_V_57_loc_channel_empty_n & features_V_56_loc_channel_empty_n & features_V_55_loc_channel_empty_n & features_V_54_loc_channel_empty_n & features_V_53_loc_channel_empty_n & features_V_52_loc_channel_empty_n & features_V_51_loc_channel_empty_n & features_V_50_loc_channel_empty_n & features_V_4_loc_channel_empty_n & features_V_49_loc_channel_empty_n & features_V_48_loc_channel_empty_n & features_V_47_loc_channel_empty_n & features_V_46_loc_channel_empty_n & features_V_45_loc_channel_empty_n & features_V_44_loc_channel_empty_n & features_V_43_loc_channel_empty_n & features_V_42_loc_channel_empty_n & features_V_41_loc_channel_empty_n & features_V_40_loc_channel_empty_n & features_V_3_loc_channel_empty_n & features_V_39_loc_channel_empty_n & features_V_38_loc_channel_empty_n & features_V_37_loc_channel_empty_n & features_V_36_loc_channel_empty_n & features_V_35_loc_channel_empty_n & features_V_34_loc_channel_empty_n & features_V_33_loc_channel_empty_n & features_V_32_loc_channel_empty_n & features_V_31_loc_channel_empty_n & features_V_30_loc_channel_empty_n & features_V_2_loc_channel_empty_n & features_V_29_loc_channel_empty_n & features_V_28_loc_channel_empty_n & features_V_27_loc_channel_empty_n & features_V_26_loc_channel_empty_n & features_V_25_loc_channel_empty_n & features_V_24_loc_channel_empty_n & features_V_23_loc_channel_empty_n & features_V_22_loc_channel_empty_n & features_V_21_loc_channel_empty_n & features_V_20_loc_channel_empty_n & features_V_1_loc_channel_empty_n & features_V_19_loc_channel_empty_n & features_V_18_loc_channel_empty_n & features_V_17_loc_channel_empty_n & features_V_16_loc_channel_empty_n & features_V_15_loc_channel_empty_n & features_V_14_loc_channel_empty_n & features_V_13_loc_channel_empty_n & features_V_12_loc_channel_empty_n & features_V_127_loc_channel_empty_n & features_V_126_loc_channel_empty_n & features_V_125_loc_channel_empty_n & features_V_124_loc_channel_empty_n & features_V_123_loc_channel_empty_n & features_V_122_loc_channel_empty_n & features_V_121_loc_channel_empty_n & features_V_120_loc_channel_empty_n & features_V_11_loc_channel_empty_n & features_V_119_loc_channel_empty_n & features_V_118_loc_channel_empty_n & features_V_117_loc_channel_empty_n & features_V_116_loc_channel_empty_n & features_V_115_loc_channel_empty_n & features_V_114_loc_channel_empty_n & features_V_113_loc_channel_empty_n & features_V_112_loc_channel_empty_n & features_V_111_loc_channel_empty_n & features_V_110_loc_channel_empty_n & features_V_10_loc_channel_empty_n & features_V_109_loc_channel_empty_n & features_V_108_loc_channel_empty_n & features_V_107_loc_channel_empty_n & features_V_106_loc_channel_empty_n & features_V_105_loc_channel_empty_n & features_V_104_loc_channel_empty_n & features_V_103_loc_channel_empty_n & features_V_102_loc_channel_empty_n & features_V_101_loc_channel_empty_n & features_V_100_loc_channel_empty_n & (ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready ^ 1'b1) & ap_start);
+assign Block_logistic_regression_for_cond_i_exit_proc_U0_ap_start = (features_V_loc_channel_empty_n & features_V_9_loc_channel_empty_n & features_V_8_loc_channel_empty_n & features_V_7_loc_channel_empty_n & features_V_6_loc_channel_empty_n & features_V_5_loc_channel_empty_n & features_V_4_loc_channel_empty_n & features_V_3_loc_channel_empty_n & features_V_31_loc_channel_empty_n & features_V_30_loc_channel_empty_n & features_V_2_loc_channel_empty_n & features_V_29_loc_channel_empty_n & features_V_28_loc_channel_empty_n & features_V_27_loc_channel_empty_n & features_V_26_loc_channel_empty_n & features_V_25_loc_channel_empty_n & features_V_24_loc_channel_empty_n & features_V_23_loc_channel_empty_n & features_V_22_loc_channel_empty_n & features_V_21_loc_channel_empty_n & features_V_20_loc_channel_empty_n & features_V_1_loc_channel_empty_n & features_V_19_loc_channel_empty_n & features_V_18_loc_channel_empty_n & features_V_17_loc_channel_empty_n & features_V_16_loc_channel_empty_n & features_V_15_loc_channel_empty_n & features_V_14_loc_channel_empty_n & features_V_13_loc_channel_empty_n & features_V_12_loc_channel_empty_n & features_V_11_loc_channel_empty_n & features_V_10_loc_channel_empty_n & (ap_sync_reg_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready ^ 1'b1) & ap_start);
 
-assign Loop_read_input_features_proc2_U0_ap_continue = (ap_sync_channel_write_features_V_loc_channel & ap_sync_channel_write_features_V_9_loc_channel & ap_sync_channel_write_features_V_99_loc_channel & ap_sync_channel_write_features_V_98_loc_channel & ap_sync_channel_write_features_V_97_loc_channel & ap_sync_channel_write_features_V_96_loc_channel & ap_sync_channel_write_features_V_95_loc_channel & ap_sync_channel_write_features_V_94_loc_channel & ap_sync_channel_write_features_V_93_loc_channel & ap_sync_channel_write_features_V_92_loc_channel & ap_sync_channel_write_features_V_91_loc_channel & ap_sync_channel_write_features_V_90_loc_channel & ap_sync_channel_write_features_V_8_loc_channel & ap_sync_channel_write_features_V_89_loc_channel & ap_sync_channel_write_features_V_88_loc_channel & ap_sync_channel_write_features_V_87_loc_channel & ap_sync_channel_write_features_V_86_loc_channel & ap_sync_channel_write_features_V_85_loc_channel & ap_sync_channel_write_features_V_84_loc_channel & ap_sync_channel_write_features_V_83_loc_channel & ap_sync_channel_write_features_V_82_loc_channel & ap_sync_channel_write_features_V_81_loc_channel & ap_sync_channel_write_features_V_80_loc_channel & ap_sync_channel_write_features_V_7_loc_channel & ap_sync_channel_write_features_V_79_loc_channel & ap_sync_channel_write_features_V_78_loc_channel & ap_sync_channel_write_features_V_77_loc_channel & ap_sync_channel_write_features_V_76_loc_channel & ap_sync_channel_write_features_V_75_loc_channel & ap_sync_channel_write_features_V_74_loc_channel & ap_sync_channel_write_features_V_73_loc_channel & ap_sync_channel_write_features_V_72_loc_channel & ap_sync_channel_write_features_V_71_loc_channel & ap_sync_channel_write_features_V_70_loc_channel & ap_sync_channel_write_features_V_6_loc_channel & ap_sync_channel_write_features_V_69_loc_channel & ap_sync_channel_write_features_V_68_loc_channel & ap_sync_channel_write_features_V_67_loc_channel & ap_sync_channel_write_features_V_66_loc_channel & ap_sync_channel_write_features_V_65_loc_channel & ap_sync_channel_write_features_V_64_loc_channel & ap_sync_channel_write_features_V_63_loc_channel & ap_sync_channel_write_features_V_62_loc_channel & ap_sync_channel_write_features_V_61_loc_channel & ap_sync_channel_write_features_V_60_loc_channel & ap_sync_channel_write_features_V_5_loc_channel & ap_sync_channel_write_features_V_59_loc_channel & ap_sync_channel_write_features_V_58_loc_channel & ap_sync_channel_write_features_V_57_loc_channel & ap_sync_channel_write_features_V_56_loc_channel & ap_sync_channel_write_features_V_55_loc_channel & ap_sync_channel_write_features_V_54_loc_channel & ap_sync_channel_write_features_V_53_loc_channel & ap_sync_channel_write_features_V_52_loc_channel & ap_sync_channel_write_features_V_51_loc_channel & ap_sync_channel_write_features_V_50_loc_channel & ap_sync_channel_write_features_V_4_loc_channel & ap_sync_channel_write_features_V_49_loc_channel & ap_sync_channel_write_features_V_48_loc_channel & ap_sync_channel_write_features_V_47_loc_channel & ap_sync_channel_write_features_V_46_loc_channel & ap_sync_channel_write_features_V_45_loc_channel & ap_sync_channel_write_features_V_44_loc_channel & ap_sync_channel_write_features_V_43_loc_channel & ap_sync_channel_write_features_V_42_loc_channel & ap_sync_channel_write_features_V_41_loc_channel & ap_sync_channel_write_features_V_40_loc_channel & ap_sync_channel_write_features_V_3_loc_channel & ap_sync_channel_write_features_V_39_loc_channel & ap_sync_channel_write_features_V_38_loc_channel & ap_sync_channel_write_features_V_37_loc_channel & ap_sync_channel_write_features_V_36_loc_channel & ap_sync_channel_write_features_V_35_loc_channel & ap_sync_channel_write_features_V_34_loc_channel & ap_sync_channel_write_features_V_33_loc_channel & ap_sync_channel_write_features_V_32_loc_channel & ap_sync_channel_write_features_V_31_loc_channel & ap_sync_channel_write_features_V_30_loc_channel & ap_sync_channel_write_features_V_2_loc_channel & ap_sync_channel_write_features_V_29_loc_channel & ap_sync_channel_write_features_V_28_loc_channel & ap_sync_channel_write_features_V_27_loc_channel & ap_sync_channel_write_features_V_26_loc_channel & ap_sync_channel_write_features_V_25_loc_channel & ap_sync_channel_write_features_V_24_loc_channel & ap_sync_channel_write_features_V_23_loc_channel & ap_sync_channel_write_features_V_22_loc_channel & ap_sync_channel_write_features_V_21_loc_channel & ap_sync_channel_write_features_V_20_loc_channel & ap_sync_channel_write_features_V_1_loc_channel & ap_sync_channel_write_features_V_19_loc_channel & ap_sync_channel_write_features_V_18_loc_channel & ap_sync_channel_write_features_V_17_loc_channel & ap_sync_channel_write_features_V_16_loc_channel & ap_sync_channel_write_features_V_15_loc_channel & ap_sync_channel_write_features_V_14_loc_channel & ap_sync_channel_write_features_V_13_loc_channel & ap_sync_channel_write_features_V_12_loc_channel & ap_sync_channel_write_features_V_127_loc_channel & ap_sync_channel_write_features_V_126_loc_channel & ap_sync_channel_write_features_V_125_loc_channel & ap_sync_channel_write_features_V_124_loc_channel & ap_sync_channel_write_features_V_123_loc_channel & ap_sync_channel_write_features_V_122_loc_channel & ap_sync_channel_write_features_V_121_loc_channel & ap_sync_channel_write_features_V_120_loc_channel & ap_sync_channel_write_features_V_11_loc_channel & ap_sync_channel_write_features_V_119_loc_channel & ap_sync_channel_write_features_V_118_loc_channel & ap_sync_channel_write_features_V_117_loc_channel & ap_sync_channel_write_features_V_116_loc_channel & ap_sync_channel_write_features_V_115_loc_channel & ap_sync_channel_write_features_V_114_loc_channel & ap_sync_channel_write_features_V_113_loc_channel & ap_sync_channel_write_features_V_112_loc_channel & ap_sync_channel_write_features_V_111_loc_channel & ap_sync_channel_write_features_V_110_loc_channel & ap_sync_channel_write_features_V_10_loc_channel & ap_sync_channel_write_features_V_109_loc_channel & ap_sync_channel_write_features_V_108_loc_channel & ap_sync_channel_write_features_V_107_loc_channel & ap_sync_channel_write_features_V_106_loc_channel & ap_sync_channel_write_features_V_105_loc_channel & ap_sync_channel_write_features_V_104_loc_channel & ap_sync_channel_write_features_V_103_loc_channel & ap_sync_channel_write_features_V_102_loc_channel & ap_sync_channel_write_features_V_101_loc_channel & ap_sync_channel_write_features_V_100_loc_channel);
+assign Loop_read_input_features_proc2_U0_ap_continue = (ap_sync_channel_write_features_V_loc_channel & ap_sync_channel_write_features_V_9_loc_channel & ap_sync_channel_write_features_V_8_loc_channel & ap_sync_channel_write_features_V_7_loc_channel & ap_sync_channel_write_features_V_6_loc_channel & ap_sync_channel_write_features_V_5_loc_channel & ap_sync_channel_write_features_V_4_loc_channel & ap_sync_channel_write_features_V_3_loc_channel & ap_sync_channel_write_features_V_31_loc_channel & ap_sync_channel_write_features_V_30_loc_channel & ap_sync_channel_write_features_V_2_loc_channel & ap_sync_channel_write_features_V_29_loc_channel & ap_sync_channel_write_features_V_28_loc_channel & ap_sync_channel_write_features_V_27_loc_channel & ap_sync_channel_write_features_V_26_loc_channel & ap_sync_channel_write_features_V_25_loc_channel & ap_sync_channel_write_features_V_24_loc_channel & ap_sync_channel_write_features_V_23_loc_channel & ap_sync_channel_write_features_V_22_loc_channel & ap_sync_channel_write_features_V_21_loc_channel & ap_sync_channel_write_features_V_20_loc_channel & ap_sync_channel_write_features_V_1_loc_channel & ap_sync_channel_write_features_V_19_loc_channel & ap_sync_channel_write_features_V_18_loc_channel & ap_sync_channel_write_features_V_17_loc_channel & ap_sync_channel_write_features_V_16_loc_channel & ap_sync_channel_write_features_V_15_loc_channel & ap_sync_channel_write_features_V_14_loc_channel & ap_sync_channel_write_features_V_13_loc_channel & ap_sync_channel_write_features_V_12_loc_channel & ap_sync_channel_write_features_V_11_loc_channel & ap_sync_channel_write_features_V_10_loc_channel);
 
 assign Loop_read_input_features_proc2_U0_ap_start = ((ap_sync_reg_Loop_read_input_features_proc2_U0_ap_ready ^ 1'b1) & ap_start);
 
-assign ap_channel_done_features_V_100_loc_channel = ((ap_sync_reg_channel_write_features_V_100_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_101_loc_channel = ((ap_sync_reg_channel_write_features_V_101_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_102_loc_channel = ((ap_sync_reg_channel_write_features_V_102_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_103_loc_channel = ((ap_sync_reg_channel_write_features_V_103_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_104_loc_channel = ((ap_sync_reg_channel_write_features_V_104_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_105_loc_channel = ((ap_sync_reg_channel_write_features_V_105_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_106_loc_channel = ((ap_sync_reg_channel_write_features_V_106_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_107_loc_channel = ((ap_sync_reg_channel_write_features_V_107_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_108_loc_channel = ((ap_sync_reg_channel_write_features_V_108_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_109_loc_channel = ((ap_sync_reg_channel_write_features_V_109_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_10_loc_channel = ((ap_sync_reg_channel_write_features_V_10_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
-assign ap_channel_done_features_V_110_loc_channel = ((ap_sync_reg_channel_write_features_V_110_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_111_loc_channel = ((ap_sync_reg_channel_write_features_V_111_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_112_loc_channel = ((ap_sync_reg_channel_write_features_V_112_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_113_loc_channel = ((ap_sync_reg_channel_write_features_V_113_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_114_loc_channel = ((ap_sync_reg_channel_write_features_V_114_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_115_loc_channel = ((ap_sync_reg_channel_write_features_V_115_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_116_loc_channel = ((ap_sync_reg_channel_write_features_V_116_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_117_loc_channel = ((ap_sync_reg_channel_write_features_V_117_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_118_loc_channel = ((ap_sync_reg_channel_write_features_V_118_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_119_loc_channel = ((ap_sync_reg_channel_write_features_V_119_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_11_loc_channel = ((ap_sync_reg_channel_write_features_V_11_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_120_loc_channel = ((ap_sync_reg_channel_write_features_V_120_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_121_loc_channel = ((ap_sync_reg_channel_write_features_V_121_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_122_loc_channel = ((ap_sync_reg_channel_write_features_V_122_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_123_loc_channel = ((ap_sync_reg_channel_write_features_V_123_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_124_loc_channel = ((ap_sync_reg_channel_write_features_V_124_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_125_loc_channel = ((ap_sync_reg_channel_write_features_V_125_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_126_loc_channel = ((ap_sync_reg_channel_write_features_V_126_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_127_loc_channel = ((ap_sync_reg_channel_write_features_V_127_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
 assign ap_channel_done_features_V_12_loc_channel = ((ap_sync_reg_channel_write_features_V_12_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
@@ -5286,153 +1486,17 @@ assign ap_channel_done_features_V_30_loc_channel = ((ap_sync_reg_channel_write_f
 
 assign ap_channel_done_features_V_31_loc_channel = ((ap_sync_reg_channel_write_features_V_31_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
-assign ap_channel_done_features_V_32_loc_channel = ((ap_sync_reg_channel_write_features_V_32_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_33_loc_channel = ((ap_sync_reg_channel_write_features_V_33_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_34_loc_channel = ((ap_sync_reg_channel_write_features_V_34_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_35_loc_channel = ((ap_sync_reg_channel_write_features_V_35_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_36_loc_channel = ((ap_sync_reg_channel_write_features_V_36_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_37_loc_channel = ((ap_sync_reg_channel_write_features_V_37_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_38_loc_channel = ((ap_sync_reg_channel_write_features_V_38_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_39_loc_channel = ((ap_sync_reg_channel_write_features_V_39_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_3_loc_channel = ((ap_sync_reg_channel_write_features_V_3_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_40_loc_channel = ((ap_sync_reg_channel_write_features_V_40_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_41_loc_channel = ((ap_sync_reg_channel_write_features_V_41_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_42_loc_channel = ((ap_sync_reg_channel_write_features_V_42_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_43_loc_channel = ((ap_sync_reg_channel_write_features_V_43_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_44_loc_channel = ((ap_sync_reg_channel_write_features_V_44_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_45_loc_channel = ((ap_sync_reg_channel_write_features_V_45_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_46_loc_channel = ((ap_sync_reg_channel_write_features_V_46_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_47_loc_channel = ((ap_sync_reg_channel_write_features_V_47_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_48_loc_channel = ((ap_sync_reg_channel_write_features_V_48_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_49_loc_channel = ((ap_sync_reg_channel_write_features_V_49_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
 assign ap_channel_done_features_V_4_loc_channel = ((ap_sync_reg_channel_write_features_V_4_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
-assign ap_channel_done_features_V_50_loc_channel = ((ap_sync_reg_channel_write_features_V_50_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_51_loc_channel = ((ap_sync_reg_channel_write_features_V_51_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_52_loc_channel = ((ap_sync_reg_channel_write_features_V_52_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_53_loc_channel = ((ap_sync_reg_channel_write_features_V_53_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_54_loc_channel = ((ap_sync_reg_channel_write_features_V_54_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_55_loc_channel = ((ap_sync_reg_channel_write_features_V_55_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_56_loc_channel = ((ap_sync_reg_channel_write_features_V_56_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_57_loc_channel = ((ap_sync_reg_channel_write_features_V_57_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_58_loc_channel = ((ap_sync_reg_channel_write_features_V_58_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_59_loc_channel = ((ap_sync_reg_channel_write_features_V_59_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_5_loc_channel = ((ap_sync_reg_channel_write_features_V_5_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_60_loc_channel = ((ap_sync_reg_channel_write_features_V_60_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_61_loc_channel = ((ap_sync_reg_channel_write_features_V_61_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_62_loc_channel = ((ap_sync_reg_channel_write_features_V_62_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_63_loc_channel = ((ap_sync_reg_channel_write_features_V_63_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_64_loc_channel = ((ap_sync_reg_channel_write_features_V_64_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_65_loc_channel = ((ap_sync_reg_channel_write_features_V_65_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_66_loc_channel = ((ap_sync_reg_channel_write_features_V_66_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_67_loc_channel = ((ap_sync_reg_channel_write_features_V_67_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_68_loc_channel = ((ap_sync_reg_channel_write_features_V_68_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_69_loc_channel = ((ap_sync_reg_channel_write_features_V_69_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
 assign ap_channel_done_features_V_6_loc_channel = ((ap_sync_reg_channel_write_features_V_6_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
-assign ap_channel_done_features_V_70_loc_channel = ((ap_sync_reg_channel_write_features_V_70_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_71_loc_channel = ((ap_sync_reg_channel_write_features_V_71_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_72_loc_channel = ((ap_sync_reg_channel_write_features_V_72_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_73_loc_channel = ((ap_sync_reg_channel_write_features_V_73_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_74_loc_channel = ((ap_sync_reg_channel_write_features_V_74_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_75_loc_channel = ((ap_sync_reg_channel_write_features_V_75_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_76_loc_channel = ((ap_sync_reg_channel_write_features_V_76_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_77_loc_channel = ((ap_sync_reg_channel_write_features_V_77_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_78_loc_channel = ((ap_sync_reg_channel_write_features_V_78_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_79_loc_channel = ((ap_sync_reg_channel_write_features_V_79_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_7_loc_channel = ((ap_sync_reg_channel_write_features_V_7_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
-assign ap_channel_done_features_V_80_loc_channel = ((ap_sync_reg_channel_write_features_V_80_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_81_loc_channel = ((ap_sync_reg_channel_write_features_V_81_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_82_loc_channel = ((ap_sync_reg_channel_write_features_V_82_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_83_loc_channel = ((ap_sync_reg_channel_write_features_V_83_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_84_loc_channel = ((ap_sync_reg_channel_write_features_V_84_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_85_loc_channel = ((ap_sync_reg_channel_write_features_V_85_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_86_loc_channel = ((ap_sync_reg_channel_write_features_V_86_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_87_loc_channel = ((ap_sync_reg_channel_write_features_V_87_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_88_loc_channel = ((ap_sync_reg_channel_write_features_V_88_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_89_loc_channel = ((ap_sync_reg_channel_write_features_V_89_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
 assign ap_channel_done_features_V_8_loc_channel = ((ap_sync_reg_channel_write_features_V_8_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_90_loc_channel = ((ap_sync_reg_channel_write_features_V_90_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_91_loc_channel = ((ap_sync_reg_channel_write_features_V_91_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_92_loc_channel = ((ap_sync_reg_channel_write_features_V_92_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_93_loc_channel = ((ap_sync_reg_channel_write_features_V_93_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_94_loc_channel = ((ap_sync_reg_channel_write_features_V_94_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_95_loc_channel = ((ap_sync_reg_channel_write_features_V_95_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_96_loc_channel = ((ap_sync_reg_channel_write_features_V_96_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_97_loc_channel = ((ap_sync_reg_channel_write_features_V_97_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_98_loc_channel = ((ap_sync_reg_channel_write_features_V_98_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
-
-assign ap_channel_done_features_V_99_loc_channel = ((ap_sync_reg_channel_write_features_V_99_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
 assign ap_channel_done_features_V_9_loc_channel = ((ap_sync_reg_channel_write_features_V_9_loc_channel ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_done);
 
@@ -5440,7 +1504,7 @@ assign ap_channel_done_features_V_loc_channel = ((ap_sync_reg_channel_write_feat
 
 assign ap_done = Block_logistic_regression_for_cond_i_exit_proc_U0_ap_done;
 
-assign ap_idle = ((features_V_loc_channel_empty_n ^ 1'b1) & (features_V_1_loc_channel_empty_n ^ 1'b1) & (features_V_2_loc_channel_empty_n ^ 1'b1) & (features_V_3_loc_channel_empty_n ^ 1'b1) & (features_V_4_loc_channel_empty_n ^ 1'b1) & (features_V_5_loc_channel_empty_n ^ 1'b1) & (features_V_6_loc_channel_empty_n ^ 1'b1) & (features_V_7_loc_channel_empty_n ^ 1'b1) & (features_V_8_loc_channel_empty_n ^ 1'b1) & (features_V_9_loc_channel_empty_n ^ 1'b1) & (features_V_10_loc_channel_empty_n ^ 1'b1) & (features_V_11_loc_channel_empty_n ^ 1'b1) & (features_V_12_loc_channel_empty_n ^ 1'b1) & (features_V_13_loc_channel_empty_n ^ 1'b1) & (features_V_14_loc_channel_empty_n ^ 1'b1) & (features_V_15_loc_channel_empty_n ^ 1'b1) & (features_V_16_loc_channel_empty_n ^ 1'b1) & (features_V_17_loc_channel_empty_n ^ 1'b1) & (features_V_18_loc_channel_empty_n ^ 1'b1) & (features_V_19_loc_channel_empty_n ^ 1'b1) & (features_V_20_loc_channel_empty_n ^ 1'b1) & (features_V_21_loc_channel_empty_n ^ 1'b1) & (features_V_22_loc_channel_empty_n ^ 1'b1) & (features_V_23_loc_channel_empty_n ^ 1'b1) & (features_V_24_loc_channel_empty_n ^ 1'b1) & (features_V_25_loc_channel_empty_n ^ 1'b1) & (features_V_26_loc_channel_empty_n ^ 1'b1) & (features_V_27_loc_channel_empty_n ^ 1'b1) & (features_V_28_loc_channel_empty_n ^ 1'b1) & (features_V_29_loc_channel_empty_n ^ 1'b1) & (features_V_30_loc_channel_empty_n ^ 1'b1) & (features_V_31_loc_channel_empty_n ^ 1'b1) & (features_V_32_loc_channel_empty_n ^ 1'b1) & (features_V_33_loc_channel_empty_n ^ 1'b1) & (features_V_34_loc_channel_empty_n ^ 1'b1) & (features_V_35_loc_channel_empty_n ^ 1'b1) & (features_V_36_loc_channel_empty_n ^ 1'b1) & (features_V_37_loc_channel_empty_n ^ 1'b1) & (features_V_38_loc_channel_empty_n ^ 1'b1) & (features_V_39_loc_channel_empty_n ^ 1'b1) & (features_V_40_loc_channel_empty_n ^ 1'b1) & (features_V_41_loc_channel_empty_n ^ 1'b1) & (features_V_42_loc_channel_empty_n ^ 1'b1) & (features_V_43_loc_channel_empty_n ^ 1'b1) & (features_V_44_loc_channel_empty_n ^ 1'b1) & (features_V_45_loc_channel_empty_n ^ 1'b1) & (features_V_46_loc_channel_empty_n ^ 1'b1) & (features_V_47_loc_channel_empty_n ^ 1'b1) & (features_V_48_loc_channel_empty_n ^ 1'b1) & (features_V_49_loc_channel_empty_n ^ 1'b1) & (features_V_50_loc_channel_empty_n ^ 1'b1) & (features_V_51_loc_channel_empty_n ^ 1'b1) & (features_V_52_loc_channel_empty_n ^ 1'b1) & (features_V_53_loc_channel_empty_n ^ 1'b1) & (features_V_54_loc_channel_empty_n ^ 1'b1) & (features_V_55_loc_channel_empty_n ^ 1'b1) & (features_V_56_loc_channel_empty_n ^ 1'b1) & (features_V_57_loc_channel_empty_n ^ 1'b1) & (features_V_58_loc_channel_empty_n ^ 1'b1) & (features_V_59_loc_channel_empty_n ^ 1'b1) & (features_V_60_loc_channel_empty_n ^ 1'b1) & (features_V_61_loc_channel_empty_n ^ 1'b1) & (features_V_62_loc_channel_empty_n ^ 1'b1) & (features_V_63_loc_channel_empty_n ^ 1'b1) & (features_V_64_loc_channel_empty_n ^ 1'b1) & (features_V_65_loc_channel_empty_n ^ 1'b1) & (features_V_66_loc_channel_empty_n ^ 1'b1) & (features_V_67_loc_channel_empty_n ^ 1'b1) & (features_V_68_loc_channel_empty_n ^ 1'b1) & (features_V_69_loc_channel_empty_n ^ 1'b1) & (features_V_70_loc_channel_empty_n ^ 1'b1) & (features_V_71_loc_channel_empty_n ^ 1'b1) & (features_V_72_loc_channel_empty_n ^ 1'b1) & (features_V_73_loc_channel_empty_n ^ 1'b1) & (features_V_74_loc_channel_empty_n ^ 1'b1) & (features_V_75_loc_channel_empty_n ^ 1'b1) & (features_V_76_loc_channel_empty_n ^ 1'b1) & (features_V_77_loc_channel_empty_n ^ 1'b1) & (features_V_78_loc_channel_empty_n ^ 1'b1) & (features_V_79_loc_channel_empty_n ^ 1'b1) & (features_V_80_loc_channel_empty_n ^ 1'b1) & (features_V_81_loc_channel_empty_n ^ 1'b1) & (features_V_82_loc_channel_empty_n ^ 1'b1) & (features_V_83_loc_channel_empty_n ^ 1'b1) & (features_V_84_loc_channel_empty_n ^ 1'b1) & (features_V_85_loc_channel_empty_n ^ 1'b1) & (features_V_86_loc_channel_empty_n ^ 1'b1) & (features_V_87_loc_channel_empty_n ^ 1'b1) & (features_V_88_loc_channel_empty_n ^ 1'b1) & (features_V_89_loc_channel_empty_n ^ 1'b1) & (features_V_90_loc_channel_empty_n ^ 1'b1) & (features_V_91_loc_channel_empty_n ^ 1'b1) & (features_V_92_loc_channel_empty_n ^ 1'b1) & (features_V_93_loc_channel_empty_n ^ 1'b1) & (features_V_94_loc_channel_empty_n ^ 1'b1) & (features_V_95_loc_channel_empty_n ^ 1'b1) & (features_V_96_loc_channel_empty_n ^ 1'b1) & (features_V_97_loc_channel_empty_n ^ 1'b1) & (features_V_98_loc_channel_empty_n ^ 1'b1) & (features_V_99_loc_channel_empty_n ^ 1'b1) & (features_V_100_loc_channel_empty_n ^ 1'b1) & (features_V_101_loc_channel_empty_n ^ 1'b1) & (features_V_102_loc_channel_empty_n ^ 1'b1) & (features_V_103_loc_channel_empty_n ^ 1'b1) & (features_V_104_loc_channel_empty_n ^ 1'b1) & (features_V_105_loc_channel_empty_n ^ 1'b1) & (features_V_106_loc_channel_empty_n ^ 1'b1) & (features_V_107_loc_channel_empty_n ^ 1'b1) & (features_V_108_loc_channel_empty_n ^ 1'b1) & (features_V_109_loc_channel_empty_n ^ 1'b1) & (features_V_110_loc_channel_empty_n ^ 1'b1) & (features_V_111_loc_channel_empty_n ^ 1'b1) & (features_V_112_loc_channel_empty_n ^ 1'b1) & (features_V_113_loc_channel_empty_n ^ 1'b1) & (features_V_114_loc_channel_empty_n ^ 1'b1) & (features_V_115_loc_channel_empty_n ^ 1'b1) & (features_V_116_loc_channel_empty_n ^ 1'b1) & (features_V_117_loc_channel_empty_n ^ 1'b1) & (features_V_118_loc_channel_empty_n ^ 1'b1) & (features_V_119_loc_channel_empty_n ^ 1'b1) & (features_V_120_loc_channel_empty_n ^ 1'b1) & (features_V_121_loc_channel_empty_n ^ 1'b1) & (features_V_122_loc_channel_empty_n ^ 1'b1) & (features_V_123_loc_channel_empty_n ^ 1'b1) & (features_V_124_loc_channel_empty_n ^ 1'b1) & (features_V_125_loc_channel_empty_n ^ 1'b1) & (features_V_126_loc_channel_empty_n ^ 1'b1) & (features_V_127_loc_channel_empty_n ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_idle & Block_logistic_regression_for_cond_i_exit_proc_U0_ap_idle);
+assign ap_idle = ((features_V_loc_channel_empty_n ^ 1'b1) & (features_V_1_loc_channel_empty_n ^ 1'b1) & (features_V_2_loc_channel_empty_n ^ 1'b1) & (features_V_3_loc_channel_empty_n ^ 1'b1) & (features_V_4_loc_channel_empty_n ^ 1'b1) & (features_V_5_loc_channel_empty_n ^ 1'b1) & (features_V_6_loc_channel_empty_n ^ 1'b1) & (features_V_7_loc_channel_empty_n ^ 1'b1) & (features_V_8_loc_channel_empty_n ^ 1'b1) & (features_V_9_loc_channel_empty_n ^ 1'b1) & (features_V_10_loc_channel_empty_n ^ 1'b1) & (features_V_11_loc_channel_empty_n ^ 1'b1) & (features_V_12_loc_channel_empty_n ^ 1'b1) & (features_V_13_loc_channel_empty_n ^ 1'b1) & (features_V_14_loc_channel_empty_n ^ 1'b1) & (features_V_15_loc_channel_empty_n ^ 1'b1) & (features_V_16_loc_channel_empty_n ^ 1'b1) & (features_V_17_loc_channel_empty_n ^ 1'b1) & (features_V_18_loc_channel_empty_n ^ 1'b1) & (features_V_19_loc_channel_empty_n ^ 1'b1) & (features_V_20_loc_channel_empty_n ^ 1'b1) & (features_V_21_loc_channel_empty_n ^ 1'b1) & (features_V_22_loc_channel_empty_n ^ 1'b1) & (features_V_23_loc_channel_empty_n ^ 1'b1) & (features_V_24_loc_channel_empty_n ^ 1'b1) & (features_V_25_loc_channel_empty_n ^ 1'b1) & (features_V_26_loc_channel_empty_n ^ 1'b1) & (features_V_27_loc_channel_empty_n ^ 1'b1) & (features_V_28_loc_channel_empty_n ^ 1'b1) & (features_V_29_loc_channel_empty_n ^ 1'b1) & (features_V_30_loc_channel_empty_n ^ 1'b1) & (features_V_31_loc_channel_empty_n ^ 1'b1) & Loop_read_input_features_proc2_U0_ap_idle & Block_logistic_regression_for_cond_i_exit_proc_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
@@ -5452,65 +1516,9 @@ assign ap_sync_Block_logistic_regression_for_cond_i_exit_proc_U0_ap_ready = (ap_
 
 assign ap_sync_Loop_read_input_features_proc2_U0_ap_ready = (ap_sync_reg_Loop_read_input_features_proc2_U0_ap_ready | Loop_read_input_features_proc2_U0_ap_ready);
 
-assign ap_sync_channel_write_features_V_100_loc_channel = ((features_V_100_loc_channel_full_n & ap_channel_done_features_V_100_loc_channel) | ap_sync_reg_channel_write_features_V_100_loc_channel);
-
-assign ap_sync_channel_write_features_V_101_loc_channel = ((features_V_101_loc_channel_full_n & ap_channel_done_features_V_101_loc_channel) | ap_sync_reg_channel_write_features_V_101_loc_channel);
-
-assign ap_sync_channel_write_features_V_102_loc_channel = ((features_V_102_loc_channel_full_n & ap_channel_done_features_V_102_loc_channel) | ap_sync_reg_channel_write_features_V_102_loc_channel);
-
-assign ap_sync_channel_write_features_V_103_loc_channel = ((features_V_103_loc_channel_full_n & ap_channel_done_features_V_103_loc_channel) | ap_sync_reg_channel_write_features_V_103_loc_channel);
-
-assign ap_sync_channel_write_features_V_104_loc_channel = ((features_V_104_loc_channel_full_n & ap_channel_done_features_V_104_loc_channel) | ap_sync_reg_channel_write_features_V_104_loc_channel);
-
-assign ap_sync_channel_write_features_V_105_loc_channel = ((features_V_105_loc_channel_full_n & ap_channel_done_features_V_105_loc_channel) | ap_sync_reg_channel_write_features_V_105_loc_channel);
-
-assign ap_sync_channel_write_features_V_106_loc_channel = ((features_V_106_loc_channel_full_n & ap_channel_done_features_V_106_loc_channel) | ap_sync_reg_channel_write_features_V_106_loc_channel);
-
-assign ap_sync_channel_write_features_V_107_loc_channel = ((features_V_107_loc_channel_full_n & ap_channel_done_features_V_107_loc_channel) | ap_sync_reg_channel_write_features_V_107_loc_channel);
-
-assign ap_sync_channel_write_features_V_108_loc_channel = ((features_V_108_loc_channel_full_n & ap_channel_done_features_V_108_loc_channel) | ap_sync_reg_channel_write_features_V_108_loc_channel);
-
-assign ap_sync_channel_write_features_V_109_loc_channel = ((features_V_109_loc_channel_full_n & ap_channel_done_features_V_109_loc_channel) | ap_sync_reg_channel_write_features_V_109_loc_channel);
-
 assign ap_sync_channel_write_features_V_10_loc_channel = ((features_V_10_loc_channel_full_n & ap_channel_done_features_V_10_loc_channel) | ap_sync_reg_channel_write_features_V_10_loc_channel);
 
-assign ap_sync_channel_write_features_V_110_loc_channel = ((features_V_110_loc_channel_full_n & ap_channel_done_features_V_110_loc_channel) | ap_sync_reg_channel_write_features_V_110_loc_channel);
-
-assign ap_sync_channel_write_features_V_111_loc_channel = ((features_V_111_loc_channel_full_n & ap_channel_done_features_V_111_loc_channel) | ap_sync_reg_channel_write_features_V_111_loc_channel);
-
-assign ap_sync_channel_write_features_V_112_loc_channel = ((features_V_112_loc_channel_full_n & ap_channel_done_features_V_112_loc_channel) | ap_sync_reg_channel_write_features_V_112_loc_channel);
-
-assign ap_sync_channel_write_features_V_113_loc_channel = ((features_V_113_loc_channel_full_n & ap_channel_done_features_V_113_loc_channel) | ap_sync_reg_channel_write_features_V_113_loc_channel);
-
-assign ap_sync_channel_write_features_V_114_loc_channel = ((features_V_114_loc_channel_full_n & ap_channel_done_features_V_114_loc_channel) | ap_sync_reg_channel_write_features_V_114_loc_channel);
-
-assign ap_sync_channel_write_features_V_115_loc_channel = ((features_V_115_loc_channel_full_n & ap_channel_done_features_V_115_loc_channel) | ap_sync_reg_channel_write_features_V_115_loc_channel);
-
-assign ap_sync_channel_write_features_V_116_loc_channel = ((features_V_116_loc_channel_full_n & ap_channel_done_features_V_116_loc_channel) | ap_sync_reg_channel_write_features_V_116_loc_channel);
-
-assign ap_sync_channel_write_features_V_117_loc_channel = ((features_V_117_loc_channel_full_n & ap_channel_done_features_V_117_loc_channel) | ap_sync_reg_channel_write_features_V_117_loc_channel);
-
-assign ap_sync_channel_write_features_V_118_loc_channel = ((features_V_118_loc_channel_full_n & ap_channel_done_features_V_118_loc_channel) | ap_sync_reg_channel_write_features_V_118_loc_channel);
-
-assign ap_sync_channel_write_features_V_119_loc_channel = ((features_V_119_loc_channel_full_n & ap_channel_done_features_V_119_loc_channel) | ap_sync_reg_channel_write_features_V_119_loc_channel);
-
 assign ap_sync_channel_write_features_V_11_loc_channel = ((features_V_11_loc_channel_full_n & ap_channel_done_features_V_11_loc_channel) | ap_sync_reg_channel_write_features_V_11_loc_channel);
-
-assign ap_sync_channel_write_features_V_120_loc_channel = ((features_V_120_loc_channel_full_n & ap_channel_done_features_V_120_loc_channel) | ap_sync_reg_channel_write_features_V_120_loc_channel);
-
-assign ap_sync_channel_write_features_V_121_loc_channel = ((features_V_121_loc_channel_full_n & ap_channel_done_features_V_121_loc_channel) | ap_sync_reg_channel_write_features_V_121_loc_channel);
-
-assign ap_sync_channel_write_features_V_122_loc_channel = ((features_V_122_loc_channel_full_n & ap_channel_done_features_V_122_loc_channel) | ap_sync_reg_channel_write_features_V_122_loc_channel);
-
-assign ap_sync_channel_write_features_V_123_loc_channel = ((features_V_123_loc_channel_full_n & ap_channel_done_features_V_123_loc_channel) | ap_sync_reg_channel_write_features_V_123_loc_channel);
-
-assign ap_sync_channel_write_features_V_124_loc_channel = ((features_V_124_loc_channel_full_n & ap_channel_done_features_V_124_loc_channel) | ap_sync_reg_channel_write_features_V_124_loc_channel);
-
-assign ap_sync_channel_write_features_V_125_loc_channel = ((features_V_125_loc_channel_full_n & ap_channel_done_features_V_125_loc_channel) | ap_sync_reg_channel_write_features_V_125_loc_channel);
-
-assign ap_sync_channel_write_features_V_126_loc_channel = ((features_V_126_loc_channel_full_n & ap_channel_done_features_V_126_loc_channel) | ap_sync_reg_channel_write_features_V_126_loc_channel);
-
-assign ap_sync_channel_write_features_V_127_loc_channel = ((features_V_127_loc_channel_full_n & ap_channel_done_features_V_127_loc_channel) | ap_sync_reg_channel_write_features_V_127_loc_channel);
 
 assign ap_sync_channel_write_features_V_12_loc_channel = ((features_V_12_loc_channel_full_n & ap_channel_done_features_V_12_loc_channel) | ap_sync_reg_channel_write_features_V_12_loc_channel);
 
@@ -5556,153 +1564,17 @@ assign ap_sync_channel_write_features_V_30_loc_channel = ((features_V_30_loc_cha
 
 assign ap_sync_channel_write_features_V_31_loc_channel = ((features_V_31_loc_channel_full_n & ap_channel_done_features_V_31_loc_channel) | ap_sync_reg_channel_write_features_V_31_loc_channel);
 
-assign ap_sync_channel_write_features_V_32_loc_channel = ((features_V_32_loc_channel_full_n & ap_channel_done_features_V_32_loc_channel) | ap_sync_reg_channel_write_features_V_32_loc_channel);
-
-assign ap_sync_channel_write_features_V_33_loc_channel = ((features_V_33_loc_channel_full_n & ap_channel_done_features_V_33_loc_channel) | ap_sync_reg_channel_write_features_V_33_loc_channel);
-
-assign ap_sync_channel_write_features_V_34_loc_channel = ((features_V_34_loc_channel_full_n & ap_channel_done_features_V_34_loc_channel) | ap_sync_reg_channel_write_features_V_34_loc_channel);
-
-assign ap_sync_channel_write_features_V_35_loc_channel = ((features_V_35_loc_channel_full_n & ap_channel_done_features_V_35_loc_channel) | ap_sync_reg_channel_write_features_V_35_loc_channel);
-
-assign ap_sync_channel_write_features_V_36_loc_channel = ((features_V_36_loc_channel_full_n & ap_channel_done_features_V_36_loc_channel) | ap_sync_reg_channel_write_features_V_36_loc_channel);
-
-assign ap_sync_channel_write_features_V_37_loc_channel = ((features_V_37_loc_channel_full_n & ap_channel_done_features_V_37_loc_channel) | ap_sync_reg_channel_write_features_V_37_loc_channel);
-
-assign ap_sync_channel_write_features_V_38_loc_channel = ((features_V_38_loc_channel_full_n & ap_channel_done_features_V_38_loc_channel) | ap_sync_reg_channel_write_features_V_38_loc_channel);
-
-assign ap_sync_channel_write_features_V_39_loc_channel = ((features_V_39_loc_channel_full_n & ap_channel_done_features_V_39_loc_channel) | ap_sync_reg_channel_write_features_V_39_loc_channel);
-
 assign ap_sync_channel_write_features_V_3_loc_channel = ((features_V_3_loc_channel_full_n & ap_channel_done_features_V_3_loc_channel) | ap_sync_reg_channel_write_features_V_3_loc_channel);
-
-assign ap_sync_channel_write_features_V_40_loc_channel = ((features_V_40_loc_channel_full_n & ap_channel_done_features_V_40_loc_channel) | ap_sync_reg_channel_write_features_V_40_loc_channel);
-
-assign ap_sync_channel_write_features_V_41_loc_channel = ((features_V_41_loc_channel_full_n & ap_channel_done_features_V_41_loc_channel) | ap_sync_reg_channel_write_features_V_41_loc_channel);
-
-assign ap_sync_channel_write_features_V_42_loc_channel = ((features_V_42_loc_channel_full_n & ap_channel_done_features_V_42_loc_channel) | ap_sync_reg_channel_write_features_V_42_loc_channel);
-
-assign ap_sync_channel_write_features_V_43_loc_channel = ((features_V_43_loc_channel_full_n & ap_channel_done_features_V_43_loc_channel) | ap_sync_reg_channel_write_features_V_43_loc_channel);
-
-assign ap_sync_channel_write_features_V_44_loc_channel = ((features_V_44_loc_channel_full_n & ap_channel_done_features_V_44_loc_channel) | ap_sync_reg_channel_write_features_V_44_loc_channel);
-
-assign ap_sync_channel_write_features_V_45_loc_channel = ((features_V_45_loc_channel_full_n & ap_channel_done_features_V_45_loc_channel) | ap_sync_reg_channel_write_features_V_45_loc_channel);
-
-assign ap_sync_channel_write_features_V_46_loc_channel = ((features_V_46_loc_channel_full_n & ap_channel_done_features_V_46_loc_channel) | ap_sync_reg_channel_write_features_V_46_loc_channel);
-
-assign ap_sync_channel_write_features_V_47_loc_channel = ((features_V_47_loc_channel_full_n & ap_channel_done_features_V_47_loc_channel) | ap_sync_reg_channel_write_features_V_47_loc_channel);
-
-assign ap_sync_channel_write_features_V_48_loc_channel = ((features_V_48_loc_channel_full_n & ap_channel_done_features_V_48_loc_channel) | ap_sync_reg_channel_write_features_V_48_loc_channel);
-
-assign ap_sync_channel_write_features_V_49_loc_channel = ((features_V_49_loc_channel_full_n & ap_channel_done_features_V_49_loc_channel) | ap_sync_reg_channel_write_features_V_49_loc_channel);
 
 assign ap_sync_channel_write_features_V_4_loc_channel = ((features_V_4_loc_channel_full_n & ap_channel_done_features_V_4_loc_channel) | ap_sync_reg_channel_write_features_V_4_loc_channel);
 
-assign ap_sync_channel_write_features_V_50_loc_channel = ((features_V_50_loc_channel_full_n & ap_channel_done_features_V_50_loc_channel) | ap_sync_reg_channel_write_features_V_50_loc_channel);
-
-assign ap_sync_channel_write_features_V_51_loc_channel = ((features_V_51_loc_channel_full_n & ap_channel_done_features_V_51_loc_channel) | ap_sync_reg_channel_write_features_V_51_loc_channel);
-
-assign ap_sync_channel_write_features_V_52_loc_channel = ((features_V_52_loc_channel_full_n & ap_channel_done_features_V_52_loc_channel) | ap_sync_reg_channel_write_features_V_52_loc_channel);
-
-assign ap_sync_channel_write_features_V_53_loc_channel = ((features_V_53_loc_channel_full_n & ap_channel_done_features_V_53_loc_channel) | ap_sync_reg_channel_write_features_V_53_loc_channel);
-
-assign ap_sync_channel_write_features_V_54_loc_channel = ((features_V_54_loc_channel_full_n & ap_channel_done_features_V_54_loc_channel) | ap_sync_reg_channel_write_features_V_54_loc_channel);
-
-assign ap_sync_channel_write_features_V_55_loc_channel = ((features_V_55_loc_channel_full_n & ap_channel_done_features_V_55_loc_channel) | ap_sync_reg_channel_write_features_V_55_loc_channel);
-
-assign ap_sync_channel_write_features_V_56_loc_channel = ((features_V_56_loc_channel_full_n & ap_channel_done_features_V_56_loc_channel) | ap_sync_reg_channel_write_features_V_56_loc_channel);
-
-assign ap_sync_channel_write_features_V_57_loc_channel = ((features_V_57_loc_channel_full_n & ap_channel_done_features_V_57_loc_channel) | ap_sync_reg_channel_write_features_V_57_loc_channel);
-
-assign ap_sync_channel_write_features_V_58_loc_channel = ((features_V_58_loc_channel_full_n & ap_channel_done_features_V_58_loc_channel) | ap_sync_reg_channel_write_features_V_58_loc_channel);
-
-assign ap_sync_channel_write_features_V_59_loc_channel = ((features_V_59_loc_channel_full_n & ap_channel_done_features_V_59_loc_channel) | ap_sync_reg_channel_write_features_V_59_loc_channel);
-
 assign ap_sync_channel_write_features_V_5_loc_channel = ((features_V_5_loc_channel_full_n & ap_channel_done_features_V_5_loc_channel) | ap_sync_reg_channel_write_features_V_5_loc_channel);
-
-assign ap_sync_channel_write_features_V_60_loc_channel = ((features_V_60_loc_channel_full_n & ap_channel_done_features_V_60_loc_channel) | ap_sync_reg_channel_write_features_V_60_loc_channel);
-
-assign ap_sync_channel_write_features_V_61_loc_channel = ((features_V_61_loc_channel_full_n & ap_channel_done_features_V_61_loc_channel) | ap_sync_reg_channel_write_features_V_61_loc_channel);
-
-assign ap_sync_channel_write_features_V_62_loc_channel = ((features_V_62_loc_channel_full_n & ap_channel_done_features_V_62_loc_channel) | ap_sync_reg_channel_write_features_V_62_loc_channel);
-
-assign ap_sync_channel_write_features_V_63_loc_channel = ((features_V_63_loc_channel_full_n & ap_channel_done_features_V_63_loc_channel) | ap_sync_reg_channel_write_features_V_63_loc_channel);
-
-assign ap_sync_channel_write_features_V_64_loc_channel = ((features_V_64_loc_channel_full_n & ap_channel_done_features_V_64_loc_channel) | ap_sync_reg_channel_write_features_V_64_loc_channel);
-
-assign ap_sync_channel_write_features_V_65_loc_channel = ((features_V_65_loc_channel_full_n & ap_channel_done_features_V_65_loc_channel) | ap_sync_reg_channel_write_features_V_65_loc_channel);
-
-assign ap_sync_channel_write_features_V_66_loc_channel = ((features_V_66_loc_channel_full_n & ap_channel_done_features_V_66_loc_channel) | ap_sync_reg_channel_write_features_V_66_loc_channel);
-
-assign ap_sync_channel_write_features_V_67_loc_channel = ((features_V_67_loc_channel_full_n & ap_channel_done_features_V_67_loc_channel) | ap_sync_reg_channel_write_features_V_67_loc_channel);
-
-assign ap_sync_channel_write_features_V_68_loc_channel = ((features_V_68_loc_channel_full_n & ap_channel_done_features_V_68_loc_channel) | ap_sync_reg_channel_write_features_V_68_loc_channel);
-
-assign ap_sync_channel_write_features_V_69_loc_channel = ((features_V_69_loc_channel_full_n & ap_channel_done_features_V_69_loc_channel) | ap_sync_reg_channel_write_features_V_69_loc_channel);
 
 assign ap_sync_channel_write_features_V_6_loc_channel = ((features_V_6_loc_channel_full_n & ap_channel_done_features_V_6_loc_channel) | ap_sync_reg_channel_write_features_V_6_loc_channel);
 
-assign ap_sync_channel_write_features_V_70_loc_channel = ((features_V_70_loc_channel_full_n & ap_channel_done_features_V_70_loc_channel) | ap_sync_reg_channel_write_features_V_70_loc_channel);
-
-assign ap_sync_channel_write_features_V_71_loc_channel = ((features_V_71_loc_channel_full_n & ap_channel_done_features_V_71_loc_channel) | ap_sync_reg_channel_write_features_V_71_loc_channel);
-
-assign ap_sync_channel_write_features_V_72_loc_channel = ((features_V_72_loc_channel_full_n & ap_channel_done_features_V_72_loc_channel) | ap_sync_reg_channel_write_features_V_72_loc_channel);
-
-assign ap_sync_channel_write_features_V_73_loc_channel = ((features_V_73_loc_channel_full_n & ap_channel_done_features_V_73_loc_channel) | ap_sync_reg_channel_write_features_V_73_loc_channel);
-
-assign ap_sync_channel_write_features_V_74_loc_channel = ((features_V_74_loc_channel_full_n & ap_channel_done_features_V_74_loc_channel) | ap_sync_reg_channel_write_features_V_74_loc_channel);
-
-assign ap_sync_channel_write_features_V_75_loc_channel = ((features_V_75_loc_channel_full_n & ap_channel_done_features_V_75_loc_channel) | ap_sync_reg_channel_write_features_V_75_loc_channel);
-
-assign ap_sync_channel_write_features_V_76_loc_channel = ((features_V_76_loc_channel_full_n & ap_channel_done_features_V_76_loc_channel) | ap_sync_reg_channel_write_features_V_76_loc_channel);
-
-assign ap_sync_channel_write_features_V_77_loc_channel = ((features_V_77_loc_channel_full_n & ap_channel_done_features_V_77_loc_channel) | ap_sync_reg_channel_write_features_V_77_loc_channel);
-
-assign ap_sync_channel_write_features_V_78_loc_channel = ((features_V_78_loc_channel_full_n & ap_channel_done_features_V_78_loc_channel) | ap_sync_reg_channel_write_features_V_78_loc_channel);
-
-assign ap_sync_channel_write_features_V_79_loc_channel = ((features_V_79_loc_channel_full_n & ap_channel_done_features_V_79_loc_channel) | ap_sync_reg_channel_write_features_V_79_loc_channel);
-
 assign ap_sync_channel_write_features_V_7_loc_channel = ((features_V_7_loc_channel_full_n & ap_channel_done_features_V_7_loc_channel) | ap_sync_reg_channel_write_features_V_7_loc_channel);
 
-assign ap_sync_channel_write_features_V_80_loc_channel = ((features_V_80_loc_channel_full_n & ap_channel_done_features_V_80_loc_channel) | ap_sync_reg_channel_write_features_V_80_loc_channel);
-
-assign ap_sync_channel_write_features_V_81_loc_channel = ((features_V_81_loc_channel_full_n & ap_channel_done_features_V_81_loc_channel) | ap_sync_reg_channel_write_features_V_81_loc_channel);
-
-assign ap_sync_channel_write_features_V_82_loc_channel = ((features_V_82_loc_channel_full_n & ap_channel_done_features_V_82_loc_channel) | ap_sync_reg_channel_write_features_V_82_loc_channel);
-
-assign ap_sync_channel_write_features_V_83_loc_channel = ((features_V_83_loc_channel_full_n & ap_channel_done_features_V_83_loc_channel) | ap_sync_reg_channel_write_features_V_83_loc_channel);
-
-assign ap_sync_channel_write_features_V_84_loc_channel = ((features_V_84_loc_channel_full_n & ap_channel_done_features_V_84_loc_channel) | ap_sync_reg_channel_write_features_V_84_loc_channel);
-
-assign ap_sync_channel_write_features_V_85_loc_channel = ((features_V_85_loc_channel_full_n & ap_channel_done_features_V_85_loc_channel) | ap_sync_reg_channel_write_features_V_85_loc_channel);
-
-assign ap_sync_channel_write_features_V_86_loc_channel = ((features_V_86_loc_channel_full_n & ap_channel_done_features_V_86_loc_channel) | ap_sync_reg_channel_write_features_V_86_loc_channel);
-
-assign ap_sync_channel_write_features_V_87_loc_channel = ((features_V_87_loc_channel_full_n & ap_channel_done_features_V_87_loc_channel) | ap_sync_reg_channel_write_features_V_87_loc_channel);
-
-assign ap_sync_channel_write_features_V_88_loc_channel = ((features_V_88_loc_channel_full_n & ap_channel_done_features_V_88_loc_channel) | ap_sync_reg_channel_write_features_V_88_loc_channel);
-
-assign ap_sync_channel_write_features_V_89_loc_channel = ((features_V_89_loc_channel_full_n & ap_channel_done_features_V_89_loc_channel) | ap_sync_reg_channel_write_features_V_89_loc_channel);
-
 assign ap_sync_channel_write_features_V_8_loc_channel = ((features_V_8_loc_channel_full_n & ap_channel_done_features_V_8_loc_channel) | ap_sync_reg_channel_write_features_V_8_loc_channel);
-
-assign ap_sync_channel_write_features_V_90_loc_channel = ((features_V_90_loc_channel_full_n & ap_channel_done_features_V_90_loc_channel) | ap_sync_reg_channel_write_features_V_90_loc_channel);
-
-assign ap_sync_channel_write_features_V_91_loc_channel = ((features_V_91_loc_channel_full_n & ap_channel_done_features_V_91_loc_channel) | ap_sync_reg_channel_write_features_V_91_loc_channel);
-
-assign ap_sync_channel_write_features_V_92_loc_channel = ((features_V_92_loc_channel_full_n & ap_channel_done_features_V_92_loc_channel) | ap_sync_reg_channel_write_features_V_92_loc_channel);
-
-assign ap_sync_channel_write_features_V_93_loc_channel = ((features_V_93_loc_channel_full_n & ap_channel_done_features_V_93_loc_channel) | ap_sync_reg_channel_write_features_V_93_loc_channel);
-
-assign ap_sync_channel_write_features_V_94_loc_channel = ((features_V_94_loc_channel_full_n & ap_channel_done_features_V_94_loc_channel) | ap_sync_reg_channel_write_features_V_94_loc_channel);
-
-assign ap_sync_channel_write_features_V_95_loc_channel = ((features_V_95_loc_channel_full_n & ap_channel_done_features_V_95_loc_channel) | ap_sync_reg_channel_write_features_V_95_loc_channel);
-
-assign ap_sync_channel_write_features_V_96_loc_channel = ((features_V_96_loc_channel_full_n & ap_channel_done_features_V_96_loc_channel) | ap_sync_reg_channel_write_features_V_96_loc_channel);
-
-assign ap_sync_channel_write_features_V_97_loc_channel = ((features_V_97_loc_channel_full_n & ap_channel_done_features_V_97_loc_channel) | ap_sync_reg_channel_write_features_V_97_loc_channel);
-
-assign ap_sync_channel_write_features_V_98_loc_channel = ((features_V_98_loc_channel_full_n & ap_channel_done_features_V_98_loc_channel) | ap_sync_reg_channel_write_features_V_98_loc_channel);
-
-assign ap_sync_channel_write_features_V_99_loc_channel = ((features_V_99_loc_channel_full_n & ap_channel_done_features_V_99_loc_channel) | ap_sync_reg_channel_write_features_V_99_loc_channel);
 
 assign ap_sync_channel_write_features_V_9_loc_channel = ((features_V_9_loc_channel_full_n & ap_channel_done_features_V_9_loc_channel) | ap_sync_reg_channel_write_features_V_9_loc_channel);
 
