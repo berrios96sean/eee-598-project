@@ -1,6 +1,6 @@
 #include "logistic_regression.h"
 
-#define N_FEATURES 32
+#define N_FEATURES 10
 #define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
 
 typedef ap_axis<32, 0, 0, 0> axis_pkt;
