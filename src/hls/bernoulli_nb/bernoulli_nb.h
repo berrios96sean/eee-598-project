@@ -8,12 +8,12 @@
 //typedef ap_uint<8> uint8_t;
 //typedef ap_int<16> int16_t;
 
-#define NUM_CLASSES 2      // Number of classes
-#define NUM_FEATURES 10    // Number of features
-#define LUT_SIZE 256       // Size of the log lookup table
-#define SCALE_FACTOR 10    // Scaling factor for log values (adjustable)
+#define NUM_CLASSES 2    
+#define NUM_FEATURES 10   
+#define LUT_SIZE 256       
+#define SCALE_FACTOR 10    
 
-extern ap_uint<8>  log_lut[LUT_SIZE];  // Log lookup table
+extern ap_uint<8>  log_lut[LUT_SIZE]; 
 
 
 //void bernoulli_nb(uint8_t input[NUM_FEATURES], int8_t output[NUM_CLASSES]);
