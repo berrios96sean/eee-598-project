@@ -30,6 +30,7 @@ puts "$current_dir"
 puts "$project_dir"
 
 source ./build/import_files.tcl
+source ./src/block_design/design_1.tcl
 
 close_project
 
