@@ -36,5 +36,5 @@ close_project
 
 open_project ./build/project_1/project_1.xpr
 start_gui
-get_board_parts
-set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
+#get_board_parts
+#set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
