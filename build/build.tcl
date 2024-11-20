@@ -32,6 +32,13 @@ puts "$project_dir"
 source ./build/import_files.tcl
 source ./src/block_design/design_1.tcl
 
+# IMPORTANT!! Change this path to match where you have the repo installed -- for example I have it installed in a directory named 'repos'
+set block_design_path "$userHome/repos/eee-598-project/build/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd"
+make_wrapper -files [get_files $block_design_path] -top
+set wrapper_file "$userHome/repos/eee-598-project/build/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v"
+add_files $wrapper_file
+set_property top design_1_wrapper [current_fileset]
+
 close_project
 
 open_project ./build/project_1/project_1.xpr
