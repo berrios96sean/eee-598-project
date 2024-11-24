@@ -2,17 +2,21 @@
 #define ADA_BOOST_H
 
 #include <hls_stream.h>
+#include <hls_math.h>
 #include <ap_fixed.h>
-#include <stdint.h>
+#include <ap_axi_sdata.h>
 
-struct DecisionStump {
-    uint8_t feature_index;
-    ap_fixed<8, 4> threshold; 
-    uint8_t polarity; // 1 or 0 (0 represents  -1)
-    ap_fixed<8, 4> alpha; 
+typedef ap_fixed<16, 2> fixed_t; 
+typedef ap_axis<16, 0, 0, 0> axis_pkt; 
+typedef ap_fixed<16, 2> input_t; 
+
+struct Stump {
+    ap_int<4> feature; 
+    fixed_t threshold; 
+    fixed_t weight; 
+    ap_int<1> polarity; 
 };
 
+void adaboost(hls::stream<axis_pkt>& in_stream, hls::stream<axis_pkt>& out_stream);
 
-void ada_boost(hls::stream<uint8_t> &input, hls::stream<uint8_t> &output);
-
-#endif 
+#endif // ADA_BOOST_H

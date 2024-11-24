@@ -3,18 +3,24 @@
 
 #include <hls_stream.h>
 #include <ap_fixed.h>
-#include <stdint.h>
+#include <ap_axi_sdata.h>
 
-struct DecisionStump {
-    uint8_t feature_index;
-    ap_fixed<8, 4> threshold; 
-    uint8_t polarity; // 1 or 0 (0 represents -1)
-    ap_fixed<8, 4> weight; 
+typedef ap_fixed<16, 2> fixed_t; 
+typedef ap_axis<16, 0, 0, 0> axis_pkt;
+typedef ap_fixed<16, 2> input_t; 
+
+struct Node {
+    ap_int<4> feature; // 4 bits         feature index (-2 to 8)
+    fixed_t threshold; // 16 bits         threshold
+    ap_int<5> left; // 5 bits         left child index (-1 to 14)
+    ap_int<5> right; // 5 bits         right child index (-1 to 14)
+    fixed_t value; // Value         leaf nodes
 };
 
+struct Tree {
+    Node nodes[15]; 
+};
 
-void gradient_boost(hls::stream<uint8_t> &input, hls::stream<uint8_t> &output);
-
-ap_fixed<16, 8> sigmoid(ap_fixed<16, 8> x);
+void gradient_boost(hls::stream<axis_pkt>& in_stream, hls::stream<axis_pkt>& out_stream);
 
 #endif // GRADIENT_BOOST_H

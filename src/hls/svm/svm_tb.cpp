@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "logistic_regression.h"
+#include "svm.h"
 
 const int num_features = 10; 
 
 int main() {
+    // Load test data
     std::ifstream infile("test_data.txt");
     if (!infile) {
         std::cerr << "Error opening test data file." << std::endl;
@@ -30,7 +31,6 @@ int main() {
     int num_samples;
     infile >> num_samples;
     int correct_predictions = 0;
-    num_samples = num_samples/100;
 
     for (int i = 0; i < num_samples; ++i) {
         for (int j = 0; j < num_features; ++j) {
@@ -42,11 +42,12 @@ int main() {
             in_stream.write(pkt);
         }
 
-        logistic_regression(in_stream, out_stream);
+        svm(in_stream, out_stream);
 
         while (out_stream.empty()) {
         }
 
+        // Read the result
         axis_pkt out_pkt = out_stream.read();
         ap_uint<1> predicted_class = out_pkt.data;
         std::cout << "packet " << i << " predicted_class: " << predicted_class << std::endl;

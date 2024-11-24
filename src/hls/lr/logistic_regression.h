@@ -1,26 +1,17 @@
-// Header file for logistic_regression function
 #ifndef LOGISTIC_REGRESSION_H
 #define LOGISTIC_REGRESSION_H
 
-#include <hls_stream.h>   // Required for hls::stream
-#include <hls_math.h>     // Required for hls::expf used in sigmoid
-#include <ap_axi_sdata.h> // Required for ap_axis type
+#include <hls_stream.h>
+#include <hls_math.h>
 #include <ap_fixed.h>
+#include <ap_axi_sdata.h>
 
-#define N_FEATURES 10
-#define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
+typedef ap_fixed<32, 8> fixed_8_t; 
+typedef ap_fixed<32, 2> fixed_2_t; 
 
-typedef ap_axis<32, 0, 0, 0> axis_pkt;
-typedef ap_fixed<16, 8> fixed_t; // 16-bit fixed-point type with 8 integer bits
-typedef ap_int<16> fixed_int16_t; // Use fixed-point integer type for weights to reduce DSP usage
-typedef ap_int<8> fixed_int8_t;   // 8-bit fixed-point integer type for inputs
+typedef ap_axis<16, 0, 0, 0> axis_pkt; 
+typedef ap_fixed<16, 2> input_t; 
 
-// Top-level function prototype
-// Top-level function prototype
-void logistic_regression(hls::stream<axis_pkt> &in_stream,
-                         hls::stream<axis_pkt> &out_stream,
-                         fixed_int16_t weights[WEIGHTS_SIZE]);
-
-
+void logistic_regression(hls::stream<axis_pkt>& in_stream, hls::stream<axis_pkt>& out_stream);
 
 #endif // LOGISTIC_REGRESSION_H

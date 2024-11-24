@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "logistic_regression.h"
+#include "gradient_boost.h"
 
 const int num_features = 10; 
 
@@ -30,8 +30,8 @@ int main() {
     int num_samples;
     infile >> num_samples;
     int correct_predictions = 0;
-    num_samples = num_samples/100;
 
+    num_samples = num_samples/100;
     for (int i = 0; i < num_samples; ++i) {
         for (int j = 0; j < num_features; ++j) {
             float value;
@@ -42,7 +42,7 @@ int main() {
             in_stream.write(pkt);
         }
 
-        logistic_regression(in_stream, out_stream);
+        gradient_boost(in_stream, out_stream);
 
         while (out_stream.empty()) {
         }

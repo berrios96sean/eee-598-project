@@ -1,64 +1,85 @@
 #include "logistic_regression.h"
 
-#define N_FEATURES 10
-#define WEIGHTS_SIZE (N_FEATURES + 1) // Include bias weight (weights + bias)
+const int num_features = 10;
 
-typedef ap_axis<32, 0, 0, 0> axis_pkt;
-typedef ap_fixed<16, 8> fixed_t; // 16-bit fixed-point type with 8 integer bits
-typedef ap_int<16> fixed_int16_t; // 16-bit fixed-point integer type for weights
-typedef ap_int<8> fixed_int8_t;   // 8-bit fixed-point integer type for inputs
+const fixed_8_t coefficients[num_features] = {
+    45.0373153853, 10.3786838184, 15.9393044430, 3.3646266663, 13.8120942498,
+    -1.2474239747, 26.3092266130, -0.0186548788, -1.7957262049, 1.3117863341,
+};
 
-// Top-level function definition
-void logistic_regression(hls::stream<axis_pkt> &in_stream,
-                         hls::stream<axis_pkt> &out_stream,
-                         fixed_int16_t weights[WEIGHTS_SIZE]) {
+const fixed_8_t intercept = -18.6547835574;
+
+// fixed_2_t sigmoid(fixed_8_t x) {
+//     return 1 / (1 + hls::exp(-x));
+// }
+
+// fixed_2_t sigmoid(fixed_8_t x) {
+
+//     const fixed_8_t neg_four = -4.0;
+//     const fixed_8_t neg_two = -2.0;
+//     const fixed_8_t zero = 0.0;
+//     const fixed_8_t two = 2.0;
+//     const fixed_8_t four = 4.0;
+//     const fixed_8_t one = 1.0;
+//     const fixed_8_t point_one = 0.1;
+//     const fixed_8_t point_two = 0.2;
+//     const fixed_8_t point_five = 0.5;
+//     const fixed_8_t point_eight = 0.8;
+//     const fixed_8_t point_two_five = 0.25;
+
+//     if (x < neg_four) return zero;
+//     else if (x < neg_two) return point_one * x + point_two;
+//     else if (x < zero) return point_two_five * x + point_five;
+//     else if (x < two) return point_two_five * x + point_five;
+//     else if (x < four) return point_one * x + point_eight;
+//     else return one;
+// }
+
+fixed_8_t sigmoid(fixed_8_t x) {
+     if (x < -4.0) return fixed_8_t(0.0);
+     else if (x < -2.0) return fixed_8_t(0.1) * x + fixed_8_t(0.2);
+     else if (x < 0.0) return fixed_8_t(0.25) * x + fixed_8_t(0.5);
+     else if (x < 2.0) return fixed_8_t(0.25) * x + fixed_8_t(0.5);
+     else if (x < 4.0) return fixed_8_t(0.1) * x + fixed_8_t(0.8);
+     else return fixed_8_t(1.0);
+ }
+
+
+
+void logistic_regression(hls::stream<axis_pkt>& in_stream, hls::stream<axis_pkt>& out_stream) {
     #pragma HLS INTERFACE axis port=in_stream
     #pragma HLS INTERFACE axis port=out_stream
-    #pragma HLS INTERFACE bram port=weights
+	#pragma HLS INTERFACE ap_ctrl_none port=return
     #pragma HLS DATAFLOW
-    #pragma HLS bind_storage variable=weights type=ram_2p impl=bram
 
-    // Input packet
-    axis_pkt input_pkt;
-    fixed_int8_t features[N_FEATURES];
-    #pragma HLS ARRAY_PARTITION variable=features complete // Fully partition to optimize parallel access
+    input_t X[num_features];
+    #pragma HLS ARRAY_PARTITION variable=X complete dim=1
 
-    // Read input features from AXI-Stream
-    read_input_features: for (int i = 0; i < N_FEATURES; i++) {
-        #pragma HLS PIPELINE II=1
-        input_pkt = in_stream.read();
-        features[i] = *((fixed_int8_t*)&input_pkt.data); // Convert the data to int8 type
-    }
+    #pragma HLS ARRAY_PARTITION variable=coefficients complete dim=1
 
-    // Perform logistic regression computation
-    fixed_t partial_sums[N_FEATURES];
-    #pragma HLS ARRAY_PARTITION variable=partial_sums complete
-    #pragma HLS bind_op variable=partial_sums op=mul impl=fabric // Force the use of LUTs for multiplication instead of DSPs
 
-    // Calculate partial products
-    compute_partial_products: for (int i = 0; i < N_FEATURES; i++) {
+    for (int i = 0; i < num_features; ++i) {
         #pragma HLS UNROLL
-        #pragma HLS allocation operation instances=mul limit=10
-        partial_sums[i] = (fixed_t)weights[i + 1] * (fixed_t)features[i];
+        axis_pkt pkt = in_stream.read();
+        X[i] = pkt.data;
     }
 
-    // Accumulate partial sums
-    fixed_t linear_sum = (fixed_t)weights[0]; // Bias term
-    accumulate_partial_sums: for (int i = 0; i < N_FEATURES; i++) {
+
+    fixed_8_t decision = intercept;
+    for (int i = 0; i < num_features; ++i) {
         #pragma HLS UNROLL
-        linear_sum += partial_sums[i];
+        decision += coefficients[i] * X[i];
+//#pragma bind_op variable=decision
     }
 
-    // Apply sigmoid function using an approximation to reduce DSP usage
-    fixed_t abs_linear_sum = (linear_sum >= fixed_t(0)) ? linear_sum : (fixed_t)(-linear_sum); // Replace hls::abs with a manual absolute calculation to avoid return value function
-    fixed_t probability = fixed_t(0.5) + linear_sum / (fixed_t(4.0) + abs_linear_sum); // Fixed-point sigmoid approximation to reduce resource usage
+    fixed_2_t probability = sigmoid(decision);
 
-    // Classify based on threshold of 0.5
-    float output = (probability.to_float() >= 0.5f) ? 1.0f : 0.0f;
 
-    // Write output to AXI-Stream
-    axis_pkt output_pkt;
-    output_pkt.data = *((uint32_t*)&output);
-    output_pkt.last = 1;
-    out_stream.write(output_pkt);
+    ap_uint<1> predicted_class = (probability > 0.5) ? 1 : 0;
+
+    // Write output data
+    axis_pkt out_pkt;
+    out_pkt.data = predicted_class;
+    out_pkt.last = true;
+    out_stream.write(out_pkt);
 }

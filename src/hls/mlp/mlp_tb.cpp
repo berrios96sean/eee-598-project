@@ -1,17 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "logistic_regression.h"
+#include "mlp.h"
 
-const int num_features = 10; 
+const int num_features = 10; // Define the number of features
 
 int main() {
+    // Load test data
     std::ifstream infile("test_data.txt");
     if (!infile) {
         std::cerr << "Error opening test data file." << std::endl;
         return 1;
     }
 
+    // Load reference predictions
     std::ifstream ref_file("reference_predictions.txt");
     if (!ref_file) {
         std::cerr << "Error opening reference predictions file." << std::endl;
@@ -30,8 +32,8 @@ int main() {
     int num_samples;
     infile >> num_samples;
     int correct_predictions = 0;
-    num_samples = num_samples/100;
 
+num_samples = num_samples/100 ;
     for (int i = 0; i < num_samples; ++i) {
         for (int j = 0; j < num_features; ++j) {
             float value;
@@ -42,11 +44,15 @@ int main() {
             in_stream.write(pkt);
         }
 
-        logistic_regression(in_stream, out_stream);
+        // Call the HLS function
+        mlp(in_stream, out_stream);
 
+        // Wait until the output stream has data before sending the next input
         while (out_stream.empty()) {
+            // Do nothing, just wait
         }
 
+        // Read the result
         axis_pkt out_pkt = out_stream.read();
         ap_uint<1> predicted_class = out_pkt.data;
         std::cout << "packet " << i << " predicted_class: " << predicted_class << std::endl;
@@ -59,6 +65,7 @@ int main() {
         }
     }
 
+    // Check for leftover data in the output stream
     if (!out_stream.empty()) {
         std::cerr << "WARNING: Output stream contains leftover data." << std::endl;
         return 1;
