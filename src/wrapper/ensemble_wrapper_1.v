@@ -53,7 +53,7 @@ module ensemble_wrapper1 #(
     output wire                  m_axis_tlast_3
 );
 
-    gaussian_nb gnb_0 (
+    gaussian_nb_0 gnb_0 (
         .ap_clk(clk),
         .ap_rst_n(rst_n),
         .in_stream_TDATA(s_axis_tdata_1),
@@ -70,7 +70,7 @@ module ensemble_wrapper1 #(
         .out_stream_TLAST(m_axis_tlast_1)
     );
 
-    logistic_regression lr_0 (
+    logistic_regression_0 lr_0 (
         .ap_clk(clk),
         .ap_rst_n(rst_n),
         .in_stream_TDATA(s_axis_tdata_2),
@@ -87,7 +87,7 @@ module ensemble_wrapper1 #(
         .out_stream_TLAST(m_axis_tlast_2)
     );
 
-    mlp mlp_0 (
+    mlp_0 mlp_u_0 (
         .ap_clk(clk),
         .ap_rst_n(rst_n),
         .in_stream_TDATA(s_axis_tdata_3),

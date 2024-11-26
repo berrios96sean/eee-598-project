@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# axis_majority_vote, axis_multiplexer, classifier_wrapper1, classifier_wrapper2, classifier_wrapper3
+# axis_majority_vote, axis_multiplexer, ensemble_wrapper1
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -160,9 +160,7 @@ if { $bCheckModules == 1 } {
    set list_check_mods "\ 
 axis_majority_vote\
 axis_multiplexer\
-classifier_wrapper1\
-classifier_wrapper2\
-classifier_wrapper3\
+ensemble_wrapper1\
 "
 
    set list_mods_missing ""
@@ -269,35 +267,13 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: classifier_wrapper1_0, and set properties
-  set block_name classifier_wrapper1
-  set block_cell_name classifier_wrapper1_0
-  if { [catch {set classifier_wrapper1_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ensemble_wrapper1_0, and set properties
+  set block_name ensemble_wrapper1
+  set block_cell_name ensemble_wrapper1_0
+  if { [catch {set ensemble_wrapper1_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $classifier_wrapper1_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: classifier_wrapper2_0, and set properties
-  set block_name classifier_wrapper2
-  set block_cell_name classifier_wrapper2_0
-  if { [catch {set classifier_wrapper2_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $classifier_wrapper2_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: classifier_wrapper3_0, and set properties
-  set block_name classifier_wrapper3
-  set block_cell_name classifier_wrapper3_0
-  if { [catch {set classifier_wrapper3_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $classifier_wrapper3_0 eq "" } {
+   } elseif { $ensemble_wrapper1_0 eq "" } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -602,17 +578,17 @@ proc create_root_design { parentCell } {
    CONFIG.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ {100} \
    CONFIG.PSU__CRL_APB__PL0_REF_CTRL__SRCSEL {RPLL} \
    CONFIG.PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ {300.000000} \
-   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0 {5} \
+   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0 {4} \
    CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1 {1} \
    CONFIG.PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ {100} \
    CONFIG.PSU__CRL_APB__PL1_REF_CTRL__SRCSEL {RPLL} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ {150.000000} \
-   CONFIG.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR0 {10} \
+   CONFIG.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR0 {4} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR1 {1} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__FREQMHZ {100} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__SRCSEL {RPLL} \
    CONFIG.PSU__CRL_APB__PL3_REF_CTRL__ACT_FREQMHZ {250.000000} \
-   CONFIG.PSU__CRL_APB__PL3_REF_CTRL__DIVISOR0 {6} \
+   CONFIG.PSU__CRL_APB__PL3_REF_CTRL__DIVISOR0 {4} \
    CONFIG.PSU__CRL_APB__PL3_REF_CTRL__DIVISOR1 {1} \
    CONFIG.PSU__CRL_APB__PL3_REF_CTRL__FREQMHZ {100} \
    CONFIG.PSU__CRL_APB__PL3_REF_CTRL__SRCSEL {RPLL} \
@@ -909,17 +885,17 @@ Port;FD4A0000;FD4AFFFF;1|FPD;DPDMA;FD4C0000;FD4CFFFF;1|FPD;DDR_XMPU5_CFG;FD05000
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_dma_1/S_AXI_LITE] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
   connect_bd_intf_net -intf_net axis_majority_vote_0_m_axis [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM] [get_bd_intf_pins axis_majority_vote_0/m_axis]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_0 [get_bd_intf_pins axis_multiplexer_0/m_axis_0] [get_bd_intf_pins classifier_wrapper1_0/s_axis]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_1 [get_bd_intf_pins axis_multiplexer_0/m_axis_1] [get_bd_intf_pins classifier_wrapper2_0/s_axis]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_2 [get_bd_intf_pins axis_multiplexer_0/m_axis_2] [get_bd_intf_pins classifier_wrapper3_0/s_axis]
-  connect_bd_intf_net -intf_net classifier_wrapper1_0_m_axis [get_bd_intf_pins axis_majority_vote_0/s_axis_1] [get_bd_intf_pins classifier_wrapper1_0/m_axis]
-  connect_bd_intf_net -intf_net classifier_wrapper2_0_m_axis [get_bd_intf_pins axis_majority_vote_0/s_axis_0] [get_bd_intf_pins classifier_wrapper2_0/m_axis]
-  connect_bd_intf_net -intf_net classifier_wrapper3_0_m_axis [get_bd_intf_pins axis_majority_vote_0/s_axis_2] [get_bd_intf_pins classifier_wrapper3_0/m_axis]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_0 [get_bd_intf_pins axis_multiplexer_0/m_axis_0] [get_bd_intf_pins ensemble_wrapper1_0/s_axis_1]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_1 [get_bd_intf_pins axis_multiplexer_0/m_axis_1] [get_bd_intf_pins ensemble_wrapper1_0/s_axis_2]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_2 [get_bd_intf_pins axis_multiplexer_0/m_axis_2] [get_bd_intf_pins ensemble_wrapper1_0/s_axis_3]
+  connect_bd_intf_net -intf_net ensemble_wrapper1_0_m_axis_1 [get_bd_intf_pins axis_majority_vote_0/s_axis_0] [get_bd_intf_pins ensemble_wrapper1_0/m_axis_1]
+  connect_bd_intf_net -intf_net ensemble_wrapper1_0_m_axis_2 [get_bd_intf_pins axis_majority_vote_0/s_axis_1] [get_bd_intf_pins ensemble_wrapper1_0/m_axis_2]
+  connect_bd_intf_net -intf_net ensemble_wrapper1_0_m_axis_3 [get_bd_intf_pins axis_majority_vote_0/s_axis_2] [get_bd_intf_pins ensemble_wrapper1_0/m_axis_3]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins axi_interconnect_0/S03_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
 
   # Create port connections
-  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins axi_interconnect_0/S04_ARESETN] [get_bd_pins axi_interconnect_0/S05_ARESETN] [get_bd_pins axis_majority_vote_0/rst_n] [get_bd_pins axis_multiplexer_0/rst_n] [get_bd_pins classifier_wrapper1_0/rst_n] [get_bd_pins classifier_wrapper2_0/rst_n] [get_bd_pins classifier_wrapper3_0/rst_n] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
-  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/m_axi_sg_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins axi_interconnect_0/S04_ACLK] [get_bd_pins axi_interconnect_0/S05_ACLK] [get_bd_pins axis_majority_vote_0/clk] [get_bd_pins axis_multiplexer_0/clk] [get_bd_pins classifier_wrapper1_0/clk] [get_bd_pins classifier_wrapper2_0/clk] [get_bd_pins classifier_wrapper3_0/clk] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins zynq_ultra_ps_e_0/saxihpc0_fpd_aclk]
+  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins axi_interconnect_0/S04_ARESETN] [get_bd_pins axi_interconnect_0/S05_ARESETN] [get_bd_pins axis_majority_vote_0/rst_n] [get_bd_pins axis_multiplexer_0/rst_n] [get_bd_pins ensemble_wrapper1_0/rst_n] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/m_axi_sg_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins axi_interconnect_0/S04_ACLK] [get_bd_pins axi_interconnect_0/S05_ACLK] [get_bd_pins axis_majority_vote_0/clk] [get_bd_pins axis_multiplexer_0/clk] [get_bd_pins ensemble_wrapper1_0/clk] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins zynq_ultra_ps_e_0/saxihpc0_fpd_aclk]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_resetn0 [get_bd_pins rst_ps8_0_100M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
 
   # Create address segments

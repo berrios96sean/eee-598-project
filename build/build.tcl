@@ -31,8 +31,13 @@ set current_dir [pwd]
 puts "$current_dir"
 puts "$project_dir"
 
+set ip_path "$userHome/repos/eee-598-project/ip"
+set_property  ip_repo_paths  $ip_path [current_project]
+update_ip_catalog
+
 source ./build/import_files.tcl
 source ./src/block_design/design_1_zu.tcl
+source ./build/import_ips.tcl
 
 # IMPORTANT!! Change this path to match where you have the repo installed -- for example I have it installed in a directory named 'repos'
 set block_design_path "$userHome/repos/eee-598-project/build/project_1/project_1.srcs/sources_1/bd/design_1_zu/design_1_zu.bd"
@@ -40,6 +45,10 @@ make_wrapper -files [get_files $block_design_path] -top
 set wrapper_file "$userHome/repos/eee-598-project/build/project_1/project_1.gen/sources_1/bd/design_1_zu/hdl/design_1_zu_wrapper.v"
 add_files $wrapper_file
 set_property top design_1_zu_wrapper [current_fileset]
+
+# Run Synthesis and Implementation 
+launch_runs synth_1 -jobs 8
+launch_runs impl_1 -jobs 8
 
 close_project
 
