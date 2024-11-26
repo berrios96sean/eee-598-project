@@ -27,7 +27,7 @@ create_project $project_name ./build/$project_name -part xczu5eg-sfvc784-1-e
 # Get the project directory and store it in a variable
 set project_dir [get_property DIRECTORY [current_project]]
 set current_dir [pwd]
-set ensemble_name "ensemble_wrapper_black_box"
+set ensemble_name "ensemble_wrapper_1"
 
 puts "$current_dir"
 puts "$project_dir"
@@ -37,8 +37,8 @@ set_property  ip_repo_paths  $ip_path [current_project]
 update_ip_catalog
 
 source ./build/import_files.tcl
-source ./src/block_design/bb/design_1_zu.tcl
-#source ./src/block_design/_1/design_1_zu.tcl
+#source ./src/block_design/bb/design_1_zu.tcl
+source ./src/block_design/_1/design_1_zu.tcl
 #source ./src/block_design/_2/design_1_zu.tcl
 #source ./src/block_design/_3/design_1_zu.tcl
 #source ./src/block_design/_4/design_1_zu.tcl
