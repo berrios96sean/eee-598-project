@@ -27,6 +27,7 @@ create_project $project_name ./build/$project_name -part xczu5eg-sfvc784-1-e
 # Get the project directory and store it in a variable
 set project_dir [get_property DIRECTORY [current_project]]
 set current_dir [pwd]
+set ensemble_name "ensemble_wrapper_black_box"
 
 puts "$current_dir"
 puts "$project_dir"
@@ -36,7 +37,11 @@ set_property  ip_repo_paths  $ip_path [current_project]
 update_ip_catalog
 
 source ./build/import_files.tcl
-source ./src/block_design/design_1_zu.tcl
+source ./src/block_design/bb/design_1_zu.tcl
+#source ./src/block_design/_1/design_1_zu.tcl
+#source ./src/block_design/_2/design_1_zu.tcl
+#source ./src/block_design/_3/design_1_zu.tcl
+#source ./src/block_design/_4/design_1_zu.tcl
 source ./build/import_ips.tcl
 
 # IMPORTANT!! Change this path to match where you have the repo installed -- for example I have it installed in a directory named 'repos'
@@ -47,8 +52,8 @@ add_files $wrapper_file
 set_property top design_1_zu_wrapper [current_fileset]
 
 # Run Synthesis and Implementation 
-launch_runs synth_1 -jobs 8
-launch_runs impl_1 -jobs 8
+#launch_runs synth_1 -jobs 8
+#launch_runs impl_1 -jobs 8
 
 close_project
 
