@@ -189,6 +189,85 @@ if { $bCheckIPsPassed != 1 } {
 ##################################################################
 
 
+# Hierarchical cell: pr_sec
+proc create_hier_cell_pr_sec { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_pr_sec() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 m_axis_0
+
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 m_axis_1
+
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 m_axis_2
+
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 s_axis_0
+
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 s_axis_1
+
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 s_axis_2
+
+
+  # Create pins
+  create_bd_pin -dir I -type clk clk
+  create_bd_pin -dir I -type rst rst_n
+
+  # Create instance: ensemble_wrapper_black_box_0, and set properties
+  set block_name ensemble_wrapper_black_box
+  set block_cell_name ensemble_wrapper_black_box_0
+  if { [catch {set ensemble_wrapper_black_box_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ensemble_wrapper_black_box_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create interface connections
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_0 [get_bd_intf_pins s_axis_0] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_0]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_1 [get_bd_intf_pins s_axis_1] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_1]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_2 [get_bd_intf_pins s_axis_2] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_2]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_0 [get_bd_intf_pins m_axis_0] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_0]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_1 [get_bd_intf_pins m_axis_1] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_1]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_2 [get_bd_intf_pins m_axis_2] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_2]
+
+  # Create port connections
+  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins rst_n] [get_bd_pins ensemble_wrapper_black_box_0/rst_n]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins clk] [get_bd_pins ensemble_wrapper_black_box_0/clk]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 
 # Procedure to create entire design; Provide argument to make
 # procedure reusable. If parentCell is "", will use root.
@@ -267,17 +346,9 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: ensemble_wrapper_black_box_0, and set properties
-  set block_name ensemble_wrapper_black_box
-  set block_cell_name ensemble_wrapper_black_box_0
-  if { [catch {set ensemble_wrapper_black_box_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $ensemble_wrapper_black_box_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
+  # Create instance: pr_sec
+  create_hier_cell_pr_sec [current_bd_instance .] pr_sec
+
   # Create instance: rst_ps8_0_100M, and set properties
   set rst_ps8_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps8_0_100M ]
 
@@ -885,17 +956,17 @@ Port;FD4A0000;FD4AFFFF;1|FPD;DPDMA;FD4C0000;FD4CFFFF;1|FPD;DDR_XMPU5_CFG;FD05000
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_dma_1/S_AXI_LITE] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
   connect_bd_intf_net -intf_net axis_majority_vote_0_m_axis [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM] [get_bd_intf_pins axis_majority_vote_0/m_axis]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_0 [get_bd_intf_pins axis_multiplexer_0/m_axis_0] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_0]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_1 [get_bd_intf_pins axis_multiplexer_0/m_axis_1] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_1]
-  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_2 [get_bd_intf_pins axis_multiplexer_0/m_axis_2] [get_bd_intf_pins ensemble_wrapper_black_box_0/s_axis_2]
-  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_0 [get_bd_intf_pins axis_majority_vote_0/s_axis_0] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_0]
-  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_1 [get_bd_intf_pins axis_majority_vote_0/s_axis_1] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_1]
-  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_2 [get_bd_intf_pins axis_majority_vote_0/s_axis_2] [get_bd_intf_pins ensemble_wrapper_black_box_0/m_axis_2]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_0 [get_bd_intf_pins axis_multiplexer_0/m_axis_0] [get_bd_intf_pins pr_sec/s_axis_0]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_1 [get_bd_intf_pins axis_multiplexer_0/m_axis_1] [get_bd_intf_pins pr_sec/s_axis_1]
+  connect_bd_intf_net -intf_net axis_multiplexer_0_m_axis_2 [get_bd_intf_pins axis_multiplexer_0/m_axis_2] [get_bd_intf_pins pr_sec/s_axis_2]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_0 [get_bd_intf_pins axis_majority_vote_0/s_axis_0] [get_bd_intf_pins pr_sec/m_axis_0]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_1 [get_bd_intf_pins axis_majority_vote_0/s_axis_1] [get_bd_intf_pins pr_sec/m_axis_1]
+  connect_bd_intf_net -intf_net ensemble_wrapper_black_box_0_m_axis_2 [get_bd_intf_pins axis_majority_vote_0/s_axis_2] [get_bd_intf_pins pr_sec/m_axis_2]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM0_FPD [get_bd_intf_pins axi_interconnect_0/S03_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_FPD]
 
   # Create port connections
-  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins axi_interconnect_0/S04_ARESETN] [get_bd_pins axi_interconnect_0/S05_ARESETN] [get_bd_pins axis_majority_vote_0/rst_n] [get_bd_pins axis_multiplexer_0/rst_n] [get_bd_pins ensemble_wrapper_black_box_0/rst_n] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
-  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/m_axi_sg_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins axi_interconnect_0/S04_ACLK] [get_bd_pins axi_interconnect_0/S05_ACLK] [get_bd_pins axis_majority_vote_0/clk] [get_bd_pins axis_multiplexer_0/clk] [get_bd_pins ensemble_wrapper_black_box_0/clk] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins zynq_ultra_ps_e_0/saxihpc0_fpd_aclk]
+  connect_bd_net -net rst_ps8_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_interconnect_0/S03_ARESETN] [get_bd_pins axi_interconnect_0/S04_ARESETN] [get_bd_pins axi_interconnect_0/S05_ARESETN] [get_bd_pins axis_majority_vote_0/rst_n] [get_bd_pins axis_multiplexer_0/rst_n] [get_bd_pins pr_sec/rst_n] [get_bd_pins rst_ps8_0_100M/peripheral_aresetn]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/m_axi_sg_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_interconnect_0/S03_ACLK] [get_bd_pins axi_interconnect_0/S04_ACLK] [get_bd_pins axi_interconnect_0/S05_ACLK] [get_bd_pins axis_majority_vote_0/clk] [get_bd_pins axis_multiplexer_0/clk] [get_bd_pins pr_sec/clk] [get_bd_pins rst_ps8_0_100M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins zynq_ultra_ps_e_0/saxihpc0_fpd_aclk]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_resetn0 [get_bd_pins rst_ps8_0_100M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
 
   # Create address segments
