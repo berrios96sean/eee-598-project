@@ -1,3 +1,5 @@
+ `timescale 1ns / 1ps
+
 module axis_majority_vote #(
     parameter DATA_WIDTH = 32
 )(

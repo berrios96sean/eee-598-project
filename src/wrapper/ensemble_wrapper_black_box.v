@@ -1,3 +1,4 @@
+ `timescale 1ns / 1ps
 
 module ensemble_wrapper_black_box #(
     parameter DATA_WIDTH = 32,

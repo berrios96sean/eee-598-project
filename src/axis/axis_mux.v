@@ -1,3 +1,5 @@
+ `timescale 1ns / 1ps
+
 module axis_multiplexer #(
     parameter DATA_WIDTH = 32,
     parameter KEEP_WIDTH = 4
