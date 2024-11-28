@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module axis_testbench;
-    parameter DATA_WIDTH = 32;
+    parameter DATA_WIDTH = 16;
     parameter PACKET_SIZE = 1;  // Can be modified to adjust the number of data words in a packet
 
     reg clk;
@@ -49,6 +49,8 @@ module axis_testbench;
     wire                  ensemble_to_vote_tvalid_2;
     wire                  ensemble_to_vote_tready_2;
     wire                  ensemble_to_vote_tlast_2;
+    
+    integer i;
 
     // Instantiate the DUTs (MUX, Ensemble, Majority Vote)
     axis_multiplexer #(
@@ -158,15 +160,20 @@ module axis_testbench;
         // Send a single packet of data
 //        send_packet(PACKET_SIZE);
         #100;
-        s_axis_tdata <= 32'hFFFFFFFF;  // Example data pattern
-        #10;
+        s_axis_tdata <= 16'hFFFF;
         s_axis_tvalid <= 1;
-        s_axis_tlast <= 1;
+        for (i = 0; i < 9; i = i + 1) begin
+            #10;
+            s_axis_tdata <= 16'hFFFF - i;  // Example data pattern, can be modified as needed
+            if (i == 8)
+                s_axis_tlast <= 1;  // Set tlast on the 10th data word
+            else
+                s_axis_tlast <= 0;
+        end
         #10;
-        s_axis_tdata <= 32'h00000000;  // Example data pattern
         s_axis_tvalid <= 0;
         s_axis_tlast <= 0;
-        
+                
 
         // Wait for the result to come back
         wait(m_axis_tvalid);
@@ -185,7 +192,7 @@ module axis_testbench;
         begin
             for (i = 0; i < size; i = i + 1) begin
                 @(posedge clk);
-                s_axis_tdata <= 32'hFFFFFFFF;  // Example data pattern
+                s_axis_tdata <= 16'hFFFF;  // Example data pattern
                 s_axis_tvalid <= 1;
                 s_axis_tlast <= (i == size - 1);
                 @(posedge clk);
