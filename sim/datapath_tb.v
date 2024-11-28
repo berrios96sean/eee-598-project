@@ -75,7 +75,7 @@ module axis_testbench;
         .m_axis_tlast_2(mux_to_ensemble_tlast_2)
     );
 
-    ensemble_wrapper_black_box #(
+    ensemble_wrapper_1 #(
         .DATA_WIDTH(DATA_WIDTH)
     ) u_ensemble (
         .clk(clk),
