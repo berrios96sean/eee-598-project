@@ -1,5 +1,3 @@
- `timescale 1ns / 1ps
-
 module axis_majority_vote #(
     parameter DATA_WIDTH = 32
 )(
@@ -48,14 +46,17 @@ module axis_majority_vote #(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             data_0 <= 0;
-            data_1 <= 0;
-            data_2 <= 0;
             valid_0 <= 1'b0;
-            valid_1 <= 1'b0;
-            valid_2 <= 1'b0;
             last_0 <= 1'b0;
+
+            data_1 <= 0;
+            valid_1 <= 1'b0;
             last_1 <= 1'b0;
+
+            data_2 <= 0;
+            valid_2 <= 1'b0;
             last_2 <= 1'b0;
+
             received_flags <= 3'b000;
         end else begin
             if (s_axis_tvalid_0 && ~valid_0) begin
@@ -76,34 +77,27 @@ module axis_majority_vote #(
                 last_2 <= s_axis_tlast_2;
                 received_flags[2] <= 1'b1;
             end
-        end
-    end
 
-    // Majority voting logic
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            majority_result <= 0;
-            result_valid <= 1'b0;
-            result_last <= 1'b0;
-        end else if (received_flags == 3'b111) begin
-            // Perform majority voting
-            if ((data_0 == data_1) || (data_0 == data_2)) begin
-                majority_result <= data_0;
-            end else if (data_1 == data_2) begin
-                majority_result <= data_1;
+            if (received_flags == 3'b111) begin
+                // Perform majority voting
+                if ((data_0 == data_1) || (data_0 == data_2)) begin
+                    majority_result <= data_0;
+                end else if (data_1 == data_2) begin
+                    majority_result <= data_1;
+                end else begin
+                    majority_result <= data_0; // Default to data_0 in case of no majority
+                end
+                result_valid <= 1'b1;
+                result_last <= last_0 & last_1 & last_2;
+
+                // Reset valid flags and received_flags
+                valid_0 <= 1'b0;
+                valid_1 <= 1'b0;
+                valid_2 <= 1'b0;
+                received_flags <= 3'b000;
             end else begin
-                majority_result <= data_0; // Default to data_0 in case of no majority
+                result_valid <= 1'b0;
             end
-            result_valid <= 1'b1;
-            result_last <= last_0 & last_1 & last_2;
-
-            // Reset valid flags
-            valid_0 <= 1'b0;
-            valid_1 <= 1'b0;
-            valid_2 <= 1'b0;
-            received_flags <= 3'b000;
-        end else begin
-            result_valid <= 1'b0;
         end
     end
 
@@ -113,4 +107,3 @@ module axis_majority_vote #(
     assign m_axis_tlast  = result_last;
 
 endmodule
-
