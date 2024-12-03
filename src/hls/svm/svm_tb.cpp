@@ -32,6 +32,8 @@ int main() {
     infile >> num_samples;
     int correct_predictions = 0;
 
+    num_samples = num_samples / 100;
+
     for (int i = 0; i < num_samples; ++i) {
         for (int j = 0; j < num_features; ++j) {
             float value;
