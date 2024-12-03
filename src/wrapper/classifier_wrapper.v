@@ -1,4 +1,4 @@
-module classifier_wrapper #(
+module classifier_wrapper1 #(
     parameter DATA_WIDTH = 32,
     parameter KEEP_WIDTH = 4
 )(
